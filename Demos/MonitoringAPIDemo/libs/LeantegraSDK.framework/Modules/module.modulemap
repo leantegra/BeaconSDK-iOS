@@ -1,0 +1,6 @@
+framework module LeantegraSDK {
+  umbrella header "LeantegraSDK.h"
+
+  export *
+  module * { export * }
+}

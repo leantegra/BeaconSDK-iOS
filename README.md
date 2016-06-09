@@ -13,7 +13,7 @@ Features:
 
 ### Manual installation
 
-1. Add [leantegra-ios-sdk_1.0.0.framework](https://github.com/leantegra/iOSPowerMoteSDK/blob/master/PowerMoteSDK/leantegra-ios-sdk_1.0.0.framework) into XCode project; 
+1. Add [LeantegraSDK.framework](https://github.com/leantegra/iOSPowerMoteSDK/blob/master/PowerMoteSDK/LeantegraSDK.framework) into XCode project; 
 2. Add Apple's CoreLocation and Apple's CoreBlueooth frameworks into XCode project;
 3. For PowerMote Monitoring feature, add [NSLocationAlwaysUsageDescription](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) property key.
 

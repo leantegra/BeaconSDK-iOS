@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LSPowerMoteConnection Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Leantegra iOS SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Leantegra Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/deviceMACAddress">deviceMACAddress</option>
+		
+		<option value="//api/name/peripheral">peripheral</option>
+		
+		<option value="//api/name/scanInterval">scanInterval</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/characteristics">- characteristics</option>
+		
+		<option value="//api/name/connect">- connect</option>
+		
+		<option value="//api/name/disconnect">- disconnect</option>
+		
+		<option value="//api/name/initWithDeviceMACAddress:delegate:">- initWithDeviceMACAddress:delegate:</option>
+		
+		<option value="//api/name/readAdvertisingInterval:">- readAdvertisingInterval:</option>
+		
+		<option value="//api/name/readBatteryLevel:">- readBatteryLevel:</option>
+		
+		<option value="//api/name/readCharacteristic:delegate:">- readCharacteristic:delegate:</option>
+		
+		<option value="//api/name/readDeviceID:">- readDeviceID:</option>
+		
+		<option value="//api/name/readDeviceInfo:">- readDeviceInfo:</option>
+		
+		<option value="//api/name/readFirmwareVersion:">- readFirmwareVersion:</option>
+		
+		<option value="//api/name/readMajor:">- readMajor:</option>
+		
+		<option value="//api/name/readMinor:">- readMinor:</option>
+		
+		<option value="//api/name/readModel:">- readModel:</option>
+		
+		<option value="//api/name/readNetworkID:">- readNetworkID:</option>
+		
+		<option value="//api/name/readOperationMode:">- readOperationMode:</option>
+		
+		<option value="//api/name/readSerial:">- readSerial:</option>
+		
+		<option value="//api/name/readTemperature:">- readTemperature:</option>
+		
+		<option value="//api/name/readTxPower:">- readTxPower:</option>
+		
+		<option value="//api/name/readURL:">- readURL:</option>
+		
+		<option value="//api/name/readUUID:">- readUUID:</option>
+		
+		<option value="//api/name/readVendor:">- readVendor:</option>
+		
+		<option value="//api/name/writeAdvertisingInterval:delegate:">- writeAdvertisingInterval:delegate:</option>
+		
+		<option value="//api/name/writeCharacteristic:dataValue:delegate:">- writeCharacteristic:dataValue:delegate:</option>
+		
+		<option value="//api/name/writeDeviceID:delegate:">- writeDeviceID:delegate:</option>
+		
+		<option value="//api/name/writeMajor:delegate:">- writeMajor:delegate:</option>
+		
+		<option value="//api/name/writeMinor:delegate:">- writeMinor:delegate:</option>
+		
+		<option value="//api/name/writeNetworkID:delegate:">- writeNetworkID:delegate:</option>
+		
+		<option value="//api/name/writeOperationMode:delegate:">- writeOperationMode:delegate:</option>
+		
+		<option value="//api/name/writeTxPower:delegate:">- writeTxPower:delegate:</option>
+		
+		<option value="//api/name/writeURL:delegate:">- writeURL:delegate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">LSPowerMoteConnection Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>CBCentralManagerDelegate<br />CBPeripheralDelegate</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>LSPowerMoteConnection.h<br />LSPowerMoteConnection.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Provides basic functionality for communication with the remote device.
+Used for reading and writing device GATT characteristics.</p>
+
+<p>All read and write operations perform synchronously, so no need to wait for finishing the previous
+operation.</p>
+
+<p><b>Note:</b> Application should call  disconnect as early as possible after executing job
+with the device.</p>
+
+<p><b>Usage:</b></p>
+
+<pre><code>-(void)connect {
+    pmConnection = [[LSPowerMoteConnection alloc] initWithDeviceMACAddress:@"xx:xx:xx:xx:xx:xx" delegate:self];
+    if (pmConnection) {
+        [pmConnection connect];
+    }
+}
+
+-(void)powerMoteConnectionDidConnect:(LSPowerMoteConnection *)powerMoteConnection {
+    //After connection we can write or read GATT characteristic's values
+    [pmConnection readBatteryLevel:self];
+    [pmConnection writeAdvertisingInterval:200 delegate:self];
+}
+
+-(void)powerMoteReadCharacteristicSuccess:(LSPowerMoteCharacteristic *)characteristic {
+    //After value of characteristic was read
+}
+
+-(void)powerMoteWriteCharacteristicSuccess:(LSCharacteristicType)characteristicType {
+    //After new value of characteristic was written
+}
+
+-(void)disconnect {
+    [pmConnection disconnect];
+}
+
+-(void)powerMoteConnectionDidDisconnect:(LSPowerMoteConnection *)powerMoteConnection {
+    //After application was disconnected from PowerMote
+}
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/scanInterval" title="scanInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanInterval">&nbsp;&nbsp;scanInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Time in seconds - maximum time of scanning</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSNumber *scanInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceMACAddress" title="deviceMACAddress"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceMACAddress">&nbsp;&nbsp;deviceMACAddress</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>MAC address of <a href="#//api/name/peripheral">peripheral</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSString *deviceMACAddress</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheral" title="peripheral"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheral">&nbsp;&nbsp;peripheral</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Bounded peripheral</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property CBPeripheral *peripheral</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDeviceMACAddress:delegate:" title="initWithDeviceMACAddress:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDeviceMACAddress:delegate:">&ndash;&nbsp;initWithDeviceMACAddress:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Construct new connection to PowerMote</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithDeviceMACAddress:(NSString *)<em>newDeviceMACAddress</em> delegate:(id&lt;LSPowerMoteConnectionDelegate&gt;)<em>newDelegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newDeviceMACAddress</code></th>
+						<td><p>should be in format XX:XX:XX:XX:XX:XX in any register</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connect" title="connect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connect">&ndash;&nbsp;connect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Connect to the remote device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)connect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnect" title="disconnect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnect">&ndash;&nbsp;disconnect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dis<a href="#//api/name/connect">connect</a> an established connection, or cancel connection that is currently in progress.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/characteristics" title="characteristics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/characteristics">&ndash;&nbsp;characteristics</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a list of GATT characteristics from the remote device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)characteristics</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readCharacteristic:delegate:" title="readCharacteristic:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readCharacteristic:delegate:">&ndash;&nbsp;readCharacteristic:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads the requested characteristic from the remote device.</p>
+
+<p><p>
+This is an asynchronous operation.
+<p>
+The successful result of the read operation is returned by the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+<p>
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readCharacteristic:(CBCharacteristic *)<em>characteristic</em> delegate:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>newReadDelegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>CBCharacteristic to read from the remote device</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newReadDelegate</code></th>
+						<td><p>The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readBatteryLevel:" title="readBatteryLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readBatteryLevel:">&ndash;&nbsp;readBatteryLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads battery level characteristic.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readBatteryLevel:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readTxPower:" title="readTxPower:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readTxPower:">&ndash;&nbsp;readTxPower:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads TX power characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readTxPower:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readFirmwareVersion:" title="readFirmwareVersion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readFirmwareVersion:">&ndash;&nbsp;readFirmwareVersion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads firmware version characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readFirmwareVersion:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readTemperature:" title="readTemperature:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readTemperature:">&ndash;&nbsp;readTemperature:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads temperature characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readTemperature:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readURL:" title="readURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readURL:">&ndash;&nbsp;readURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads URL characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readURL:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readAdvertisingInterval:" title="readAdvertisingInterval:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readAdvertisingInterval:">&ndash;&nbsp;readAdvertisingInterval:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads advertising interval characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readAdvertisingInterval:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readMajor:" title="readMajor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readMajor:">&ndash;&nbsp;readMajor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads major ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readMajor:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readMinor:" title="readMinor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readMinor:">&ndash;&nbsp;readMinor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads minor ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readMinor:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readDeviceID:" title="readDeviceID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readDeviceID:">&ndash;&nbsp;readDeviceID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads device ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readDeviceID:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readNetworkID:" title="readNetworkID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readNetworkID:">&ndash;&nbsp;readNetworkID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads network ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readNetworkID:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readOperationMode:" title="readOperationMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readOperationMode:">&ndash;&nbsp;readOperationMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads operation mode characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readOperationMode:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readSerial:" title="readSerial:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readSerial:">&ndash;&nbsp;readSerial:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads serial characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readSerial:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readVendor:" title="readVendor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readVendor:">&ndash;&nbsp;readVendor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads vendor characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readVendor:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readModel:" title="readModel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readModel:">&ndash;&nbsp;readModel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads model characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readModel:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readUUID:" title="readUUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readUUID:">&ndash;&nbsp;readUUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads UUID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readUUID:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readDeviceInfo:" title="readDeviceInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readDeviceInfo:">&ndash;&nbsp;readDeviceInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads all available characteristic.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+[LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInfoSuccess:deviceInfo] callback.
+If error occurred, the [LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInfoError:error:] callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readDeviceInfo:(id&lt;LSPowerMoteReadDeviceInfoDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSPowerMoteReadDeviceInfoDelegate.html">LSPowerMoteReadDeviceInfoDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteReadDeviceInfoDelegate.html">LSPowerMoteReadDeviceInfoDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeCharacteristic:dataValue:delegate:" title="writeCharacteristic:dataValue:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeCharacteristic:dataValue:delegate:">&ndash;&nbsp;writeCharacteristic:dataValue:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write a given characteristics to the remote device.</p>
+
+<p><p>
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is triggered,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a>  callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeCharacteristic:(CBCharacteristic *)<em>characteristic</em> dataValue:(NSData *)<em>dataValue</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>newWriteDelegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>Characteristic to write</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataValue</code></th>
+						<td><p>New characteristic value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newWriteDelegate</code></th>
+						<td><p>The write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeTxPower:delegate:" title="writeTxPower:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeTxPower:delegate:">&ndash;&nbsp;writeTxPower:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write TX power characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeTxPower:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New TX power value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeURL:delegate:" title="writeURL:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeURL:delegate:">&ndash;&nbsp;writeURL:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write URL characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeURL:(NSString *)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New URL value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeAdvertisingInterval:delegate:" title="writeAdvertisingInterval:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeAdvertisingInterval:delegate:">&ndash;&nbsp;writeAdvertisingInterval:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write advertising interval characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeAdvertisingInterval:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New advertising interval value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeMajor:delegate:" title="writeMajor:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeMajor:delegate:">&ndash;&nbsp;writeMajor:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write major ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeMajor:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New major ID value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeMinor:delegate:" title="writeMinor:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeMinor:delegate:">&ndash;&nbsp;writeMinor:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write minor ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeMinor:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New minor ID value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeDeviceID:delegate:" title="writeDeviceID:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeDeviceID:delegate:">&ndash;&nbsp;writeDeviceID:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write device ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeDeviceID:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New device ID value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeNetworkID:delegate:" title="writeNetworkID:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeNetworkID:delegate:">&ndash;&nbsp;writeNetworkID:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write network ID characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeNetworkID:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New network ID value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeOperationMode:delegate:" title="writeOperationMode:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeOperationMode:delegate:">&ndash;&nbsp;writeOperationMode:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write operation mode characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeOperationMode:(LSOperationMode)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New operation mode value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-06-09</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

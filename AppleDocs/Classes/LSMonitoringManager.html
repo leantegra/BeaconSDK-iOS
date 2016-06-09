@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LSMonitoringManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Leantegra iOS SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Leantegra Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addDelegate:">- addDelegate:</option>
+		
+		<option value="//api/name/applicationWillEnterBackground">- applicationWillEnterBackground</option>
+		
+		<option value="//api/name/monitoredRegions">- monitoredRegions</option>
+		
+		<option value="//api/name/rangingManager:didGetError:">- rangingManager:didGetError:</option>
+		
+		<option value="//api/name/rangingManager:didRangeBeacon:">- rangingManager:didRangeBeacon:</option>
+		
+		<option value="//api/name/rangingManager:didRangeBeacons:">- rangingManager:didRangeBeacons:</option>
+		
+		<option value="//api/name/startMonitoringForRegion:">- startMonitoringForRegion:</option>
+		
+		<option value="//api/name/stopMonitoringForAllRegions">- stopMonitoringForAllRegions</option>
+		
+		<option value="//api/name/stopMonitoringForRegion:">- stopMonitoringForRegion:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">LSMonitoringManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>CLLocationManagerDelegate<br /><a href="../Protocols/LSRangingManagerDelegate.html">LSRangingManagerDelegate</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>LSMonitoringManager.h<br />LSMonitoringManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Allows to detect enter/exit events in regions</p>
+
+<p><b>Usage:</b></p>
+
+<pre><code>-(void)startMonitoring(){
+    monitoringManager = [[LSMonitoringManager alloc] init];
+    [monitoringManager addDelegate:self];
+
+    LSRegionBuilder *builder = [[LSRegionBuilder alloc] init];
+    builder.identifier = @"MyRegion";
+    builder.proximityUUID = [[NSUUID alloc] initWithUUIDString:@"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"];
+    builder.major = [NSNumber numberWithInteger:1];
+    builder.minor = [NSNumber numberWithInteger:1];
+    builder.proximityZone = IMMEDIATE;
+    LSRegion *region = [builder build];
+
+    [monitoringManager startMonitoringForRegion:region];
+}
+
+-(void)monitoringManager:(LSMonitoringManager *)manager didEnterRegion:(LSRegion *)region{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = [NSString stringWithFormat:@"Enter region %@",region.identifier];
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+-(void)monitoringManager:(LSMonitoringManager *)manager didExitRegion:(LSRegion *)region{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = [NSString stringWithFormat:@"Exit region %@",region.identifier];
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+-(void)monitoringManager:(LSMonitoringManager *)manager timeForRangingBeaconsWasExpiredInRegions:(NSSetLSRegionWrapper *&gt; *)regions{
+    //Calls when time in background for monitoring &lt;b&gt;regions&lt;/b&gt; was expired
+}
+
+-(void)stopMonitoring:(LSRegion*)region {
+    [monitoringManager stopMonitoringForRegion:region];
+}
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add the new delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;LSMonitoringManagerDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSMonitoringManagerDelegate.html">LSMonitoringManagerDelegate</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startMonitoringForRegion:" title="startMonitoringForRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startMonitoringForRegion:">&ndash;&nbsp;startMonitoringForRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add and start region for monitoring. If the region with the same identifier exists, new region will replace it</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startMonitoringForRegion:(LSRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p><a href="../Classes/LSRegion.html">LSRegion</a> new region</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopMonitoringForRegion:" title="stopMonitoringForRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopMonitoringForRegion:">&ndash;&nbsp;stopMonitoringForRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop and remove region from monitoring</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopMonitoringForRegion:(LSRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p><a href="../Classes/LSRegion.html">LSRegion</a> new region</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopMonitoringForAllRegions" title="stopMonitoringForAllRegions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopMonitoringForAllRegions">&ndash;&nbsp;stopMonitoringForAllRegions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops monitoring for all regions</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopMonitoringForAllRegions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/monitoredRegions" title="monitoredRegions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monitoredRegions">&ndash;&nbsp;monitoredRegions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns set of regions in monitoring</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSSet&lt;LSRegionWrapper*&gt; *)monitoredRegions</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSSet<a href="../Classes/LSRegionWrapper.html">LSRegionWrapper</a> *> regions in monitoring</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applicationWillEnterBackground" title="applicationWillEnterBackground"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applicationWillEnterBackground">&ndash;&nbsp;applicationWillEnterBackground</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify manager that application will enter background. In this case, regions with proximityZone will be in monitoring at least 3 minutes in background, otherwise only 10 seconds</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)applicationWillEnterBackground</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/rangingManager:didRangeBeacon:" title="rangingManager:didRangeBeacon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangingManager:didRangeBeacon:">&ndash;&nbsp;rangingManager:didRangeBeacon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns callback when the new (during activePeriod) frame was found.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rangingManager:(LSRangingManager *)<em>manager</em> didRangeBeacon:(LSBaseFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/LSRangingManager.html">LSRangingManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p><a href="../Classes/LSBaseFrame.html">LSBaseFrame</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRangingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangingManager:didRangeBeacons:" title="rangingManager:didRangeBeacons:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangingManager:didRangeBeacons:">&ndash;&nbsp;rangingManager:didRangeBeacons:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns callback when <b>activePeriod</b> over</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rangingManager:(LSRangingManager *)<em>manager</em> didRangeBeacons:(NSArray&lt;LSBaseFrame*&gt; *)<em>frames</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/LSRangingManager.html">LSRangingManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frames</code></th>
+						<td><p>NSArray<a href="../Classes/LSBaseFrame.html">LSBaseFrame</a> *> of all frames which were ranged during <b>activePeriod</b></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRangingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangingManager:didGetError:" title="rangingManager:didGetError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangingManager:didGetError:">&ndash;&nbsp;rangingManager:didGetError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns callback if <a href="../Constants/LSPowerMoteError.html">LSPowerMoteError</a> was generated</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rangingManager:(LSRangingManager *)<em>manager</em> didGetError:(LSPowerMoteError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/LSRangingManager.html">LSRangingManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p><a href="../Constants/LSPowerMoteError.html">LSPowerMoteError</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRangingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-06-09</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

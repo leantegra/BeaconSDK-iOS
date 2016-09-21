@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSPowerMoteConnection Class Reference</title>
+	<title>LSWiBeatConnection Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -145,7 +145,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSPowerMoteConnection Class Reference</h1>
+					<h1 class="title">LSWiBeatConnection Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -157,7 +157,7 @@
 	<td>CBCentralManagerDelegate<br />CBPeripheralDelegate</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSPowerMoteConnection.h<br />LSPowerMoteConnection.m</td>
+	<td>LSWiBeatConnection.h<br />LSWiBeatConnection.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -179,23 +179,23 @@ with the device.</p>
 <p><b>Usage:</b></p>
 
 <pre><code>-(void)connect {
-    pmConnection = [[LSPowerMoteConnection alloc] initWithDeviceMACAddress:@"xx:xx:xx:xx:xx:xx" delegate:self];
+    pmConnection = [[LSWiBeatConnection alloc] initWithDeviceMACAddress:@"xx:xx:xx:xx:xx:xx" delegate:self];
     if (pmConnection) {
         [pmConnection connect];
     }
 }
 
--(void)powerMoteConnectionDidConnect:(LSPowerMoteConnection *)powerMoteConnection {
+-(void)wiBeatConnectionDidConnect:(LSWiBeatConnection *)wiBeatConnection {
     //After connection we can write or read GATT characteristic's values
     [pmConnection readBatteryLevel:self];
     [pmConnection writeAdvertisingInterval:200 delegate:self];
 }
 
--(void)powerMoteReadCharacteristicSuccess:(LSPowerMoteCharacteristic *)characteristic {
+-(void)wiBeatReadCharacteristicSuccess:(LSWiBeatCharacteristic *)characteristic {
     //After value of characteristic was read
 }
 
--(void)powerMoteWriteCharacteristicSuccess:(LSCharacteristicType)characteristicType {
+-(void)wiBeatWriteCharacteristicSuccess:(LSCharacteristicType)characteristicType {
     //After new value of characteristic was written
 }
 
@@ -203,8 +203,8 @@ with the device.</p>
     [pmConnection disconnect];
 }
 
--(void)powerMoteConnectionDidDisconnect:(LSPowerMoteConnection *)powerMoteConnection {
-    //After application was disconnected from PowerMote
+-(void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection *)wiBeatConnection {
+    //After application was disconnected from WiBeat
 }
 </code></pre>
 					</div>
@@ -256,7 +256,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -297,7 +297,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -338,7 +338,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -356,12 +356,12 @@ with the device.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Construct new connection to PowerMote</p>
+				<p>Construct new connection to WiBeat</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)initWithDeviceMACAddress:(NSString *)<em>newDeviceMACAddress</em> delegate:(id&lt;LSPowerMoteConnectionDelegate&gt;)<em>newDelegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (id)initWithDeviceMACAddress:(NSString *)<em>newDeviceMACAddress</em> delegate:(id&lt;LSWiBeatConnectionDelegate&gt;)<em>newDelegate</em></code></div>
 
 		    
 			
@@ -391,7 +391,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -432,7 +432,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -473,7 +473,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -514,7 +514,7 @@ with the device.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -537,14 +537,14 @@ with the device.</p>
 <p><p>
 This is an asynchronous operation.
 <p>
-The successful result of the read operation is returned by the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
+The successful result of the read operation is returned by the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
 <p>
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readCharacteristic:(CBCharacteristic *)<em>characteristic</em> delegate:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>newReadDelegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readCharacteristic:(CBCharacteristic *)<em>characteristic</em> delegate:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>newReadDelegate</em></code></div>
 
 		    
 			
@@ -579,7 +579,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -602,7 +602,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readBatteryLevel:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readBatteryLevel:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -612,7 +612,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -627,8 +627,8 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 
@@ -639,9 +639,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -650,7 +650,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -672,13 +672,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readTxPower:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readTxPower:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -688,7 +688,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -708,9 +708,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -719,7 +719,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -741,13 +741,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readFirmwareVersion:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readFirmwareVersion:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -757,7 +757,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -777,9 +777,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -788,7 +788,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -810,13 +810,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readTemperature:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readTemperature:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -826,7 +826,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -846,9 +846,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -857,7 +857,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -879,13 +879,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readURL:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readURL:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -895,7 +895,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -915,9 +915,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -926,7 +926,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -948,13 +948,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readAdvertisingInterval:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readAdvertisingInterval:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -964,7 +964,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -984,9 +984,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -995,7 +995,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1017,13 +1017,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readMajor:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readMajor:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1033,7 +1033,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1053,9 +1053,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1064,7 +1064,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1086,13 +1086,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readMinor:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readMinor:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1102,7 +1102,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1122,9 +1122,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1133,7 +1133,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1155,13 +1155,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readDeviceID:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readDeviceID:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1171,7 +1171,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1191,9 +1191,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1202,7 +1202,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1224,13 +1224,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readNetworkID:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readNetworkID:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1240,7 +1240,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1260,9 +1260,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1271,7 +1271,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1293,13 +1293,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readOperationMode:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readOperationMode:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1309,7 +1309,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1329,9 +1329,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1340,7 +1340,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1362,13 +1362,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readSerial:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readSerial:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1378,7 +1378,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1398,9 +1398,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1409,7 +1409,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1431,13 +1431,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readVendor:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readVendor:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1447,7 +1447,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1467,9 +1467,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1478,7 +1478,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1500,13 +1500,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readModel:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readModel:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1516,7 +1516,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1536,9 +1536,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1547,7 +1547,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1569,13 +1569,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristicSuccess:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html#//api/name/powerMoteReadCharacteristic:error:">[LSPowerMoteReadCharacteristicDelegate powerMoteReadCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readUUID:(id&lt;LSPowerMoteReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readUUID:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1585,7 +1585,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1605,9 +1605,9 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadCharacteristicDelegate.html">LSPowerMoteReadCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
 					
-					<li><code><p><a href="../Classes/LSPowerMoteCharacteristic.html">LSPowerMoteCharacteristic</a></p></code></li>
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1616,7 +1616,7 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1638,13 +1638,13 @@ If error occurred, the <a href="../Protocols/LSPowerMoteReadCharacteristicDelega
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
-[LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInfoSuccess:deviceInfo] callback.
-If error occurred, the [LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInfoError:error:] callback is triggered.</p>
+[LSWiBeatReadDeviceInfoDelegate wiBeatReadDeviceInfoSuccess:deviceInfo] callback.
+If error occurred, the [LSWiBeatReadDeviceInfoDelegate wiBeatReadDeviceInfoError:error:] callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readDeviceInfo:(id&lt;LSPowerMoteReadDeviceInfoDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readDeviceInfo:(id&lt;LSWiBeatReadDeviceInfoDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1654,7 +1654,7 @@ If error occurred, the [LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInf
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSPowerMoteReadDeviceInfoDelegate.html">LSPowerMoteReadDeviceInfoDelegate</a> The read delegate</p></td>
+						<td><p><a href="../Protocols/LSWiBeatReadDeviceInfoDelegate.html">LSWiBeatReadDeviceInfoDelegate</a> The read delegate</p></td>
 					</tr>
 				
 				</table>
@@ -1674,7 +1674,7 @@ If error occurred, the [LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInf
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteReadDeviceInfoDelegate.html">LSPowerMoteReadDeviceInfoDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatReadDeviceInfoDelegate.html">LSWiBeatReadDeviceInfoDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1683,7 +1683,7 @@ If error occurred, the [LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInf
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1705,13 +1705,13 @@ If error occurred, the [LSPowerMoteReadDeviceInfoDelegate powerMoteReadDeviceInf
 
 <p><p>
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is triggered,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a>  callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is triggered,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a>  callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeCharacteristic:(CBCharacteristic *)<em>characteristic</em> dataValue:(NSData *)<em>dataValue</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>newWriteDelegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeCharacteristic:(CBCharacteristic *)<em>characteristic</em> dataValue:(NSData *)<em>dataValue</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>newWriteDelegate</em></code></div>
 
 		    
 			
@@ -1751,7 +1751,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1760,7 +1760,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1783,13 +1783,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeTxPower:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeTxPower:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1824,7 +1824,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1833,7 +1833,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1856,13 +1856,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeURL:(NSString *)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeURL:(NSString *)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1897,7 +1897,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1906,7 +1906,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -1929,13 +1929,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeAdvertisingInterval:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeAdvertisingInterval:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1970,7 +1970,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -1979,7 +1979,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -2002,13 +2002,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeMajor:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeMajor:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -2043,7 +2043,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -2052,7 +2052,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -2075,13 +2075,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeMinor:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeMinor:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -2116,7 +2116,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -2125,7 +2125,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -2148,13 +2148,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeDeviceID:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeDeviceID:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -2189,7 +2189,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -2198,7 +2198,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -2221,13 +2221,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeNetworkID:(NSInteger)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeNetworkID:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -2262,7 +2262,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -2271,7 +2271,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -2294,13 +2294,13 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 <p><p>
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
-<a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristicSuccess:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//api/name/powerMoteWriteCharacteristic:error:">[LSPowerMoteWriteCharacteristicDelegate powerMoteWriteCharacteristic:error:]</a> callback is triggered.</p>
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeOperationMode:(LSOperationMode)<em>value</em> delegate:(id&lt;LSPowerMoteWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeOperationMode:(LSOperationMode)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -2335,7 +2335,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html">LSPowerMoteWriteCharacteristicDelegate</a></p></code></li>
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -2344,7 +2344,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
@@ -2365,7 +2365,7 @@ otherwise <a href="../Protocols/LSPowerMoteWriteCharacteristicDelegate.html#//ap
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-06-09</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

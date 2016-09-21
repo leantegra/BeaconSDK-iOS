@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSBaseDeviceInfo Class Reference</title>
+	<title>LeantegraSDK Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,33 +54,35 @@
 
 	
 	
-	<optgroup label="Properties">
+
+	
+	<optgroup label="Class Methods">
 		
-		<option value="//api/name/advertisingInterval">advertisingInterval</option>
+		<option value="//api/name/age">+ age</option>
 		
-		<option value="//api/name/batteryLevel">batteryLevel</option>
+		<option value="//api/name/clientId">+ clientId</option>
 		
-		<option value="//api/name/firmwareVersion">firmwareVersion</option>
+		<option value="//api/name/clientSecret">+ clientSecret</option>
 		
-		<option value="//api/name/macAddress">macAddress</option>
+		<option value="//api/name/gender">+ gender</option>
 		
-		<option value="//api/name/model">model</option>
+		<option value="//api/name/serverUrl">+ serverUrl</option>
 		
-		<option value="//api/name/name">name</option>
+		<option value="//api/name/setAge:">+ setAge:</option>
 		
-		<option value="//api/name/operationMode">operationMode</option>
+		<option value="//api/name/setClientId:">+ setClientId:</option>
 		
-		<option value="//api/name/serial">serial</option>
+		<option value="//api/name/setClientSecret:">+ setClientSecret:</option>
 		
-		<option value="//api/name/temperature">temperature</option>
+		<option value="//api/name/setGender:">+ setGender:</option>
 		
-		<option value="//api/name/txPowerLevel">txPowerLevel</option>
+		<option value="//api/name/setServerUrl:">+ setServerUrl:</option>
 		
-		<option value="//api/name/vendor">vendor</option>
+		<option value="//api/name/setThirdPartyId:">+ setThirdPartyId:</option>
+		
+		<option value="//api/name/thirdPartyId">+ thirdPartyId</option>
 		
 	</optgroup>
-	
-
 	
 
 	
@@ -97,7 +99,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSBaseDeviceInfo Class Reference</h1>
+					<h1 class="title">LeantegraSDK Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -106,7 +108,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSBaseDeviceInfo.h<br />LSBaseDeviceInfo.m</td>
+	<td>LeantegraSDK.h<br />LeantegraSDK.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,7 +118,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents all basic Bluetooth GATT characteristics of WiBeat.</p>
+						<p>Represents proximity UUID string value</p>
 					</div>
 					
 					
@@ -132,8 +134,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/vendor" title="vendor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vendor">&nbsp;&nbsp;vendor</a></code>
+	<a name="//api/name/serverUrl" title="serverUrl"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serverUrl">+&nbsp;serverUrl</a></code>
 </h3>
 
 	<div class="method-info">
@@ -143,12 +145,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents vendor</p>
+				<p>Returns server URL</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *vendor</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)serverUrl</code></div>
 
 		    
 			
@@ -166,15 +168,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/model" title="model"></a>
-	<h3 class="method-title"><code><a href="#//api/name/model">&nbsp;&nbsp;model</a></code>
+	<a name="//api/name/setServerUrl:" title="setServerUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setServerUrl:">+&nbsp;setServerUrl:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -184,12 +186,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device model</p>
+				<p>Set new value of server URL</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *model</code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setServerUrl:(NSString *)<em>newServerUrl</em></code></div>
 
 		    
 			
@@ -207,15 +209,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+	<a name="//api/name/clientId" title="clientId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientId">+&nbsp;clientId</a></code>
 </h3>
 
 	<div class="method-info">
@@ -225,12 +227,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device name</p>
+				<p>Returns current client ID value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *name</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)clientId</code></div>
 
 		    
 			
@@ -248,15 +250,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/serial" title="serial"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serial">&nbsp;&nbsp;serial</a></code>
+	<a name="//api/name/setClientId:" title="setClientId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setClientId:">+&nbsp;setClientId:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -266,12 +268,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device serial number</p>
+				<p>Set new client ID value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *serial</code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setClientId:(NSString *)<em>newClientId</em></code></div>
 
 		    
 			
@@ -289,15 +291,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/macAddress" title="macAddress"></a>
-	<h3 class="method-title"><code><a href="#//api/name/macAddress">&nbsp;&nbsp;macAddress</a></code>
+	<a name="//api/name/clientSecret" title="clientSecret"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientSecret">+&nbsp;clientSecret</a></code>
 </h3>
 
 	<div class="method-info">
@@ -307,12 +309,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device MAC address</p>
+				<p>Returns current client secret value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *macAddress</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)clientSecret</code></div>
 
 		    
 			
@@ -330,15 +332,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/operationMode" title="operationMode"></a>
-	<h3 class="method-title"><code><a href="#//api/name/operationMode">&nbsp;&nbsp;operationMode</a></code>
+	<a name="//api/name/setClientSecret:" title="setClientSecret:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setClientSecret:">+&nbsp;setClientSecret:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -348,13 +350,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents operation mode:
-<br>HYBRID, I_BEACON, EDDYSTONE_URL, TAG</p>
+				<p>Set new client secret value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSOperationMode operationMode</code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setClientSecret:(NSString *)<em>newClientSecret</em></code></div>
 
 		    
 			
@@ -367,29 +368,20 @@
 
 			
 
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/LSOperationMode.html">LSOperationMode</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/txPowerLevel" title="txPowerLevel"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txPowerLevel">&nbsp;&nbsp;txPowerLevel</a></code>
+	<a name="//api/name/thirdPartyId" title="thirdPartyId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/thirdPartyId">+&nbsp;thirdPartyId</a></code>
 </h3>
 
 	<div class="method-info">
@@ -399,12 +391,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents TX power</p>
+				<p>Returns third party ID value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger txPowerLevel</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)thirdPartyId</code></div>
 
 		    
 			
@@ -422,15 +414,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/advertisingInterval" title="advertisingInterval"></a>
-	<h3 class="method-title"><code><a href="#//api/name/advertisingInterval">&nbsp;&nbsp;advertisingInterval</a></code>
+	<a name="//api/name/setThirdPartyId:" title="setThirdPartyId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setThirdPartyId:">+&nbsp;setThirdPartyId:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -440,12 +432,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents advertising interval in miliseconds</p>
+				<p>Set new third party ID value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger advertisingInterval</code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setThirdPartyId:(NSString *)<em>newThirdPartyId</em></code></div>
 
 		    
 			
@@ -463,15 +455,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/firmwareVersion" title="firmwareVersion"></a>
-	<h3 class="method-title"><code><a href="#//api/name/firmwareVersion">&nbsp;&nbsp;firmwareVersion</a></code>
+	<a name="//api/name/gender" title="gender"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gender">+&nbsp;gender</a></code>
 </h3>
 
 	<div class="method-info">
@@ -481,12 +473,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents firmvare version</p>
+				<p>Returns gender</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *firmwareVersion</code></div>
+			<div class="method-subsection method-declaration"><code>+ (LSGender)gender</code></div>
 
 		    
 			
@@ -504,15 +496,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/temperature" title="temperature"></a>
-	<h3 class="method-title"><code><a href="#//api/name/temperature">&nbsp;&nbsp;temperature</a></code>
+	<a name="//api/name/setGender:" title="setGender:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setGender:">+&nbsp;setGender:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -522,12 +514,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents temperature</p>
+				<p>Set new <a href="#//api/name/gender">gender</a> value</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger temperature</code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setGender:(LSGender)<em>newGender</em></code></div>
 
 		    
 			
@@ -545,15 +537,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/batteryLevel" title="batteryLevel"></a>
-	<h3 class="method-title"><code><a href="#//api/name/batteryLevel">&nbsp;&nbsp;batteryLevel</a></code>
+	<a name="//api/name/age" title="age"></a>
+	<h3 class="method-title"><code><a href="#//api/name/age">+&nbsp;age</a></code>
 </h3>
 
 	<div class="method-info">
@@ -563,12 +555,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents battery level in persent</p>
+				<p>Returns age</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger batteryLevel</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSInteger)age</code></div>
 
 		    
 			
@@ -586,7 +578,48 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAge:" title="setAge:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAge:">+&nbsp;setAge:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set new <a href="#//api/name/age">age</a> value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setAge:(NSInteger)<em>newAge</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
 			</div>
 			
 			

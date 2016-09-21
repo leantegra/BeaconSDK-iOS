@@ -56,7 +56,11 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/address">address</option>
+		<option value="//api/name/addresses">addresses</option>
+		
+		<option value="//api/name/beacons">beacons</option>
+		
+		<option value="//api/name/identifier">identifier</option>
 		
 		<option value="//api/name/proximityZone">proximityZone</option>
 		
@@ -99,7 +103,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>CLBeaconRegion</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>LSRegion.h<br />LSRegion.m</td>
@@ -112,7 +116,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Immutable representation of a criteria of fields used to match PowerMote.</p>
+						<p>Immutable representation of a criteria of fields used to match WiBeat.</p>
 					</div>
 					
 					
@@ -128,6 +132,47 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/identifier" title="identifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents identifier</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *identifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRegion.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/proximityZone" title="proximityZone"></a>
 	<h3 class="method-title"><code><a href="#//api/name/proximityZone">&nbsp;&nbsp;proximityZone</a></code>
 </h3>
@@ -156,7 +201,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>In case of setting proximity zone IMMEDIATE or NEAR enter and exit will call if one of PowerMotes will be in this zones. In background application has minimum 3 minutes for monitoring IMMEDIATE or NEAR zone after entering in FAR zone. In addition, if LSMonitoringManager will notified before entering background IMMEDIATE or NEAR zones will be monitoring 3 minutes minimum. After 3 minutes in background will be expired when device located in FAR zone <a href="../Protocols/LSMonitoringManagerDelegate.html#//api/name/monitoringManager:timeForRangingBeaconsWasExpiredInRegions:">[LSMonitoringManagerDelegate monitoringManager:timeForRangingBeaconsWasExpiredInRegions:]</a> will be called</p>
+				<p>In case of setting proximity zone IMMEDIATE or NEAR enter and exit will call if one of WiBeats will be in this zones. In background application has minimum 3 minutes for monitoring IMMEDIATE or NEAR zone after entering in FAR zone. In addition, if LSMonitoringManager will notified before entering background IMMEDIATE or NEAR zones will be monitoring 3 minutes minimum. After 3 minutes in background will be expired when device located in FAR zone <a href="../Protocols/LSMonitoringManagerDelegate.html#//api/name/monitoringManager:timeForRangingBeaconsWasExpiredInRegions:">[LSMonitoringManagerDelegate monitoringManager:timeForRangingBeaconsWasExpiredInRegions:]</a> will be called</p>
 			</div>
 			
 
@@ -183,8 +228,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/address" title="address"></a>
-	<h3 class="method-title"><code><a href="#//api/name/address">&nbsp;&nbsp;address</a></code>
+	<a name="//api/name/addresses" title="addresses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addresses">&nbsp;&nbsp;addresses</a></code>
 </h3>
 
 	<div class="method-info">
@@ -194,12 +239,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents MAC address os specific PowerMote</p>
+				<p>Represents list of MAC addresses of specific WiBeat</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *address</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;NSString*&gt; *addresses</code></div>
 
 		    
 			
@@ -213,6 +258,47 @@
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>In case of setting MAC address, manager will trigger enter and exit region only in foreground mode</p>
 			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRegion.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beacons" title="beacons"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beacons">&nbsp;&nbsp;beacons</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents list of beacons</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;CLBeaconRegion*&gt; *beacons</code></div>
+
+		    
+			
+
+			
+
+			
+
 			
 
 			
@@ -465,7 +551,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-06-09</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

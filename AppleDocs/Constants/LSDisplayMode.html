@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSOperationMode Constants Reference</title>
+	<title>LSDisplayMode Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSOperationMode Constants Reference</h1>
+					<h1 class="title">LSDisplayMode Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>LSWiBeatEnums.h</td>
+	<td>LSCloudEnums.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,11 +75,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">LSOperationMode</h3>
+                    <h3 class="subsubtitle method-title">LSDisplayMode</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Operation mode enum describes all possible broadcasting schemes of the WiBeat.</p>
+                        <p>Represents display mode</p>
 					</div>
 					
 					
@@ -87,15 +87,13 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, LSOperationMode ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, LSDisplayMode ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">HYBRID</a>,<br>
+                            &nbsp;&nbsp; <a href="">LS_DISPLAY_MODE_EVERYWHERE</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">TAG</a>,<br>
+                            &nbsp;&nbsp; <a href="">LS_DISPLAY_MODE_IN_OFFER_LIST</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">I_BEACON</a>,<br>
-                            
-                            &nbsp;&nbsp; <a href="">EDDYSTONE_URL</a>,<br>
+                            &nbsp;&nbsp; <a href="">LS_DISPLAY_MODE_AS_PUSH_NOTIFICATION</a>,<br>
                             
                             };</code>
                     
@@ -105,11 +103,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="HYBRID"></a><code>HYBRID</code></dt>
+                            <dt><a name="" title="LS_DISPLAY_MODE_EVERYWHERE"></a><code>LS_DISPLAY_MODE_EVERYWHERE</code></dt>
 <dd>
 
 
-<p>WiBeat broadcasts iBeacon and Eddystone(URL) advertising frames.</p>
+<p>Event info will showed in offer list and in notification</p>
 
 
 
@@ -117,16 +115,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSCloudEnums.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="TAG"></a><code>TAG</code></dt>
+                            <dt><a name="" title="LS_DISPLAY_MODE_IN_OFFER_LIST"></a><code>LS_DISPLAY_MODE_IN_OFFER_LIST</code></dt>
 <dd>
 
 
-<p>WiBeat broadcasts advertising frame with location tag.</p>
+<p>Event info will showed in offer list</p>
 
 
 
@@ -134,16 +132,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSCloudEnums.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="I_BEACON"></a><code>I_BEACON</code></dt>
+                            <dt><a name="" title="LS_DISPLAY_MODE_AS_PUSH_NOTIFICATION"></a><code>LS_DISPLAY_MODE_AS_PUSH_NOTIFICATION</code></dt>
 <dd>
 
 
-<p>WiBeat broadcasts iBeacon advertising frame.</p>
+<p>Event info will showed in notification</p>
 
 
 
@@ -151,24 +149,7 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="EDDYSTONE_URL"></a><code>EDDYSTONE_URL</code></dt>
-<dd>
-
-
-<p>WiBeat broadcasts Eddystone(URL) advertising frame.</p>
-
-
-
-
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSCloudEnums.h</code>.
 	</p>
 	
 </dd>
@@ -185,7 +166,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">LSWiBeatEnums.h</code></p>
+                        <p><code class="declared-in-ref">LSCloudEnums.h</code></p>
                     </div>
                     
                     

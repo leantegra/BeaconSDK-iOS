@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LSAdvertisingNotificationManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Leantegra iOS SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Leantegra Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/allCMSRules">- allCMSRules</option>
+		
+		<option value="//api/name/cmsRuleById:">- cmsRuleById:</option>
+		
+		<option value="//api/name/initWithNotification:">- initWithNotification:</option>
+		
+		<option value="//api/name/monitoringManager:didEnterRegion:frame:">- monitoringManager:didEnterRegion:frame:</option>
+		
+		<option value="//api/name/monitoringManager:didExitRegion:frame:">- monitoringManager:didExitRegion:frame:</option>
+		
+		<option value="//api/name/monitoringManager:didGetError:">- monitoringManager:didGetError:</option>
+		
+		<option value="//api/name/monitoringManager:timeForRangingBeaconsWasExpiredInRegions:">- monitoringManager:timeForRangingBeaconsWasExpiredInRegions:</option>
+		
+		<option value="//api/name/sendViewCMSRule:">- sendViewCMSRule:</option>
+		
+		<option value="//api/name/startScan">- startScan</option>
+		
+		<option value="//api/name/stopScan">- stopScan</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">LSAdvertisingNotificationManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/LSMonitoringManagerDelegate.html">LSMonitoringManagerDelegate</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>LSAdvertisingNotificationManager.h<br />LSAdvertisingNotificationManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Allows to show notifications when user enter region, which is defined on CMS.
+<b>Note:</b> The LSAdvertisingNotificationManager uses a <a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a> to detect
+region events. Also uses <a href="../Classes/LSCmsClient.html">LSCmsClient</a> to interact with Leantegra CMS API.</p>
+
+<p>SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification in case of content changing.</p>
+
+<p><b>Usage:</b></p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Initialize manager
+    manager=[[LSAdvertisingNotificationManager alloc] initWithNotification:[UILocalNotification new]];
+    [manager setDelegate:self];
+    [manager startScan];
+    //Show content from notification
+    UILocalNotification*localNotification = [launchOptions valueForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if(localNotification){
+        LSCMSRule*cmsRule=[[LSCMSRule alloc] initWithNotificationDictionary:localNotification.userInfo];
+        [manager sendViewCMSRule:cmsRule];
+    }
+
+    return YES;
+}
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delegate property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;LSAdvertisingNotificationManagerDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithNotification:" title="initWithNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithNotification:">&ndash;&nbsp;initWithNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructs monitoring with the background scan in your Application and shown notifications.
+Notification displayed when the user entered the region and it has a content on the server.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithNotification:(UILocalNotification *)<em>baseNotification</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>baseNotification</code></th>
+						<td><p>UILocalNotification object what be used to show notifications</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p><b>Note:</b> Notification content loaded from Leantegra CMS, therefore you must initialize SDK.</p>
+
+<p><b>Note:</b> The baseNotification will be added userInfo data. Extended data is a
+LSCMSRule object, what you can get with <a href="../Classes/LSCMSRule.html#//api/name/initWithNotificationDictionary:">[LSCMSRule initWithNotificationDictionary:]</a> putting the userInfo as parameter.
+The <a href="../Classes/LSCMSRule.html">LSCMSRule</a> object can used to get advertising content of the notification.
+Also if you want to send view statistic to CMS, you must call the <a href="#//api/name/sendViewCMSRule:">sendViewCMSRule:</a> method when you show content of <a href="../Classes/LSCMSRule.html">LSCMSRule</a>.</p>
+
+<p><b>Note:</b> The alertBody of UILocalNotification will be set in manager. All other parameters you must set manually.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startScan" title="startScan"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startScan">&ndash;&nbsp;startScan</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start monitoring with the background scan in your Application.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startScan</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopScan" title="stopScan"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopScan">&ndash;&nbsp;stopScan</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop monitoring with the background scan in your Application.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopScan</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendViewCMSRule:" title="sendViewCMSRule:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendViewCMSRule:">&ndash;&nbsp;sendViewCMSRule:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send view info about <a href="../Classes/LSCMSRule.html">LSCMSRule</a> content to CMS server.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendViewCMSRule:(LSCMSRule *)<em>cmsRule</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allCMSRules" title="allCMSRules"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allCMSRules">&ndash;&nbsp;allCMSRules</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns list of all <a href="../Classes/LSCMSRule.html">LSCMSRule</a> enabled for showing in list
+SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification in case of content changing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;LSCMSRule*&gt; *)allCMSRules</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSArray&lt;LSCMSRule*></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cmsRuleById:" title="cmsRuleById:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cmsRuleById:">&ndash;&nbsp;cmsRuleById:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns LSCMSRule* by ruleId</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (LSCMSRule *)cmsRuleById:(NSNumber *)<em>ruleId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ruleId</code></th>
+						<td><p>NSNumber*</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>LSCMSRule*</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/monitoringManager:didEnterRegion:frame:" title="monitoringManager:didEnterRegion:frame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didEnterRegion:frame:">&ndash;&nbsp;monitoringManager:didEnterRegion:frame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns callback when device entering in region</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didEnterRegion:(LSRegion *)<em>region</em> frame:(LSBaseFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p><a href="../Classes/LSRegion.html">LSRegion</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>First advertising frame in region.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/monitoringManager:didExitRegion:frame:" title="monitoringManager:didExitRegion:frame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didExitRegion:frame:">&ndash;&nbsp;monitoringManager:didExitRegion:frame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns callback when device exit from region</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didExitRegion:(LSRegion *)<em>region</em> frame:(LSBaseFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p><a href="../Classes/LSRegion.html">LSRegion</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>First advertising frame in region.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/monitoringManager:didGetError:" title="monitoringManager:didGetError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didGetError:">&ndash;&nbsp;monitoringManager:didGetError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns callback when monitoring manager generates error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didGetError:(LSWiBeatError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p><a href="../Constants/LSWiBeatError.html">LSWiBeatError</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/monitoringManager:timeForRangingBeaconsWasExpiredInRegions:" title="monitoringManager:timeForRangingBeaconsWasExpiredInRegions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:timeForRangingBeaconsWasExpiredInRegions:">&ndash;&nbsp;monitoringManager:timeForRangingBeaconsWasExpiredInRegions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns set of regions, which have <a href="../Constants/LSProximityZone.html">LSProximityZone</a> parameter when the time for ranging in background expired</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> timeForRangingBeaconsWasExpiredInRegions:(NSSet&lt;LSRegionWrapper*&gt; *)<em>regions</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>manager <a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>regions</code></th>
+						<td><p>NSSet&lt;LSRegionWrapper*> set of regions, which have <a href="../Constants/LSProximityZone.html">LSProximityZone</a> parameter when the time for ranging in background expired</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

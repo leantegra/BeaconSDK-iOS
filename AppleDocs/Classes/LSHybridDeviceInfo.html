@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSPowerMoteConnectionDelegate Protocol Reference</title>
+	<title>LSHybridDeviceInfo Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,19 +54,19 @@
 
 	
 	
-
-	
-
-	
-	<optgroup label="Instance Methods">
+	<optgroup label="Properties">
 		
-		<option value="//api/name/powerMoteConnection:didGetError:">- powerMoteConnection:didGetError:</option>
+		<option value="//api/name/major">major</option>
 		
-		<option value="//api/name/powerMoteConnectionDidConnect:">- powerMoteConnectionDidConnect:</option>
+		<option value="//api/name/minor">minor</option>
 		
-		<option value="//api/name/powerMoteConnectionDidDisconnect:">- powerMoteConnectionDidDisconnect:</option>
+		<option value="//api/name/url">url</option>
 		
 	</optgroup>
+	
+
+	
+
 	
 	
 </select>
@@ -81,16 +81,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSPowerMoteConnectionDelegate Protocol Reference</h1>
+					<h1 class="title">LSHybridDeviceInfo Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Conforms to</th>
-	<td>NSObject</td>
+	<th>Inherits from</th>
+	<td><a href="../Classes/LSBaseDeviceInfo.html">LSBaseDeviceInfo</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSPowerMoteConnection.h</td>
+	<td>LSHybridDeviceInfo.h<br />LSHybridDeviceInfo.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -100,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Provides callbacks indicating whether connection state changed.</p>
+						<p>Represents all Bluetooth GATT characteristics of WiBeat in the hybrid mode.</p>
 					</div>
 					
 					
@@ -116,9 +116,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/powerMoteConnectionDidConnect:" title="powerMoteConnectionDidConnect:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/powerMoteConnectionDidConnect:">&ndash;&nbsp;powerMoteConnectionDidConnect:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/major" title="major"></a>
+	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -127,13 +127,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Callback invoked when device established connection with PowerMote.
-@param powerMoteConnection</p>
+				<p>Represents major ID</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)powerMoteConnectionDidConnect:(LSPowerMoteConnection *)<em>powerMoteConnection</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property NSInteger major</code></div>
 
 		    
 			
@@ -151,16 +150,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSHybridDeviceInfo.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/powerMoteConnectionDidDisconnect:" title="powerMoteConnectionDidDisconnect:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/powerMoteConnectionDidDisconnect:">&ndash;&nbsp;powerMoteConnectionDidDisconnect:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/minor" title="minor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -169,13 +168,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Callback invoked when device is disconnected from PowerMote.
-@param powerMoteConnection</p>
+				<p>Represents minor ID</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)powerMoteConnectionDidDisconnect:(LSPowerMoteConnection *)<em>powerMoteConnection</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property NSInteger minor</code></div>
 
 		    
 			
@@ -193,16 +191,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSHybridDeviceInfo.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/powerMoteConnection:didGetError:" title="powerMoteConnection:didGetError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/powerMoteConnection:didGetError:">&ndash;&nbsp;powerMoteConnection:didGetError:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/url" title="url"></a>
+	<h3 class="method-title"><code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -211,27 +209,14 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Calls when code can&rsquo;t process correctly any method
-@param powerMoteConnection</p>
+				<p>Represents advertise URL</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)powerMoteConnection:(LSPowerMoteConnection *)<em>powerMoteConnection</em> didGetError:(LSPowerMoteError)<em>powerMoteError</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property NSString *url</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>powerMoteError</code></th>
-						<td><p>Error code</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -247,7 +232,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSPowerMoteConnection.h</code></p>
+				<p><code class="declared-in-ref">LSHybridDeviceInfo.h</code></p>
 			</div>
 			
 			
@@ -268,7 +253,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-06-09</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

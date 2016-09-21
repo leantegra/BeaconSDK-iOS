@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSRegionWrapper Class Reference</title>
+	<title>LSCmsClient Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,25 +54,19 @@
 
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/enterFrame">enterFrame</option>
-		
-		<option value="//api/name/lastTimeWasVisible">lastTimeWasVisible</option>
-		
-		<option value="//api/name/notifiedRegion">notifiedRegion</option>
-		
-		<option value="//api/name/region">region</option>
-		
-	</optgroup>
-	
 
 	
 
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithRegion:">- initWithRegion:</option>
+		<option value="//api/name/contentRawCallback:fail:">- contentRawCallback:fail:</option>
+		
+		<option value="//api/name/contentSuccess:fail:">- contentSuccess:fail:</option>
+		
+		<option value="//api/name/sendDelivery:success:fail:">- sendDelivery:success:fail:</option>
+		
+		<option value="//api/name/sendView:success:fail:">- sendView:success:fail:</option>
 		
 	</optgroup>
 	
@@ -89,7 +83,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSRegionWrapper Class Reference</h1>
+					<h1 class="title">LSCmsClient Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -98,7 +92,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSRegionWrapper.h<br />LSRegionWrapper.m</td>
+	<td>LSCmsClient.h<br />LSCmsClient.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -108,7 +102,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Keeps monitoring state of <a href="#//api/name/region">region</a></p>
+						<p>API client provides interaction with Leantegra CMS API.
+You can set your CMS URL in cmsUrl static variable, client ID in clientId, secret ID in secretId, third party ID in thirdPartyId</p>
 					</div>
 					
 					
@@ -124,8 +119,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/region" title="region"></a>
-	<h3 class="method-title"><code><a href="#//api/name/region">&nbsp;&nbsp;region</a></code>
+	<a name="//api/name/contentSuccess:fail:" title="contentSuccess:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentSuccess:fail:">&ndash;&nbsp;contentSuccess:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -135,12 +130,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents <a href="../Classes/LSRegion.html">LSRegion</a></p>
+				<p>Return all CMSRules without any filters</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSRegion *region</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentSuccess:(void ( ^ ) ( LSContent *))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -158,15 +153,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/notifiedRegion" title="notifiedRegion"></a>
-	<h3 class="method-title"><code><a href="#//api/name/notifiedRegion">&nbsp;&nbsp;notifiedRegion</a></code>
+	<a name="//api/name/contentRawCallback:fail:" title="contentRawCallback:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentRawCallback:fail:">&ndash;&nbsp;contentRawCallback:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -176,12 +171,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>What last callback was send to delegates</p>
+				<p>Return raw response without any filters</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property CLRegionState notifiedRegion</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentRawCallback:(void ( ^ ) ( id _Nonnull responseObject ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -199,15 +194,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/lastTimeWasVisible" title="lastTimeWasVisible"></a>
-	<h3 class="method-title"><code><a href="#//api/name/lastTimeWasVisible">&nbsp;&nbsp;lastTimeWasVisible</a></code>
+	<a name="//api/name/sendDelivery:success:fail:" title="sendDelivery:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendDelivery:success:fail:">&ndash;&nbsp;sendDelivery:success:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -217,94 +212,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Last time any of frames of this <a href="#//api/name/region">region</a> had been visible</p>
+				<p>Notify server about getting notification</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSTimeInterval lastTimeWasVisible</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/enterFrame" title="enterFrame"></a>
-	<h3 class="method-title"><code><a href="#//api/name/enterFrame">&nbsp;&nbsp;enterFrame</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>First frame received in this <a href="#//api/name/region">region</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property LSBaseFrame *enterFrame</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithRegion:" title="initWithRegion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithRegion:">&ndash;&nbsp;initWithRegion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Instantiates LSRegionWrapper object</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithRegion:(LSRegion *)<em>region</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSInteger)<em>rule</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -313,19 +226,24 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>region</code></th>
-						<td><p><a href="../Classes/LSRegion.html">LSRegion</a></p></td>
+						<th scope="row" class="argument-name"><code>rule</code></th>
+						<td><p>rule ID of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
 					</tr>
 				
 				</table>
 			</div>
 			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>instancetype LSRegionWrapper</p>
-			</div>
 			
 
 			
@@ -339,7 +257,70 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendView:success:fail:" title="sendView:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendView:success:fail:">&ndash;&nbsp;sendView:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about showing to user content of event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSInteger)<em>rule</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rule</code></th>
+						<td><p>rule ID of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
 			</div>
 			
 			

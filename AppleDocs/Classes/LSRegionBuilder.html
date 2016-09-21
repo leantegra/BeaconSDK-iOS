@@ -56,15 +56,7 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/address">address</option>
-		
 		<option value="//api/name/identifier">identifier</option>
-		
-		<option value="//api/name/major">major</option>
-		
-		<option value="//api/name/minor">minor</option>
-		
-		<option value="//api/name/proximityUUID">proximityUUID</option>
 		
 		<option value="//api/name/proximityZone">proximityZone</option>
 		
@@ -76,11 +68,19 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addBeaconByAddress:">- addBeaconByAddress:</option>
+		
+		<option value="//api/name/addBeaconByUUID:major:minor:">- addBeaconByUUID:major:minor:</option>
+		
+		<option value="//api/name/addresses">- addresses</option>
+		
+		<option value="//api/name/beacons">- beacons</option>
+		
 		<option value="//api/name/build">- build</option>
 		
 		<option value="//api/name/init">- init</option>
 		
-		<option value="//api/name/initWithProximityUUID:identifier:">- initWithProximityUUID:identifier:</option>
+		<option value="//api/name/initWithIdentifier:">- initWithIdentifier:</option>
 		
 	</optgroup>
 	
@@ -143,15 +143,15 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Unique nonnull identifier.</p>
+				<p>Unique nonnull identifier. Do not use spaces in identifier.</p>
 
 <p><p>
-Another region wil the same identifier will replace previous</p>
+Another region with the same identifier will replace previous</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *identifier</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull) NSString *identifier</code></div>
 
 		    
 			
@@ -220,8 +220,8 @@ If proximity zone will be set IMMEDIATE or NEAR, in background mode application 
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/address" title="address"></a>
-	<h3 class="method-title"><code><a href="#//api/name/address">&nbsp;&nbsp;address</a></code>
+	<a name="//api/name/addresses" title="addresses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addresses">&ndash;&nbsp;addresses</a></code>
 </h3>
 
 	<div class="method-info">
@@ -231,7 +231,7 @@ If proximity zone will be set IMMEDIATE or NEAR, in background mode application 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents MAC address of PowerMote in format XX:XX:XX:XX:XX:XX</p>
+				<p>Returns list of MAC addresses of WiBeats</p>
 
 <p><p>
 If MAC address is set, this region will be monitored only in foreground mode</p>
@@ -239,7 +239,7 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *address</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSString*&gt; *)addresses</code></div>
 
 		    
 			
@@ -264,8 +264,8 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/proximityUUID" title="proximityUUID"></a>
-	<h3 class="method-title"><code><a href="#//api/name/proximityUUID">&nbsp;&nbsp;proximityUUID</a></code>
+	<a name="//api/name/beacons" title="beacons"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beacons">&ndash;&nbsp;beacons</a></code>
 </h3>
 
 	<div class="method-info">
@@ -275,53 +275,12 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Proximity <a href="#//api/name/identifier">identifier</a> associated with the region.</p>
+				<p>Returns list of beacons</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSUUID *proximityUUID</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionBuilder.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents major ID</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property NSNumber *major</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;CLBeaconRegion*&gt; *)beacons</code></div>
 
 		    
 			
@@ -346,49 +305,8 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents minor ID</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property NSNumber *minor</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionBuilder.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithProximityUUID:identifier:" title="initWithProximityUUID:identifier:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithProximityUUID:identifier:">&ndash;&nbsp;initWithProximityUUID:identifier:</a></code>
+	<a name="//api/name/initWithIdentifier:" title="initWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIdentifier:">&ndash;&nbsp;initWithIdentifier:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -403,7 +321,7 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)initWithProximityUUID:(NSUUID *)<em>proximityUUID</em> identifier:(NSString *)<em>identifier</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (id)initWithIdentifier:(nonnull NSString *)<em>identifier</em></code></div>
 
 		    
 			
@@ -461,12 +379,111 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Must use <a href="#//api/name/initWithProximityUUID:identifier:">initWithProximityUUID:identifier:</a> instead.</p>
+				<p>Must use <a href="#//api/name/initWithIdentifier:">initWithIdentifier:</a> instead.</p>
 			</div>
 			
 		    
 
 			<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRegionBuilder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addBeaconByAddress:" title="addBeaconByAddress:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addBeaconByAddress:">&ndash;&nbsp;addBeaconByAddress:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>   Receive MAC address in format XX:XX:XX:XX:XX:XX and add it into <a href="#//api/name/addresses">addresses</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addBeaconByAddress:(nonnull NSString *)<em>address</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@param address NSString
+*</li>
+<li>@return YES if MAC address has valid format</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRegionBuilder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addBeaconByUUID:major:minor:" title="addBeaconByUUID:major:minor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addBeaconByUUID:major:minor:">&ndash;&nbsp;addBeaconByUUID:major:minor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Receive parameters for creating CLBeaconRegion and adding it into <a href="#//api/name/beacons">beacons</a> array
+*</li>
+<li>@param uuid  NSUUID could not be nil</li>
+<li>@param major NSNumber could be nil</li>
+<li>@param minor NSNumber could be nil</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addBeaconByUUID:(nonnull NSUUID *)<em>uuid</em> major:(nullable NSNumber *)<em>major</em> minor:(nullable NSNumber *)<em>minor</em></code></div>
 
 		    
 			
@@ -546,7 +563,7 @@ If MAC address is set, this region will be monitored only in foreground mode</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-06-09</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSiBeaconDeviceInfo Class Reference</title>
+	<title>LSWiBeatConnectionDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,19 +54,19 @@
 
 	
 	
-	<optgroup label="Properties">
+
+	
+
+	
+	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/major">major</option>
+		<option value="//api/name/wiBeatConnection:didGetError:">- wiBeatConnection:didGetError:</option>
 		
-		<option value="//api/name/minor">minor</option>
+		<option value="//api/name/wiBeatConnectionDidConnect:">- wiBeatConnectionDidConnect:</option>
 		
-		<option value="//api/name/uuid">uuid</option>
+		<option value="//api/name/wiBeatConnectionDidDisconnect:">- wiBeatConnectionDidDisconnect:</option>
 		
 	</optgroup>
-	
-
-	
-
 	
 	
 </select>
@@ -81,16 +81,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSiBeaconDeviceInfo Class Reference</h1>
+					<h1 class="title">LSWiBeatConnectionDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td><a href="../Classes/LSBaseDeviceInfo.html">LSBaseDeviceInfo</a> : NSObject</td>
+	<th>Conforms to</th>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSiBeaconDeviceInfo.h<br />LSiBeaconDeviceInfo.m</td>
+	<td>LSWiBeatConnection.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -100,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents all Bluetooth GATT characteristics of WiBeat in iBeacone mode.</p>
+						<p>Provides callbacks indicating whether connection state changed.</p>
 					</div>
 					
 					
@@ -116,9 +116,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
-</h3>
+	<a name="//api/name/wiBeatConnectionDidConnect:" title="wiBeatConnectionDidConnect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wiBeatConnectionDidConnect:">&ndash;&nbsp;wiBeatConnectionDidConnect:</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -127,12 +127,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents major ID</p>
+				<p>Callback invoked when device established connection with WiBeat.
+@param wiBeatConnection</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger major</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)wiBeatConnectionDidConnect:(LSWiBeatConnection *)<em>wiBeatConnection</em></code></div>
 
 		    
 			
@@ -150,16 +151,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
-</h3>
+	<a name="//api/name/wiBeatConnectionDidDisconnect:" title="wiBeatConnectionDidDisconnect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wiBeatConnectionDidDisconnect:">&ndash;&nbsp;wiBeatConnectionDidDisconnect:</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -168,12 +169,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents minor ID</p>
+				<p>Callback invoked when device is disconnected from WiBeat.
+@param wiBeatConnection</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger minor</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection *)<em>wiBeatConnection</em></code></div>
 
 		    
 			
@@ -191,16 +193,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/uuid" title="uuid"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uuid">&nbsp;&nbsp;uuid</a></code>
-</h3>
+	<a name="//api/name/wiBeatConnection:didGetError:" title="wiBeatConnection:didGetError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wiBeatConnection:didGetError:">&ndash;&nbsp;wiBeatConnection:didGetError:</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -209,14 +211,27 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents UUID</p>
+				<p>Calls when code can&rsquo;t process correctly any method
+@param wiBeatConnection</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *uuid</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)wiBeatConnection:(LSWiBeatConnection *)<em>wiBeatConnection</em> didGetError:(LSWiBeatError)<em>wiBeatError</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>wiBeatError</code></th>
+						<td><p>Error code</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -232,7 +247,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
 			</div>
 			
 			

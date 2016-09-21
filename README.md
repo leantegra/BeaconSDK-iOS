@@ -1,4 +1,4 @@
-# PowerMote SDK for iOS #
+# PowerMote SDK v 1.0.0 for iOS #
 
 The PowerMote SDK for iOS is a library that allows interaction with [PowerMotes](http://leantegra.com/pm).
 It works with iOS 8 or above and requires Bluetooth Low Energy support.

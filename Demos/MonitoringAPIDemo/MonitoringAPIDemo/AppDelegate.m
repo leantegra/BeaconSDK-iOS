@@ -47,9 +47,10 @@
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }
-    
-    LSRegionBuilder *builder = [[LSRegionBuilder alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"85a99e33-bbbe-4763-a66b-4d3a3edec09b"] identifier:@"DemoRegion"];
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"85a99e33-bbbe-4763-a66b-4d3a3edec09b"];
+    LSRegionBuilder *builder = [[LSRegionBuilder alloc] initWithIdentifier:@"DemoRegion"];
     builder.proximityZone = IMMEDIATE;
+    [builder addBeaconByUUID:uuid major:nil minor:nil];
     LSRegion *region = [builder build];
     
     self.monitoringManager = [[LSMonitoringManager alloc] init];
@@ -57,10 +58,6 @@
     [self.monitoringManager startMonitoringForRegion:region];
     
     return YES;
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    [self.monitoringManager applicationWillEnterBackground];
 }
 
 - (void)showNotification:(NSString*)message{
@@ -71,15 +68,15 @@
 
 #pragma mark - LSMonitoringManagerDelegate
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didEnterRegion:(LSRegion *)region{
+- (void)monitoringManager:(LSMonitoringManager *)manager didEnterRegion:(LSRegion *)region frame:(LSBaseFrame *)frame{
     [self showNotification:[NSString stringWithFormat:@"Enter region %@",region.identifier]];
 }
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didExitRegion:(LSRegion *)region{
+- (void)monitoringManager:(LSMonitoringManager *)manager didExitRegion:(LSRegion *)region frame:(LSBaseFrame *)frame{
     [self showNotification:[NSString stringWithFormat:@"Exit region %@",region.identifier]];
 }
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didGetError:(LSPowerMoteError)error{
+- (void)monitoringManager:(LSMonitoringManager *)manager didGetError:(LSWiBeatError)error{
 
 }
 

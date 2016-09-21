@@ -11,7 +11,7 @@
 #import "LSFrameProximable.h"
 
 /**
- * Represents Eddystone(URL) advertising frame of PowerMote.
+ * Represents Eddystone(URL) advertising frame of WiBeat.
  * @see LSBaseFrame
  */
 @interface LSEddystoneUrlFrame : LSBaseFrame <LSFrameProximable>

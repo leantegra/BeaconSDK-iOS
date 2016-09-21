@@ -11,7 +11,7 @@
 #import "LSRangingEnums.h"
 
 /**
- * Represents a basic advertising frame of PowerMote.
+ * Represents a basic advertising frame of WiBeat.
  * @see LSEddystoneUrlFrame
  * @see LSiBeaconFrame
  * @see LSTagFrame

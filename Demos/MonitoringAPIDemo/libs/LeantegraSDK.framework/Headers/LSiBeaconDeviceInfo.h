@@ -9,9 +9,9 @@
 #import "LSBaseDeviceInfo.h"
 
 /**
- * Represents all Bluetooth GATT characteristics of PowerMote in iBeacone mode.
+ * Represents all Bluetooth GATT characteristics of WiBeat in iBeacone mode.
  * @see LSBaseDeviceInfo
- * @see OperationMode#I_BEACON I_BEACON
+ * @see OperationMode#I_BEACON
  */
 @interface LSiBeaconDeviceInfo : LSBaseDeviceInfo
 

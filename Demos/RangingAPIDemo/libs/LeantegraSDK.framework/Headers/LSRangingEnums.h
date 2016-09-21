@@ -9,29 +9,29 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Describes relative distance between PowerMote and the device.
+ * Describes relative distance between WiBeat and the device.
  */
 typedef NS_ENUM(NSInteger, LSProximityZone) {
     /*!
-     * Unknown distance to PowerMote.
+     * Unknown distance to WiBeat.
      */
     UNKNOWN,
     /*!
-     * Distance to PowerMote is not more than 0.5m.
+     * Distance to WiBeat is not more than 0.5m.
      */
     IMMEDIATE,
     /*!
-     * Distance to PowerMote is not more than 3.0m.
+     * Distance to WiBeat is not more than 3.0m.
      */
     NEAR,
     /*!
-     * Distance to PowerMote is more than 3.0m.
+     * Distance to WiBeat is more than 3.0m.
      */
     FAR
 };
 
 /**
- * Type enum describes all possible advertising frames of the PowerMote.
+ * Type enum describes all possible advertising frames of the WiBeat.
  */
 typedef NS_ENUM(NSInteger, LSFrameType){
     /**

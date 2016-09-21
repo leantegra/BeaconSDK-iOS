@@ -4,93 +4,121 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/LSAdvertisingNotificationManager.h</key>
+		<data>
+		FzSmLq3fb5NaLD45zKyI3RPH8ss=
+		</data>
 		<key>Headers/LSBaseDeviceInfo.h</key>
 		<data>
-		ljcRHF7uMxSnf/G6EW/eLPBbuc8=
+		CTe/S29zwUHcIzO81+wofS01wMA=
 		</data>
 		<key>Headers/LSBaseFrame.h</key>
 		<data>
-		JVMChhVmY9OkUZxMtlwHyybV18g=
+		I2uTC0HZf16mXaYijc1bJrX/D3c=
 		</data>
 		<key>Headers/LSBeaconURL.h</key>
 		<data>
 		g7iGmotxkb5g16pz4jiGUq8emKM=
 		</data>
+		<key>Headers/LSCMSRule.h</key>
+		<data>
+		+ohrZmlOkDsNoxCk1FjJvK8BcP4=
+		</data>
+		<key>Headers/LSCloudEnums.h</key>
+		<data>
+		/Q1xl4JymmcqDPBV9UCeg78Inlo=
+		</data>
+		<key>Headers/LSCmsClient.h</key>
+		<data>
+		lHX3/C/feehT9laIC4IX1WBys+M=
+		</data>
+		<key>Headers/LSContent.h</key>
+		<data>
+		RIolL7SnJsE2lQDENfxQrFClUPM=
+		</data>
 		<key>Headers/LSEddystoneURLDeviceInfo.h</key>
 		<data>
-		h+IaRefShR4+pS3Hmlxtg7WD+UQ=
+		AIZcvTgZdvjZ3CrOWcB7JiMHkJU=
 		</data>
 		<key>Headers/LSEddystoneUrlFrame.h</key>
 		<data>
-		m+tIrqWz1adA09nvPU7az46fyH4=
+		j8stfGKJPY/D168EBBTqMVT4mM0=
 		</data>
 		<key>Headers/LSFrameProximable.h</key>
 		<data>
 		kGV7YnfIl688RUgsaP51hhrf5jA=
 		</data>
-		<key>Headers/LSHybrideDeviceInfo.h</key>
+		<key>Headers/LSHybridDeviceInfo.h</key>
 		<data>
-		jbIx0/LQJ6vxPzk3XXVvWY3/NeI=
+		v7Dm/y5XaO1MOf63gUkNEw/oLOw=
 		</data>
 		<key>Headers/LSMonitoringManager.h</key>
 		<data>
-		6/1kzFcUAYmjlzDy+07FPFvbezc=
-		</data>
-		<key>Headers/LSPowerMoteCharacteristic.h</key>
-		<data>
-		WOXw3M322pHDwdhh1qxaAHs/vqI=
-		</data>
-		<key>Headers/LSPowerMoteConnection.h</key>
-		<data>
-		pFzWf5Ow+BVi9HIOXyaDVHX4JnE=
-		</data>
-		<key>Headers/LSPowerMoteEnums.h</key>
-		<data>
-		ZjqLs3na9LJLvZgqu5eLkATlCCk=
+		k5+xJ+7Wve82m/NjmG6ZLZ7mWro=
 		</data>
 		<key>Headers/LSRangingEnums.h</key>
 		<data>
-		eoYgcr9Hq+ZmryJS/DGo+hTm/2I=
+		jZIJ+yGE3LcyJT3adP1Fx8SHjb8=
 		</data>
 		<key>Headers/LSRangingManager.h</key>
 		<data>
-		WY/gdJBB1FBb6jd1JK2u6Eip0tA=
+		+J27kcmk57dX3oAh83OPZXz54Xo=
 		</data>
 		<key>Headers/LSRegion.h</key>
 		<data>
-		/wdSkkFCeJrhtnN/m9SZiOqsNrI=
+		tNioBlLC16rSDwaNwhFN/yMTBG8=
 		</data>
 		<key>Headers/LSRegionBuilder.h</key>
 		<data>
-		l48uUdM+m0QO/fiP8rt4L+P95oo=
+		W6gxGRddJXJmDhT/xtc4+r1vRvQ=
 		</data>
 		<key>Headers/LSRegionWrapper.h</key>
 		<data>
-		2MwRNXcOvIFIk8sCs+PkcWJfZVY=
+		ozhRrHyuX/WEmKhnlJ41ucvBwIc=
 		</data>
 		<key>Headers/LSTagDeviceInfo.h</key>
 		<data>
-		oGMZWB26AKu3ANpOwlBTUrR+iD4=
+		dmIMN6ze7JM8WEfXsRXqn6wp45g=
 		</data>
 		<key>Headers/LSTagFrame.h</key>
 		<data>
-		E4XbyTP8NmBgUpOJ7hkJ2qM15Mk=
+		Q9CsqZ/gH2umGtFRI4iwuJKH7K8=
+		</data>
+		<key>Headers/LSWiBeatCharacteristic.h</key>
+		<data>
+		81RMTY7S8p55Nnb/ORPEkJ6t+O0=
+		</data>
+		<key>Headers/LSWiBeatConnection.h</key>
+		<data>
+		ZE4H1pqNQuU0YR8ylsOzupYKuvY=
+		</data>
+		<key>Headers/LSWiBeatEnums.h</key>
+		<data>
+		+qSrk4HW/9twZWz+4W8U9mpNoAA=
 		</data>
 		<key>Headers/LSiBeaconDeviceInfo.h</key>
 		<data>
-		vp1CuDhOZvPE2OBPGYeRIQbL3YI=
+		a7cayOP3km5CiyT/IizOJUULPXw=
 		</data>
 		<key>Headers/LSiBeaconFrame.h</key>
 		<data>
-		FBCjS3ZZYwzWOkGeCiRpSF6jdsY=
+		wVWlanr4xp/L2otklsQGDQcdR2o=
 		</data>
 		<key>Headers/LeantegraSDK.h</key>
 		<data>
-		wUJBWeWP53PU5Fhe5qe802p6yZI=
+		XOGQDo13RZX1lyHjdFtzr3CxRDU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		O7oshOujtOZRQWmfcUZFIKrnILU=
+		mtZnb7aIjnrg0PW4dvnbF8X/Ct4=
+		</data>
+		<key>LSCmsModel.momd/LSCmsModel.mom</key>
+		<data>
+		UuSaGxDzTwhQU4aQMc8glCHI49o=
+		</data>
+		<key>LSCmsModel.momd/VersionInfo.plist</key>
+		<data>
+		9Vjr2m6Y+ekDB6wJ3XqV0j2L9TU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -99,26 +127,37 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/LSAdvertisingNotificationManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FzSmLq3fb5NaLD45zKyI3RPH8ss=
+			</data>
+			<key>hash2</key>
+			<data>
+			Hdk3bR7QX4Uf+jMf0MCjAWpq9wh7VQPiKFBI0Gmqsk4=
+			</data>
+		</dict>
 		<key>Headers/LSBaseDeviceInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ljcRHF7uMxSnf/G6EW/eLPBbuc8=
+			CTe/S29zwUHcIzO81+wofS01wMA=
 			</data>
 			<key>hash2</key>
 			<data>
-			5PNQL8SH1+1aH6EablI0V2Cg5/4+dHwJqRgfwzN7CeU=
+			H9UH2ud8uMmnvIO976Dn3D4fRnlRDHGPGpHzuzdCFds=
 			</data>
 		</dict>
 		<key>Headers/LSBaseFrame.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JVMChhVmY9OkUZxMtlwHyybV18g=
+			I2uTC0HZf16mXaYijc1bJrX/D3c=
 			</data>
 			<key>hash2</key>
 			<data>
-			rXbrzMmcKdOvBtjwWrbPgUuNpCZnt86+GZUBlSf8sgc=
+			Lv0/BfhXzxcMa0Bz2Ejjpx34CWQO/hnjPrxJDDTO1kg=
 			</data>
 		</dict>
 		<key>Headers/LSBeaconURL.h</key>
@@ -132,26 +171,70 @@
 			R2bmvdapPnWRadc8sE5ZTr1wzx8BwzKnSiqaCXThC+8=
 			</data>
 		</dict>
+		<key>Headers/LSCMSRule.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+ohrZmlOkDsNoxCk1FjJvK8BcP4=
+			</data>
+			<key>hash2</key>
+			<data>
+			/mJ+29kh1fp4g1LPDUSAuaHpltym/RqBesSMgkKNL2A=
+			</data>
+		</dict>
+		<key>Headers/LSCloudEnums.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/Q1xl4JymmcqDPBV9UCeg78Inlo=
+			</data>
+			<key>hash2</key>
+			<data>
+			rvHYhTV3/16yzRIIh5RDG2xPcrt87lsxOAK9di+I0B4=
+			</data>
+		</dict>
+		<key>Headers/LSCmsClient.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lHX3/C/feehT9laIC4IX1WBys+M=
+			</data>
+			<key>hash2</key>
+			<data>
+			ShJGCPy07EHp6FiU/bqpgKSTLKLe+CT00+N7G5J25uU=
+			</data>
+		</dict>
+		<key>Headers/LSContent.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RIolL7SnJsE2lQDENfxQrFClUPM=
+			</data>
+			<key>hash2</key>
+			<data>
+			8oJ5NPaoFkIfztzeo+zXT7V8GTSJxew/ZToWt0uy8bg=
+			</data>
+		</dict>
 		<key>Headers/LSEddystoneURLDeviceInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h+IaRefShR4+pS3Hmlxtg7WD+UQ=
+			AIZcvTgZdvjZ3CrOWcB7JiMHkJU=
 			</data>
 			<key>hash2</key>
 			<data>
-			VIAfvhjt3LPBRtv0h+V2TmazsItfGxftf+1f5QeEUm4=
+			4cqBPMcHV4tjIh+9oAITMKhYK9i43ryAGM7VgFQjXVI=
 			</data>
 		</dict>
 		<key>Headers/LSEddystoneUrlFrame.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			m+tIrqWz1adA09nvPU7az46fyH4=
+			j8stfGKJPY/D168EBBTqMVT4mM0=
 			</data>
 			<key>hash2</key>
 			<data>
-			i/QhA+lrXEhUPOkgNaWsrlqUpCU5SaNiX58oOS7HbeM=
+			OZssVr1U7MpPtD9aOEyafMoLhm7C4StCOMbEVSnvzJM=
 			</data>
 		</dict>
 		<key>Headers/LSFrameProximable.h</key>
@@ -165,169 +248,191 @@
 			dNzduUyQZ4LHDd1pA58bqWa7yBkvKUmI/6/hxfBmRhc=
 			</data>
 		</dict>
-		<key>Headers/LSHybrideDeviceInfo.h</key>
+		<key>Headers/LSHybridDeviceInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jbIx0/LQJ6vxPzk3XXVvWY3/NeI=
+			v7Dm/y5XaO1MOf63gUkNEw/oLOw=
 			</data>
 			<key>hash2</key>
 			<data>
-			YrHctbjdVpgoohnm2ZjvZEttf9ONoEgRui42h4fWDTQ=
+			KqMa+9+x2g3DuQfaJx0dRtlfk5sR6+flqGFVohFfnOc=
 			</data>
 		</dict>
 		<key>Headers/LSMonitoringManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6/1kzFcUAYmjlzDy+07FPFvbezc=
+			k5+xJ+7Wve82m/NjmG6ZLZ7mWro=
 			</data>
 			<key>hash2</key>
 			<data>
-			XlhBTFN6V4a8jcG5fmTDoDC/bPcavMNGu0J5yRQMWV0=
-			</data>
-		</dict>
-		<key>Headers/LSPowerMoteCharacteristic.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WOXw3M322pHDwdhh1qxaAHs/vqI=
-			</data>
-			<key>hash2</key>
-			<data>
-			QkGOkqr7hkq/opubTZpaS57CCcRonLIR+GiKegB8wHY=
-			</data>
-		</dict>
-		<key>Headers/LSPowerMoteConnection.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			pFzWf5Ow+BVi9HIOXyaDVHX4JnE=
-			</data>
-			<key>hash2</key>
-			<data>
-			OQOJm00wuB0zuqp+ak+1I6PAvSw6iEN0k5gymbF9l08=
-			</data>
-		</dict>
-		<key>Headers/LSPowerMoteEnums.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZjqLs3na9LJLvZgqu5eLkATlCCk=
-			</data>
-			<key>hash2</key>
-			<data>
-			9l+okDaBtL9VZLdt3bhWcU5W/Kp75KvU9eYCht/GZLA=
+			MbUdxfSgVoukN/OV5inAZHd8FaTH0irgwSWycSSCNt0=
 			</data>
 		</dict>
 		<key>Headers/LSRangingEnums.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eoYgcr9Hq+ZmryJS/DGo+hTm/2I=
+			jZIJ+yGE3LcyJT3adP1Fx8SHjb8=
 			</data>
 			<key>hash2</key>
 			<data>
-			fiiRJeKWPZqi+P8oPb8Yzffy5B1PWfG8+cByQ5rkXwc=
+			K98NrJnq6vTTGc8UeBfCkgMIiJXTB8ovrzW+J9Gyjew=
 			</data>
 		</dict>
 		<key>Headers/LSRangingManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WY/gdJBB1FBb6jd1JK2u6Eip0tA=
+			+J27kcmk57dX3oAh83OPZXz54Xo=
 			</data>
 			<key>hash2</key>
 			<data>
-			cPXzMI8rEwsHKrW8AqYo/sc6NwrR573LCNWEP9Rh4RY=
+			dQ9OH1zStxxFyVPISIo92ThOrPKFY86JqXXf6DHWKF4=
 			</data>
 		</dict>
 		<key>Headers/LSRegion.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/wdSkkFCeJrhtnN/m9SZiOqsNrI=
+			tNioBlLC16rSDwaNwhFN/yMTBG8=
 			</data>
 			<key>hash2</key>
 			<data>
-			1PWvzb+J6QlGC2vgojNDYNT8LuSXYY+qTym27jkfEmI=
+			rm/k7H10LaVBFfyKG4sMy4IyoMj97lnzFxbNehf+Lps=
 			</data>
 		</dict>
 		<key>Headers/LSRegionBuilder.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l48uUdM+m0QO/fiP8rt4L+P95oo=
+			W6gxGRddJXJmDhT/xtc4+r1vRvQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			7JpvKcTDxgzdr0oygRZmwj59K/fkhCsu1ekudR6nAeU=
+			9E0QZX28kSrjyk9gtsM4JJgtyh8jM9Xj69gGQAv4SdY=
 			</data>
 		</dict>
 		<key>Headers/LSRegionWrapper.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2MwRNXcOvIFIk8sCs+PkcWJfZVY=
+			ozhRrHyuX/WEmKhnlJ41ucvBwIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			wrfX2k833gUCmUTj2DNC5vEX+T+g8e4VJ2TwwmuQ5V8=
+			y6A3G3yb6Sod1Dsnc+eclncXUtJQS/5+0JV7cQr2FUo=
 			</data>
 		</dict>
 		<key>Headers/LSTagDeviceInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oGMZWB26AKu3ANpOwlBTUrR+iD4=
+			dmIMN6ze7JM8WEfXsRXqn6wp45g=
 			</data>
 			<key>hash2</key>
 			<data>
-			vQKpjt2flTFmgR9aCIb8YskiYD0KBViPSj7B3ywMRsM=
+			/nwPt1Tb+HnmTCB+aAEVZg2CwnORIKjA1Ep84u9pgP8=
 			</data>
 		</dict>
 		<key>Headers/LSTagFrame.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			E4XbyTP8NmBgUpOJ7hkJ2qM15Mk=
+			Q9CsqZ/gH2umGtFRI4iwuJKH7K8=
 			</data>
 			<key>hash2</key>
 			<data>
-			vYoNBm6yffIabS/Xl7PwUPerlDpR+CMiKz5Y4xsnIH0=
+			XCQEwU5qcQK9Wa4yhVUTvFp44idPGC0NwblV6ME7ssU=
+			</data>
+		</dict>
+		<key>Headers/LSWiBeatCharacteristic.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			81RMTY7S8p55Nnb/ORPEkJ6t+O0=
+			</data>
+			<key>hash2</key>
+			<data>
+			KZawHHBr36HGII7zabWFQQGaWRzFyHqkdXhzKkhzF20=
+			</data>
+		</dict>
+		<key>Headers/LSWiBeatConnection.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZE4H1pqNQuU0YR8ylsOzupYKuvY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Lisos8V9XNYNYKwMGi0WlqNlNCTcNOHbGNclimgIZvQ=
+			</data>
+		</dict>
+		<key>Headers/LSWiBeatEnums.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+qSrk4HW/9twZWz+4W8U9mpNoAA=
+			</data>
+			<key>hash2</key>
+			<data>
+			OLg9x3axL4VsC6AqW5xGp+FZjxiVPoemzQgWSYsEsmw=
 			</data>
 		</dict>
 		<key>Headers/LSiBeaconDeviceInfo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vp1CuDhOZvPE2OBPGYeRIQbL3YI=
+			a7cayOP3km5CiyT/IizOJUULPXw=
 			</data>
 			<key>hash2</key>
 			<data>
-			h7EJrEI/xzUmAzo5xk0v2n6EI49QEn9YF7nNlhrgkuo=
+			BcP1us/P7Cny5m+dwPWi0mAiAch3yVNpqVlrA//l5E4=
 			</data>
 		</dict>
 		<key>Headers/LSiBeaconFrame.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FBCjS3ZZYwzWOkGeCiRpSF6jdsY=
+			wVWlanr4xp/L2otklsQGDQcdR2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			mJCtRXCzC+Jr0/s+B04kK3Ow8AN80/dOJgId282p1+w=
+			KY29dGiKZdhIG0/2GzaLNc6gKm7wEFYEIlCKWuoGiAw=
 			</data>
 		</dict>
 		<key>Headers/LeantegraSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wUJBWeWP53PU5Fhe5qe802p6yZI=
+			XOGQDo13RZX1lyHjdFtzr3CxRDU=
 			</data>
 			<key>hash2</key>
 			<data>
-			+ftWminKNACtSKuJPUoNHuklW+RXHwgugq8Cg7yz1+A=
+			hCLOLi0XIu+JPnkPt8qDQ3dDhDAhS8uzvePEttiOz6g=
+			</data>
+		</dict>
+		<key>LSCmsModel.momd/LSCmsModel.mom</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UuSaGxDzTwhQU4aQMc8glCHI49o=
+			</data>
+			<key>hash2</key>
+			<data>
+			VChIYuzysPzMQprkmicFl+JzF6r9ZRXOdffj3xmoBfk=
+			</data>
+		</dict>
+		<key>LSCmsModel.momd/VersionInfo.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9Vjr2m6Y+ekDB6wJ3XqV0j2L9TU=
+			</data>
+			<key>hash2</key>
+			<data>
+			M3S/4ordlR4KJlBq04WfRfztF6CQe7kDJKb/RVRe+9E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

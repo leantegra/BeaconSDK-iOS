@@ -11,7 +11,7 @@
 #import "LSEddystoneUrlFrame.h"
 #import "LSiBeaconFrame.h"
 #import "LSTagFrame.h"
-#import "LSPowerMoteEnums.h"
+#import "LSWiBeatEnums.h"
 #import "LSEddystoneUrlFrame.h"
 #import "LSiBeaconFrame.h"
 #import "LSTagFrame.h"
@@ -39,12 +39,12 @@
 - (void)rangingManager:(LSRangingManager*)manager didRangeBeacon:(LSBaseFrame*)frame;
 
 /**
- *  Returns callback if LSPowerMoteError was generated
+ *  Returns callback if LSWiBeatError was generated
  *
  *  @param manager LSRangingManager
- *  @param error   LSPowerMoteError
+ *  @param error   LSWiBeatError
  */
-- (void)rangingManager:(LSRangingManager*)manager didGetError:(LSPowerMoteError)error;
+- (void)rangingManager:(LSRangingManager*)manager didGetError:(LSWiBeatError)error;
 
 @end
 
@@ -62,7 +62,7 @@
     }
  
     -(void)rangingManager:(LSRangingManager *)manager didRangeBeacon:(LSBaseFrame *)frame{
-        //When new PowerMote will be found during active period
+        //When new WiBeat will be found during active period
     }
   
     -(void)rangingManager:(LSRangingManager *)manager didRangeBeacons:(NSArray<LSBaseFrame *> *)newFrames{

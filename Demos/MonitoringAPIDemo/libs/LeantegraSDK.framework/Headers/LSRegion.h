@@ -12,23 +12,35 @@
 #import "LSRegionBuilder.h"
 
 /**
- * Immutable representation of a criteria of fields used to match PowerMote.
+ * Immutable representation of a criteria of fields used to match WiBeat.
  */
-@interface LSRegion : CLBeaconRegion
+@interface LSRegion : NSObject
+
+/**
+ Represents identifier
+*/
+@property (readonly) NSString *identifier;
 
 /**
  Represents proximity zone.
  
- In case of setting proximity zone IMMEDIATE or NEAR enter and exit will call if one of PowerMotes will be in this zones. In background application has minimum 3 minutes for monitoring IMMEDIATE or NEAR zone after entering in FAR zone. In addition, if LSMonitoringManager will notified before entering background IMMEDIATE or NEAR zones will be monitoring 3 minutes minimum. After 3 minutes in background will be expired when device located in FAR zone [LSMonitoringManagerDelegate monitoringManager:timeForRangingBeaconsWasExpiredInRegions:] will be called
+ In case of setting proximity zone IMMEDIATE or NEAR enter and exit will call if one of WiBeats will be in this zones. In background application has minimum 3 minutes for monitoring IMMEDIATE or NEAR zone after entering in FAR zone. In addition, if LSMonitoringManager will notified before entering background IMMEDIATE or NEAR zones will be monitoring 3 minutes minimum. After 3 minutes in background will be expired when device located in FAR zone [LSMonitoringManagerDelegate monitoringManager:timeForRangingBeaconsWasExpiredInRegions:] will be called
  @see LSProximityZone
  */
 @property (readonly) LSProximityZone proximityZone;
 
 /**
- *  Represents MAC address os specific PowerMote
+ *  Represents list of MAC addresses of specific WiBeat
  * @discussion In case of setting MAC address, manager will trigger enter and exit region only in foreground mode
  */
-@property (readonly) NSString *address;
+@property (readonly) NSArray<NSString*> *addresses;
+
+/**
+ Represents list of beacons
+ 
+ @see CLBeaconRegion
+ */
+@property (readonly) NSArray<CLBeaconRegion*>*beacons;
 
 /**
  *  Creates LSRegion from LSRegionBuilder

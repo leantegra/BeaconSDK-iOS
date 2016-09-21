@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LSPowerMoteEnums.h"
+#import "LSWiBeatEnums.h"
 
 /**
- * Represents all basic Bluetooth GATT characteristics of PowerMote.
+ * Represents all basic Bluetooth GATT characteristics of WiBeat.
  * @see LSTagDeviceInfo
  * @see LSiBeaconeDeviceInfo
- * @see LSHybrideDeviceInfo
+ * @see LSHybridDeviceInfo
  * @see LSEddystoneURLDeviceInfo
  */
 @interface LSBaseDeviceInfo : NSObject
@@ -34,7 +34,7 @@
 @property NSString *macAddress;
 
 /**Represents operation mode:
- *<br>HYBRIDE, I_BEACON, EDDYSTONE_URL, TAG
+ *<br>HYBRID, I_BEACON, EDDYSTONE_URL, TAG
  * @see LSOperationMode
  */
 @property LSOperationMode operationMode;

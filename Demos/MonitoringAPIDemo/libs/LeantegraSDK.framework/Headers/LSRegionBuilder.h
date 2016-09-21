@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "LSRangingEnums.h"
-//#import "LSRegion.h"
 @class LSRegion;
 
 /**
@@ -17,11 +17,11 @@
 @interface LSRegionBuilder : NSObject
 
 /**
- *  Unique nonnull identifier.
+ *  Unique nonnull identifier. Do not use spaces in identifier.
  * <p>
- * Another region wil the same identifier will replace previous
+ * Another region with the same identifier will replace previous
  */
-@property NSString *identifier;
+@property (nonnull) NSString *identifier;
 
 /**
  *  Represents proximity zone
@@ -31,26 +31,16 @@
 @property LSProximityZone proximityZone;
 
 /**
- *  Represents MAC address of PowerMote in format XX:XX:XX:XX:XX:XX
+ *  Returns list of MAC addresses of WiBeats
  *  <p>
  *  If MAC address is set, this region will be monitored only in foreground mode
  */
-@property NSString *address;
+- (NSArray<NSString*>*)addresses;
 
 /**
- *  Proximity identifier associated with the region.
+ *  Returns list of beacons
  */
-@property NSUUID *proximityUUID;
-
-/**
- *  Represents major ID
- */
-@property NSNumber *major;
-
-/**
- *  Represents minor ID
- */
-@property NSNumber *minor;
+- (NSArray<CLBeaconRegion*>*)beacons;
 
 /**
  *  Initialize LSRegionBuilder object
@@ -60,10 +50,29 @@
  *
  *  @return id LSRegionBuilder
  */
-- (id)initWithProximityUUID:(NSUUID*)proximityUUID identifier:(NSString*)identifier;
+- (id)initWithIdentifier:(nonnull NSString*)identifier;
 
-///Must use initWithProximityUUID:identifier: instead.
-- (id) init __attribute__((unavailable("Must use initWithProximityUUID:identifier instead.")));
+///Must use initWithIdentifier: instead.
+- (id) init __attribute__((unavailable("Must use initWithIdentifier instead.")));
+
+/**
+   Receive MAC address in format XX:XX:XX:XX:XX:XX and add it into addresses
+ 
+ *  @param address NSString
+ *
+ *  @return YES if MAC address has valid format
+ */
+- (BOOL)addBeaconByAddress:(nonnull NSString*)address;
+
+/**
+ *  Receive parameters for creating CLBeaconRegion and adding it into beacons array
+ *
+ *  @param uuid  NSUUID could not be nil
+ *  @param major NSNumber could be nil
+ *  @param minor NSNumber could be nil
+ 
+ */
+- (void)addBeaconByUUID:(nonnull NSUUID*)uuid major:(nullable NSNumber*)major minor:(nullable NSNumber*)minor;
 
 /**
  * Initialise LSRegion object

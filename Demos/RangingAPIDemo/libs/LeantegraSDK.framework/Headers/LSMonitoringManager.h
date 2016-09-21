@@ -22,24 +22,26 @@
  *
  *  @param manager LSMonitoringManager
  *  @param region  LSRegion
+ *  @param frame First advertising frame in region.
  */
-- (void)monitoringManager:(LSMonitoringManager*)manager didEnterRegion:(LSRegion*)region;
+- (void)monitoringManager:(LSMonitoringManager*)manager didEnterRegion:(LSRegion*)region frame:(LSBaseFrame*)frame;
 
 /**
  *  Returns callback when device exit from region
  *
  *  @param manager LSMonitoringManager
  *  @param region  LSRegion
+ *  @param frame First advertising frame in region.
  */
-- (void)monitoringManager:(LSMonitoringManager*)manager didExitRegion:(LSRegion*)region;
+- (void)monitoringManager:(LSMonitoringManager*)manager didExitRegion:(LSRegion*)region frame:(LSBaseFrame*)frame;
 
 /**
  *  Returns callback when monitoring manager generates error
  *
  *  @param manager LSMonitoringManager
- *  @param error  LSPowerMoteError
+ *  @param error  LSWiBeatError
  */
-- (void)monitoringManager:(LSMonitoringManager*)manager didGetError:(LSPowerMoteError)error;
+- (void)monitoringManager:(LSMonitoringManager*)manager didGetError:(LSWiBeatError)error;
 
 /**
  *  Returns set of regions, which have LSProximityZone parameter when the time for ranging in background expired
@@ -48,6 +50,28 @@
  *  @param regions NSSet<LSRegionWrapper*> set of regions, which have LSProximityZone parameter when the time for ranging in background expired
  */
 - (void)monitoringManager:(LSMonitoringManager*)manager timeForRangingBeaconsWasExpiredInRegions:(NSSet<LSRegionWrapper*>*)regions;
+
+/**
+ *  Calls when device enters in region with defaultProximityUUID
+ *  You can change this value in LeantegraSDK.h
+ *  You can't start or stop service region monitoring manually
+ *
+ *  @param manager LSMonitoringManager
+ *  @param region  CLRegion
+ */
+@optional
+- (void)monitoringManager:(LSMonitoringManager*)manager didEnterServiceRegion:(CLRegion*)region;
+
+/**
+ *  Calls when device exit out region with defaultProximityUUID
+ *  You can change this value in LeantegraSDK.h
+ *  You can't start or stop service region monitoring manually
+ *
+ *  @param manager LSMonitoringManager
+ *  @param region  CLRegion
+ */
+@optional
+- (void)monitoringManager:(LSMonitoringManager*)manager didExitServiceRegion:(CLRegion*)region;
 
 @end
 
@@ -61,12 +85,15 @@
         monitoringManager = [[LSMonitoringManager alloc] init];
         [monitoringManager addDelegate:self];
 
-        LSRegionBuilder *builder = [[LSRegionBuilder alloc] init];
-        builder.identifier = @"MyRegion";
-        builder.proximityUUID = [[NSUUID alloc] initWithUUIDString:@"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"];
-        builder.major = [NSNumber numberWithInteger:1];
-        builder.minor = [NSNumber numberWithInteger:1];
+        LSRegionBuilder *builder = [[LSRegionBuilder alloc] initWithIdentifier:@"MyRegion"];
         builder.proximityZone = IMMEDIATE;
+ 
+        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"];
+        NSNumber *major = [NSNumber numberWithInteger:1];
+        NSNumber *minor = [NSNumber numberWithInteger:1];
+ 
+        [builder addBeaconByUUID:uuid major:major minor:minor];
+ 
         LSRegion *region = [builder build];
  
         [monitoringManager startMonitoringForRegion:region];
@@ -126,10 +153,5 @@
  *  @return NSSet<LSRegionWrapper *> regions in monitoring
  */
 - (NSSet<LSRegionWrapper *>*)monitoredRegions;
-
-/**
- *  Notify manager that application will enter background. In this case, regions with proximityZone will be in monitoring at least 3 minutes in background, otherwise only 10 seconds 
- */
-- (void)applicationWillEnterBackground;
 
 @end

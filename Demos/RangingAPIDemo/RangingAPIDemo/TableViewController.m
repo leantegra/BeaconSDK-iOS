@@ -58,7 +58,7 @@
 
 #pragma mark - LSRangingManagerDelegate
 
--(void)rangingManager:(LSRangingManager *)manager didGetError:(LSPowerMoteError)error{
+-(void)rangingManager:(LSRangingManager *)manager didGetError:(LSWiBeatError)error{
 }
 
 -(void)rangingManager:(LSRangingManager *)manager didRangeBeacon:(LSBaseFrame *)frame{

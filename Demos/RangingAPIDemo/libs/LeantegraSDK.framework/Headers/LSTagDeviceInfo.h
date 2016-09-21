@@ -9,7 +9,7 @@
 #import "LSBaseDeviceInfo.h"
 
 /**
- * Represents all Bluetooth GATT characteristics of PowerMote in the location tag mode.
+ * Represents all Bluetooth GATT characteristics of WiBeat in the location tag mode.
  * @see LSBaseDeviceInfo
  * @see LSOperationMode#TAG
  */

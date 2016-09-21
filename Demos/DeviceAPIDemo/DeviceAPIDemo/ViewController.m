@@ -14,8 +14,8 @@
     __weak IBOutlet UIActivityIndicatorView *indicator;
     __weak IBOutlet UITableView *characteristicsTableView;
     __weak IBOutlet UIButton *connectButton;
-    LSPowerMoteConnection*connection;
-    LSBaseDeviceInfo*powerMoteDeviceInfo;
+    LSWiBeatConnection*connection;
+    LSBaseDeviceInfo*wiBeatDeviceInfo;
 }
 
 @end
@@ -36,7 +36,7 @@
 
 - (IBAction)connectButtonClick:(id)sender {
     if(!connection.isConnected){
-        connection=[[LSPowerMoteConnection alloc] initWithDeviceMACAddress:addressTextField.text.lowercaseString delegate:self];
+        connection=[[LSWiBeatConnection alloc] initWithDeviceMACAddress:addressTextField.text.lowercaseString delegate:self];
         [connection connect];
     }else{
         [connection disconnect];
@@ -72,7 +72,7 @@
         case 1:{
             [self showNumberDialogWithTitle:@"Advertising interval"
                                     message:@"Enter new value(100-10000)"
-                                  initValue:powerMoteDeviceInfo.advertisingInterval
+                                  initValue:wiBeatDeviceInfo.advertisingInterval
                                     handler:^(int value) {
                                         if(value>=100 && value<=10000){
                                             [self writeAdvertisingInterval:value];
@@ -110,27 +110,27 @@
     switch (indexPath.row) {
         case 0:
             title=@"Operation mode";
-            subTitle=[self operationModeToString:powerMoteDeviceInfo.operationMode];
+            subTitle=[self operationModeToString:wiBeatDeviceInfo.operationMode];
             break;
             
         case 1:
             title=@"Advertising interval";
-            subTitle=[NSString stringWithFormat:@"%dms",powerMoteDeviceInfo.advertisingInterval];
+            subTitle=[NSString stringWithFormat:@"%dms",wiBeatDeviceInfo.advertisingInterval];
             break;
             
         case 2:
             title=@"Tx power";
-            subTitle=[NSString stringWithFormat:@"%ddBm",powerMoteDeviceInfo.txPowerLevel];
+            subTitle=[NSString stringWithFormat:@"%ddBm",wiBeatDeviceInfo.txPowerLevel];
             break;
             
         case 3:
             title=@"Firmware version";
-            subTitle=powerMoteDeviceInfo.firmwareVersion;
+            subTitle=wiBeatDeviceInfo.firmwareVersion;
             break;
             
         case 4:
             title=@"Battery level";
-            subTitle=[NSString stringWithFormat:@"%d%%",powerMoteDeviceInfo.batteryLevel];
+            subTitle=[NSString stringWithFormat:@"%d%%",wiBeatDeviceInfo.batteryLevel];
             break;
             
         default:
@@ -142,13 +142,13 @@
     return cell;
 }
 
-#pragma mark - LSPowerMoteConnectionDelegate
+#pragma mark - LSWiBeatConnectionDelegate
 
--(void)powerMoteConnectionDidConnect:(LSPowerMoteConnection *)powerMoteConnection{
+-(void)wiBeatConnectionDidConnect:(LSWiBeatConnection *)wiBeatConnection{
     [connection readDeviceInfo:self];
 }
 
--(void)powerMoteConnectionDidDisconnect:(LSPowerMoteConnection *)powerMoteConnection{
+-(void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection *)wiBeatConnection{
     [indicator stopAnimating];
     [characteristicsTableView setHidden:true];
     [connectButton setEnabled:true];
@@ -157,7 +157,7 @@
     [connectButton setTitle:@"Connect" forState:UIControlStateNormal];
 }
 
--(void)powerMoteConnection:(LSPowerMoteConnection *)powerMoteConnection didGetError:(LSPowerMoteError)powerMoteError{
+-(void)wiBeatConnection:(LSWiBeatConnection *)wiBeatConnection didGetError:(LSWiBeatError)powerMoteError{
     [indicator stopAnimating];
     [characteristicsTableView setHidden:true];
     [connectButton setEnabled:true];
@@ -169,8 +169,8 @@
 
 #pragma mark- LSReadDeviceInfoDelegate
 
--(void)powerMoteReadDeviceInfoSuccess:(LSBaseDeviceInfo *)deviceInfo{
-    powerMoteDeviceInfo=deviceInfo;
+-(void)wiBeatReadDeviceInfoSuccess:(LSBaseDeviceInfo *)deviceInfo{
+    wiBeatDeviceInfo=deviceInfo;
     [indicator stopAnimating];
     [characteristicsTableView setHidden:false];
     [connectButton setEnabled:true];
@@ -179,18 +179,18 @@
     [characteristicsTableView reloadData];
 }
 
--(void)powerMoteReadDeviceInfoError:(LSPowerMoteError)error{
+-(void)wiBeatReadDeviceInfoError:(LSWiBeatError)error{
     //handle error
 }
 
-#pragma marl- LSPowerMoteWriteCharacteristicDelegate
+#pragma marl- LSWiBeatWriteCharacteristicDelegate
 
--(void)powerMoteWriteCharacteristicSuccess:(LSCharacteristicType)characteristicType{
+-(void)wiBeatWriteCharacteristicSuccess:(LSCharacteristicType)characteristicType{
     [connection readDeviceInfo:self];
     
 }
 
--(void)powerMoteWriteCharacteristic:(LSCharacteristicType)characteristicType error:(LSPowerMoteError)error{
+-(void)wiBeatWriteCharacteristic:(LSCharacteristicType)characteristicType error:(LSWiBeatError)error{
     [indicator stopAnimating];
     [characteristicsTableView setHidden:false];
     [connectButton setEnabled:true];
@@ -235,7 +235,7 @@
             return @"Tag";
             break;
             
-        case HYBRIDE:
+        case HYBRID:
             return @"Hybrid";
             break;
             
@@ -259,7 +259,7 @@
                                                  handler:^(UIAlertAction *action) {
                                                      [actionView dismissViewControllerAnimated:YES completion:nil];
                                                  }]];
-    int modes[]={I_BEACON,EDDYSTONE_URL,HYBRIDE,TAG};
+    int modes[]={I_BEACON,EDDYSTONE_URL,HYBRID,TAG};
     
     for(int i=0;i<4;i++){
         NSNumber*mode=[NSNumber numberWithInt:modes[i]];

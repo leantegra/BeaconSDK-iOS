@@ -11,7 +11,7 @@
 #import "LSFrameProximable.h"
 
 /**
- * Represents iBeacon advertising frame of PowerMote.
+ * Represents iBeacon advertising frame of WiBeat.
  * @see LSBaseFrame
  */
 @interface LSiBeaconFrame : LSBaseFrame <LSFrameProximable>

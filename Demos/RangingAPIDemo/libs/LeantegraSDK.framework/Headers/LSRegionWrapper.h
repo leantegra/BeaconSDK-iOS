@@ -10,6 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LSRegion.h"
 
+@class LSBaseFrame;
+
 /**
  *  Keeps monitoring state of region
  */
@@ -26,9 +28,14 @@
 @property CLRegionState notifiedRegion;
 
 /**
- *  If LSRegion is inside of CLRegion
+ *  Last time any of frames of this region had been visible
  */
-@property BOOL insideCLRegion;
+@property NSTimeInterval lastTimeWasVisible;
+
+/**
+ *  First frame received in this region
+ */
+@property LSBaseFrame*enterFrame;
 
 /**
  *  Instantiates LSRegionWrapper object

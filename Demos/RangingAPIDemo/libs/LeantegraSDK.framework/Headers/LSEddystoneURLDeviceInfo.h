@@ -9,7 +9,7 @@
 #import "LSBaseDeviceInfo.h"
 
 /**
- * Represents all Bluetooth GATT characteristics of PowerMote in Eddystone(URL) mode.
+ * Represents all Bluetooth GATT characteristics of WiBeat in Eddystone(URL) mode.
  * @see LSBaseDeviceInfo
  * @see LSOperationMode#EDDYSTONE_URL
  */

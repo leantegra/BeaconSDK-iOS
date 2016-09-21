@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <LeantegraSDK/LSPowerMoteConnection.h>
+#import <LeantegraSDK/LSWiBeatConnection.h>
 
-@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,LSPowerMoteConnectionDelegate,LSPowerMoteReadDeviceInfoDelegate,LSPowerMoteWriteCharacteristicDelegate>
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,LSWiBeatConnectionDelegate,LSWiBeatReadDeviceInfoDelegate,LSWiBeatWriteCharacteristicDelegate>
 
 
 @end

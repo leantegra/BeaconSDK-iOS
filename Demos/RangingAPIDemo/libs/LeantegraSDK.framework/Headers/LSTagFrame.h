@@ -9,7 +9,7 @@
 #import "LSBaseFrame.h"
 
 /**
- * Represents Location Tag advertising frame of PowerMote.
+ * Represents Location Tag advertising frame of WiBeat.
  * @see LSBaseFrame
  */
 @interface LSTagFrame : LSBaseFrame

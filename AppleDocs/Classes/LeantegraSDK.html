@@ -60,21 +60,33 @@
 		
 		<option value="//api/name/age">+ age</option>
 		
+		<option value="//api/name/birthDate">+ birthDate</option>
+		
 		<option value="//api/name/clientId">+ clientId</option>
 		
 		<option value="//api/name/clientSecret">+ clientSecret</option>
 		
 		<option value="//api/name/gender">+ gender</option>
 		
+		<option value="//api/name/immediateZoneRadius">+ immediateZoneRadius</option>
+		
+		<option value="//api/name/nearZoneRadius">+ nearZoneRadius</option>
+		
 		<option value="//api/name/serverUrl">+ serverUrl</option>
 		
 		<option value="//api/name/setAge:">+ setAge:</option>
+		
+		<option value="//api/name/setBirthDate:">+ setBirthDate:</option>
 		
 		<option value="//api/name/setClientId:">+ setClientId:</option>
 		
 		<option value="//api/name/setClientSecret:">+ setClientSecret:</option>
 		
 		<option value="//api/name/setGender:">+ setGender:</option>
+		
+		<option value="//api/name/setImmediateZoneRadius:">+ setImmediateZoneRadius:</option>
+		
+		<option value="//api/name/setNearZoneRadius:">+ setNearZoneRadius:</option>
 		
 		<option value="//api/name/setServerUrl:">+ setServerUrl:</option>
 		
@@ -625,6 +637,256 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/setBirthDate:" title="setBirthDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setBirthDate:">+&nbsp;setBirthDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set new birth date value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setBirthDate:(NSDate *)<em>newBirthDate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/birthDate" title="birthDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/birthDate">+&nbsp;birthDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns birth date</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSDate *)birthDate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setImmediateZoneRadius:" title="setImmediateZoneRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setImmediateZoneRadius:">+&nbsp;setImmediateZoneRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set new radius for IMMEDIATE zone
+if value = nil, monitoring take default value 0.5 meters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setImmediateZoneRadius:(NSNumber *)<em>meters</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/immediateZoneRadius" title="immediateZoneRadius"></a>
+	<h3 class="method-title"><code><a href="#//api/name/immediateZoneRadius">+&nbsp;immediateZoneRadius</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns value of IMMEDIATE zone radius
+returning value = nil means radius was not customised and monitoring use default value = 0.5 m</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSNumber *)immediateZoneRadius</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setNearZoneRadius:" title="setNearZoneRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setNearZoneRadius:">+&nbsp;setNearZoneRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set new radius for NEAR zone
+if value = nil, monitoring take default value 3 meters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setNearZoneRadius:(NSNumber *)<em>meters</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nearZoneRadius" title="nearZoneRadius"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nearZoneRadius">+&nbsp;nearZoneRadius</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns value of NEAR zone radius
+returning value = nil means radius was not customised and monitoring use default value = 3 m</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSNumber *)nearZoneRadius</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LeantegraSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -640,7 +902,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-11-01</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

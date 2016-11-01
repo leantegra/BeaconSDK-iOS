@@ -64,9 +64,11 @@
 		
 		<option value="//api/name/contentSuccess:fail:">- contentSuccess:fail:</option>
 		
-		<option value="//api/name/sendDelivery:success:fail:">- sendDelivery:success:fail:</option>
+		<option value="//api/name/sendDelivery:channel:success:fail:">- sendDelivery:channel:success:fail:</option>
 		
-		<option value="//api/name/sendView:success:fail:">- sendView:success:fail:</option>
+		<option value="//api/name/sendUsage:channel:success:fail:">- sendUsage:channel:success:fail:</option>
+		
+		<option value="//api/name/sendView:channel:success:fail:">- sendView:channel:success:fail:</option>
 		
 	</optgroup>
 	
@@ -201,8 +203,8 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/sendDelivery:success:fail:" title="sendDelivery:success:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sendDelivery:success:fail:">&ndash;&nbsp;sendDelivery:success:fail:</a></code>
+	<a name="//api/name/sendDelivery:channel:success:fail:" title="sendDelivery:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendDelivery:channel:success:fail:">&ndash;&nbsp;sendDelivery:channel:success:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -217,7 +219,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSInteger)<em>rule</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSArray&lt;NSNumber*&gt; *)<em>rulesIds</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -226,8 +228,13 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>rule</code></th>
-						<td><p>rule ID of event</p></td>
+						<th scope="row" class="argument-name"><code>rulesIds</code></th>
+						<td><p>array of rules IDs of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
 					</tr>
 				
 					<tr>
@@ -264,8 +271,8 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/sendView:success:fail:" title="sendView:success:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sendView:success:fail:">&ndash;&nbsp;sendView:success:fail:</a></code>
+	<a name="//api/name/sendView:channel:success:fail:" title="sendView:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendView:channel:success:fail:">&ndash;&nbsp;sendView:channel:success:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -280,7 +287,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSInteger)<em>rule</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSArray&lt;NSNumber*&gt; *)<em>rulesIds</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -289,8 +296,81 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>rule</code></th>
-						<td><p>rule ID of event</p></td>
+						<th scope="row" class="argument-name"><code>rulesIds</code></th>
+						<td><p>rules IDs of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendUsage:channel:success:fail:" title="sendUsage:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendUsage:channel:success:fail:">&ndash;&nbsp;sendUsage:channel:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about using content of event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendUsage:(NSArray&lt;NSNumber*&gt; *)<em>rulesIds</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rulesIds</code></th>
+						<td><p>rules IDs of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
 					</tr>
 				
 					<tr>
@@ -341,7 +421,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-09-21</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-11-01</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -30,19 +30,31 @@
 /**
  *  Notify server about getting notification
  *
- *  @param rule               rule ID of event
+ *  @param rulesIds           array of rules IDs of event
+ *  @param channel            which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification
  *  @param successfulCallback block called if request performs successfully
  *  @param failCallback       block called in case of error
  */
-- (void)sendDelivery:(NSInteger)rule success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
+- (void)sendDelivery:(NSArray<NSNumber*>*)rulesIds channel:(NSString*)channel success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
 
 /**
  *  Notify server about showing to user content of event
  *
- *  @param rule               rule ID of event
+ *  @param rulesIds           rules IDs of event
+ *  @param channel            which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification
  *  @param successfulCallback block called if request performs successfully
  *  @param failCallback       block called in case of error
  */
-- (void)sendView:(NSInteger)rule success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
+- (void)sendView:(NSArray<NSNumber*>*)rulesIds channel:(NSString*)channel success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
+
+/**
+ *  Notify server about using content of event
+ *
+ *  @param rulesIds           rules IDs of event
+ *  @param channel            which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification
+ *  @param successfulCallback block called if request performs successfully
+ *  @param failCallback       block called in case of error
+ */
+- (void)sendUsage:(NSArray<NSNumber*>*)rulesIds channel:(NSString*)channel success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
 
 @end

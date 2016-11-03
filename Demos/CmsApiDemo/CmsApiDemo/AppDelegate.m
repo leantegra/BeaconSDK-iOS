@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //Initialize manager
-    manager=[[LSAdvertisingNotificationManager alloc] initWithNotification:[UILocalNotification new]];
+    manager=[[LSAdvertisingNotificationManager alloc] initWithNotification:[LSLocalNotification new]];
     [manager setDelegate:self];
     [manager startScan];
     
@@ -32,7 +32,7 @@
 {
     if(notification){
         LSCMSRule*cmsRule=[[LSCMSRule alloc] initWithNotificationDictionary:notification.userInfo];
-        [manager sendViewCMSRule:cmsRule];
+        [manager sendViewCMSRules:@[cmsRule] channel:LSViewChannelTypeNotification];
     }
 }
 

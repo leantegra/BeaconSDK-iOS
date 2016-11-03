@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LSMonitoringManager.h"
+#import "LSLocalNotification.h"
 
 @class LSCMSRule;
 
@@ -72,7 +73,7 @@
 
  @param baseNotification UILocalNotification object what be used to show notifications
  */
--(id)initWithNotification:(UILocalNotification*)baseNotification;
+-(id)initWithNotification:(LSLocalNotification*)baseNotification;
 
 /// Start monitoring with the background scan in your Application.
 -(void)startScan;
@@ -81,7 +82,13 @@
 -(void)stopScan;
 
 ///Send view info about LSCMSRule content to CMS server.
--(void)sendViewCMSRule:(LSCMSRule*)cmsRule;
+-(void)sendViewCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel;
+
+///Send notification to CMS server about LSCMSRule use
+-(void)sendUsageCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
+
+///Send notification to CMS server about delivery rules in offer list
+- (void)sendDeliveryInOfferList:(NSArray<LSCMSRule*>*)rules;
 
 /**
  *  Returns list of all LSCMSRule enabled for showing in list

@@ -11,6 +11,13 @@
 /// Local notification name in case of rules was changed
 #define LSCMSRulesCacheContentWasChanged @"LSCMSRulesCacheContentWasChanged"
 
+// String constants for content/view call
+#define LSViewChannelTypeOfferList @"offer-list"
+#define LSViewChannelTypeNotification @"notification"
+
+#define LSGenderStringArray @[@"Any",@"Male",@"Female"]
+#define LSDaysOfWeekStringArray @[@"Sun", @"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat"]
+
 /**
  *  Represents type of rule content
  */

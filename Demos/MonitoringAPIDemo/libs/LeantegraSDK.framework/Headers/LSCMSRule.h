@@ -105,6 +105,16 @@
 @property (readonly) NSInteger scheduleTimeEnd;
 
 /**
+ If rule can be disposable
+ */
+@property (readonly) BOOL disposable;
+
+/**
+ If rule was already used
+ */
+@property (readonly) BOOL used;
+
+/**
  *  Initialise object using NSDictionary from [LSCmsClient allCMSRulesSuccess:fail:] or [LSCmsClient CMSRules:major:minor:proximityZone:address:success:fail:] response
  *
  *  @param dictionary NSDictionary

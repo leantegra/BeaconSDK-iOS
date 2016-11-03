@@ -96,6 +96,40 @@ static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3ede
  */
 + (void)setAge:(NSInteger)newAge;
 
+/**
+ Set new birth date value
+ */
++ (void)setBirthDate:(NSDate*)newBirthDate;
+
+/**
+ Returns birth date
+ */
++ (NSDate*)birthDate;
+
+/**
+ Set new radius for IMMEDIATE zone
+ if value = nil, monitoring take default value 0.5 meters
+ */
++ (void)setImmediateZoneRadius:(NSNumber*)meters;
+
+/**
+ Returns value of IMMEDIATE zone radius
+ returning value = nil means radius was not customised and monitoring use default value = 0.5 m
+ */
++ (NSNumber*)immediateZoneRadius;
+
+/**
+ Set new radius for NEAR zone
+ if value = nil, monitoring take default value 3 meters
+ */
++ (void)setNearZoneRadius:(NSNumber*)meters;
+
+/**
+ Returns value of NEAR zone radius
+ returning value = nil means radius was not customised and monitoring use default value = 3 m
+ */
++ (NSNumber*)nearZoneRadius;
+
 @end
 
 

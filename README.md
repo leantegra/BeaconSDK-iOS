@@ -28,3 +28,6 @@ Apple Docs for WiBeat SDK you can find [here](http://leantegra.github.io/iOSWiBe
 
 Demo applications you can find [here](https://github.com/leantegra/iOSWiBeatSDK/tree/master/Demos).
 
+### Changelog
+
+The list of changes in WiBeat SDK for iOS located in [CHANGELOG](https://github.com/leantegra/iOSWiBeatSDK/blob/master/CHANGELOG.md).

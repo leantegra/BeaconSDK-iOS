@@ -1,5 +1,11 @@
 Changelog
 =====================
+## 1.3.0 (Dec 29, 2016)
+- Eddystone GATT support.
+- Customizable proximity zones.
+- Support of new CMS API.
+- Bug fixing and improvements.
+
 ## 1.2.1 (Nov 1, 2016)
 - Added ability to customise proximity zones.
 - Only one notification for rule in Notifications center.

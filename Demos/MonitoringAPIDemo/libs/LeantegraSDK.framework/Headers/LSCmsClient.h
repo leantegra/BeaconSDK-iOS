@@ -10,6 +10,8 @@
 #import "LSRangingEnums.h"
 #import "LSCMSRule.h"
 #import "LSContent.h"
+#import "LSWiBeat.h"
+#import "LSLocations.h"
 
 /**
  *  API client provides interaction with Leantegra CMS API.
@@ -56,5 +58,21 @@
  *  @param failCallback       block called in case of error
  */
 - (void)sendUsage:(NSArray<NSNumber*>*)rulesIds channel:(NSString*)channel success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
+
+/**
+ * Returns LSWiBeat array from CMS server
+ *
+ * @param successfulCallback block called if request performs successfully
+ * @param failCallback       block called in case of error
+ */
+- (void)devices:(void (^)(NSArray<LSWiBeat*>*))successfulCallback fail:(void (^)(NSError*))failCallback;
+
+/**
+ * Returns LSLocation info from CMS server
+ *
+ * @param successfulCallback block called if request performs successfully
+ * @param failCallback       block called in case of error
+ */
+- (void)locations:(void (^)(LSLocations*))successfulCallback fail:(void (^)(NSError*))failCallback;
 
 @end

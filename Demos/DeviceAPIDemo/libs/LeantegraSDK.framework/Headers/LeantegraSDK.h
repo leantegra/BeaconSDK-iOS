@@ -44,7 +44,7 @@ static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3ede
 /**
  *  Set new value of server URL
  */
-+ (void)setServerUrl:(NSString*)newServerUrl;
++ (void)setServerUrl:(NSString* _Nonnull)newServerUrl;
 
 /**
  *  Returns current client ID value
@@ -54,7 +54,7 @@ static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3ede
 /**
  *  Set new client ID value
  */
-+ (void)setClientId:(NSString*)newClientId;
++ (void)setClientId:(NSString* _Nonnull)newClientId;
 
 /**
  *  Returns current client secret value
@@ -64,7 +64,7 @@ static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3ede
 /**
  *  Set new client secret value
  */
-+ (void)setClientSecret:(NSString*)newClientSecret;
++ (void)setClientSecret:(NSString* _Nonnull)newClientSecret;
 
 /**
  *  Returns third party ID value

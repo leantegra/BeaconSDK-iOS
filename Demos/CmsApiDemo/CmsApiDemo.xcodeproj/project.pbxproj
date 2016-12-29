@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3B9A6B1E150B8B00E2D935 /* LeantegraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3B9A6A1E150B8B00E2D935 /* LeantegraSDK.framework */; };
+		1D3B9A6C1E150B8B00E2D935 /* LeantegraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3B9A6A1E150B8B00E2D935 /* LeantegraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D7E82BB1D13EA150067F6EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E82BA1D13EA150067F6EE /* main.m */; };
 		1D7E82BE1D13EA150067F6EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E82BD1D13EA150067F6EE /* AppDelegate.m */; };
 		1D7E82C11D13EA150067F6EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E82C01D13EA150067F6EE /* ViewController.m */; };
 		1D7E82C41D13EA150067F6EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E82C21D13EA150067F6EE /* Main.storyboard */; };
 		1D7E82C61D13EA160067F6EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E82C51D13EA160067F6EE /* Assets.xcassets */; };
 		1D7E82C91D13EA160067F6EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E82C71D13EA160067F6EE /* LaunchScreen.storyboard */; };
-		1D7E82D21D13ED340067F6EE /* LeantegraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7E82D11D13ED340067F6EE /* LeantegraSDK.framework */; };
-		1D7E82D31D13ED340067F6EE /* LeantegraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7E82D11D13ED340067F6EE /* LeantegraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D7E82D31D13ED340067F6EE /* LeantegraSDK.framework in Embed Frameworks */,
+				1D3B9A6C1E150B8B00E2D935 /* LeantegraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D3B9A6A1E150B8B00E2D935 /* LeantegraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeantegraSDK.framework; path = libs/LeantegraSDK.framework; sourceTree = "<group>"; };
 		1D7E82B61D13EA150067F6EE /* CmsApiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CmsApiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7E82BA1D13EA150067F6EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D7E82BC1D13EA150067F6EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		1D7E82C51D13EA160067F6EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D7E82C81D13EA160067F6EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D7E82CA1D13EA160067F6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D7E82D11D13ED340067F6EE /* LeantegraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeantegraSDK.framework; path = libs/LeantegraSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D7E82D21D13ED340067F6EE /* LeantegraSDK.framework in Frameworks */,
+				1D3B9A6B1E150B8B00E2D935 /* LeantegraSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 		1D7E82AD1D13EA150067F6EE = {
 			isa = PBXGroup;
 			children = (
-				1D7E82D11D13ED340067F6EE /* LeantegraSDK.framework */,
+				1D3B9A6A1E150B8B00E2D935 /* LeantegraSDK.framework */,
 				1D7E82B81D13EA150067F6EE /* CmsApiDemo */,
 				1D7E82B71D13EA150067F6EE /* Products */,
 			);
@@ -130,7 +130,7 @@
 				TargetAttributes = {
 					1D7E82B51D13EA150067F6EE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LMUJPSLHX4;
+						DevelopmentTeam = KWUHXM4MWE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -291,6 +291,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KWUHXM4MWE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",
@@ -310,6 +311,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KWUHXM4MWE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",

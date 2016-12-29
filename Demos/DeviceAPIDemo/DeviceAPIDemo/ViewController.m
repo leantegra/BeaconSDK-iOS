@@ -128,11 +128,6 @@
             subTitle=wiBeatDeviceInfo.firmwareVersion;
             break;
             
-        case 4:
-            title=@"Battery level";
-            subTitle=[NSString stringWithFormat:@"%d%%",wiBeatDeviceInfo.batteryLevel];
-            break;
-            
         default:
             break;
     }
@@ -218,7 +213,7 @@
 }
 
 -(void)writeTXPower:(int)txPower{
-    [connection writeTxPower:txPower delegate:self];
+    [connection writeRadioTxPower:txPower delegate:self];
     [indicator startAnimating];
     [characteristicsTableView setHidden:true];
     [connectButton setEnabled:false];

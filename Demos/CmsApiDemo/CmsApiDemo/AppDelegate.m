@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [LeantegraSDK setClientId:@"demo_mobile"];
+    [LeantegraSDK setClientSecret:@"d0177393-f9a7-4417-9930-9465ee4e59ee"];
     //Initialize manager
     manager=[[LSAdvertisingNotificationManager alloc] initWithNotification:[LSLocalNotification new]];
     [manager setDelegate:self];

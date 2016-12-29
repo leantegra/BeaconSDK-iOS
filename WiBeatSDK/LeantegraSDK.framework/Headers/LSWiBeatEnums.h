@@ -48,17 +48,17 @@ typedef NS_ENUM(NSInteger, LSWiBeatError) {
 typedef NS_ENUM(NSInteger, LSOperationMode) {
     /*!WiBeat broadcasts iBeacon and Eddystone(URL) advertising frames.*/
     HYBRID,
-    /*!WiBeat broadcasts advertising frame with location tag.*/
-    TAG,
     /*!WiBeat broadcasts iBeacon advertising frame.*/
     I_BEACON,
     /*!WiBeat broadcasts Eddystone(URL) advertising frame.*/
-    EDDYSTONE_URL
+    EDDYSTONE_URL,
+    /*!WiBeat broadcasts advertising frame with location tag.*/
+    TAG
 };
 
 typedef NS_ENUM(NSInteger, LSCharacteristicType){
     LS_CHARACTERISTIC_TYPE_UNKNOWN,
-    LS_CHARACTERISTIC_TYPE_BATTERY_LEVEL,
+    LS_CHARACTERISTIC_TYPE_STATUS,
     LS_CHARACTERISTIC_TYPE_TX_POWER,
     LS_CHARACTERISTIC_TYPE_TEMPERATURE,
     LS_CHARACTERISTIC_TYPE_ADVERTISING_INTERVAL,
@@ -73,4 +73,34 @@ typedef NS_ENUM(NSInteger, LSCharacteristicType){
     LS_CHARACTERISTIC_TYPE_UUID,
     LS_CHARACTERISTIC_TYPE_NETWORK_ID,
     LS_CHARACTERISTIC_TYPE_DEVICE_ID
+};
+
+typedef NS_ENUM(NSInteger, LSCapabilitiesVariableSupported){
+    IS_VARIABLE_ADV_SUPPORTED = 0x01,
+    IS_VARIABLE_TX_POWER_SUPPORTED = 0x02
+};
+
+typedef NS_ENUM(NSInteger, LSCapabilitiesFrameType){
+    UID = 0x0001,
+    URL = 0x0002,
+    TLM = 0x0004,
+    EID = 0x0008
+};
+
+typedef NS_ENUM(NSInteger, LSLockState){
+    LS_LOCKED,
+    LS_UNLOCKED,
+    LS_UNLOCKED_AND_AUTOMATIC_RELOCK_DISABLED
+};
+
+/**Eddystone frame type for ADV slot data characterystic*/
+typedef NS_ENUM(NSInteger, LSADVSlotDataType){
+    /**Eddystone UID frame*/
+    SLOT_DATA_UID = 0x00,
+    /**Eddystone URL frame*/
+    SLOT_DATA_URL = 0x10,
+    /**Eddystone TLM frame*/
+    SLOT_DATA_TLM = 0x20,
+    /**Eddystone EID frame*/
+    SLOT_DATA_EID = 0x30
 };

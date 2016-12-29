@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "LSWiBeatEnums.h"
+#import "LSDeviceStatus.h"
+#import "LSCapabilities.h"
 
 /**
  * Represents all basic Bluetooth GATT characteristics of WiBeat.
@@ -51,7 +53,9 @@
 ///Represents temperature
 @property NSInteger temperature;
 
-///Represents battery level in persent
-@property NSInteger batteryLevel;
+///Represents device status
+@property LSDeviceStatus *deviceStatus;
+
+@property LSCapabilities *capabilities;
 
 @end

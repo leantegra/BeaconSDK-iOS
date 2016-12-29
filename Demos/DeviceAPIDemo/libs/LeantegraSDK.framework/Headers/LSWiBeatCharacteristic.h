@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "LSWiBeatEnums.h"
+#import "LSDeviceStatus.h"
+#import "LSCapabilities.h"
+#import "LSEddystoneBaseData.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+
+struct LSAdvDataStruct
+{
+    NSInteger networkId;
+    NSInteger deviceId;
+};
 
 /**
  Represents a wrapper around Bluetooth GATT Characteristic of WiBeat.
@@ -58,10 +67,46 @@
 /**
  Return the operation mode represented by characteristic.
 
- Use for LS_CHARACTERISTIC_TYPE_OPERATION_MODE  type of characteristics.
+ Use for:<br> 
+ LS_CHARACTERISTIC_TYPE_OPERATION_MODE<br>  
+ type of characteristics.
  @return Operation mode represented by characteristic.
  @see LSCharacteristicType
  */
 @property LSOperationMode operationMode;
+
+
+@property NSData *data;
+
+/**
+ * Return the device status represented by characteristic.
+ * <p>
+ * Use for LS_STATUS type of characteristics.
+ * @return Device status represented by characteristic.
+ * @since 1.3.0
+ */
+@property LSDeviceStatus *deviceStatus;
+
+/**
+ * Return the device capabilities represented by characteristic.
+ * <p>
+ * Use for
+ * LS_CAPABILITIES type of characteristics.
+ * @return Device capabilities represented by characteristic.
+ * @since 1.3.0
+ */
+@property LSCapabilities *capabilities;
+
+/**
+ * Returns Eddystone ADV slot data
+ * <p>
+ * Use for
+ * LS_ADV_SLOT_DATA type of characteristics.
+ * @return ADV slot data represented by characteristic.
+ * @since 1.3.0
+ */
+@property LSEddystoneBaseData *advSlotData;
+
+@property struct LSAdvDataStruct *advDataStruct;
 
 @end

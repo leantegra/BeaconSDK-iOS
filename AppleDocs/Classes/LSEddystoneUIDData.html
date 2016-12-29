@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSTagFrame Class Reference</title>
+	<title>LSEddystoneUIDData Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,9 +56,11 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/deviceId">deviceId</option>
+		<option value="//api/name/advTxPower">advTxPower</option>
 		
-		<option value="//api/name/networkId">networkId</option>
+		<option value="//api/name/bid">bid</option>
+		
+		<option value="//api/name/nid">nid</option>
 		
 	</optgroup>
 	
@@ -79,16 +81,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSTagFrame Class Reference</h1>
+					<h1 class="title">LSEddystoneUIDData Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/LSBaseFrame.html">LSBaseFrame</a> : NSObject</td>
+	<td><a href="../Classes/LSEddystoneBaseData.html">LSEddystoneBaseData</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSTagFrame.h<br />LSTagFrame.m</td>
+	<td>LSEddystoneUIDData.h<br />LSEddystoneUIDData.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -98,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents Location Tag advertising frame of WiBeat.</p>
+						<p>Represents data from ADV slot data characteristic in SLOT_DATA_UID mode</p>
 					</div>
 					
 					
@@ -114,8 +116,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/networkId" title="networkId"></a>
-	<h3 class="method-title"><code><a href="#//api/name/networkId">&nbsp;&nbsp;networkId</a></code>
+	<a name="//api/name/advTxPower" title="advTxPower"></a>
+	<h3 class="method-title"><code><a href="#//api/name/advTxPower">&nbsp;&nbsp;advTxPower</a></code>
 </h3>
 
 	<div class="method-info">
@@ -125,12 +127,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents network ID</p>
+				<p>Advertisement TX power.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger networkId</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger advTxPower</code></div>
 
 		    
 			
@@ -148,15 +150,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSTagFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneUIDData.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/deviceId" title="deviceId"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deviceId">&nbsp;&nbsp;deviceId</a></code>
+	<a name="//api/name/nid" title="nid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nid">&nbsp;&nbsp;nid</a></code>
 </h3>
 
 	<div class="method-info">
@@ -166,12 +168,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device ID</p>
+				<p>Namespace</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger deviceId</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger nid</code></div>
 
 		    
 			
@@ -189,7 +191,48 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSTagFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneUIDData.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bid" title="bid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bid">&nbsp;&nbsp;bid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instance</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger bid</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSEddystoneUIDData.h</code></p>
 			</div>
 			
 			

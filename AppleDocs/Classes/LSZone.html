@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSRegionWrapper Class Reference</title>
+	<title>LSZone Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,13 +54,15 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/enterFrame">enterFrame</option>
+		<option value="//api/name/access">access</option>
 		
-		<option value="//api/name/lastTimeWasVisible">lastTimeWasVisible</option>
+		<option value="//api/name/geojson">geojson</option>
 		
-		<option value="//api/name/notifiedRegion">notifiedRegion</option>
+		<option value="//api/name/name">name</option>
 		
-		<option value="//api/name/region">region</option>
+		<option value="//api/name/parent">parent</option>
+		
+		<option value="//api/name/uid">uid</option>
 		
 	</optgroup>
 	
@@ -72,7 +72,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithRegion:">- initWithRegion:</option>
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
 		
 	</optgroup>
 	
@@ -89,7 +91,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSRegionWrapper Class Reference</h1>
+					<h1 class="title">LSZone Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -98,20 +100,12 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSRegionWrapper.h<br />LSRegionWrapper.m</td>
+	<td>LSZone.h<br />LSZone.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Keeps monitoring state of <a href="#//api/name/region">region</a></p>
-					</div>
-					
-					
 
 					
 					
@@ -124,8 +118,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/region" title="region"></a>
-	<h3 class="method-title"><code><a href="#//api/name/region">&nbsp;&nbsp;region</a></code>
+	<a name="//api/name/geojson" title="geojson"></a>
+	<h3 class="method-title"><code><a href="#//api/name/geojson">&nbsp;&nbsp;geojson</a></code>
 </h3>
 
 	<div class="method-info">
@@ -135,12 +129,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents <a href="../Classes/LSRegion.html">LSRegion</a></p>
+				<p>Represents GeoJson data</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSRegion *region</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary *geojson</code></div>
 
 		    
 			
@@ -158,15 +152,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/notifiedRegion" title="notifiedRegion"></a>
-	<h3 class="method-title"><code><a href="#//api/name/notifiedRegion">&nbsp;&nbsp;notifiedRegion</a></code>
+	<a name="//api/name/uid" title="uid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uid">&nbsp;&nbsp;uid</a></code>
 </h3>
 
 	<div class="method-info">
@@ -176,12 +170,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>What last callback was send to delegates</p>
+				<p>Represents UID</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property CLRegionState notifiedRegion</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger uid</code></div>
 
 		    
 			
@@ -199,15 +193,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/lastTimeWasVisible" title="lastTimeWasVisible"></a>
-	<h3 class="method-title"><code><a href="#//api/name/lastTimeWasVisible">&nbsp;&nbsp;lastTimeWasVisible</a></code>
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
 </h3>
 
 	<div class="method-info">
@@ -217,12 +211,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Last time any of frames of this <a href="#//api/name/region">region</a> had been visible</p>
+				<p>Represents name</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSTimeInterval lastTimeWasVisible</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *name</code></div>
 
 		    
 			
@@ -240,15 +234,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/enterFrame" title="enterFrame"></a>
-	<h3 class="method-title"><code><a href="#//api/name/enterFrame">&nbsp;&nbsp;enterFrame</a></code>
+	<a name="//api/name/parent" title="parent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parent">&nbsp;&nbsp;parent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -258,12 +252,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>First frame received in this <a href="#//api/name/region">region</a></p>
+				<p>Represents parent</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSBaseFrame *enterFrame</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger parent</code></div>
 
 		    
 			
@@ -281,15 +275,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithRegion:" title="initWithRegion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithRegion:">&ndash;&nbsp;initWithRegion:</a></code>
+	<a name="//api/name/access" title="access"></a>
+	<h3 class="method-title"><code><a href="#//api/name/access">&nbsp;&nbsp;access</a></code>
 </h3>
 
 	<div class="method-info">
@@ -299,12 +293,53 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Instantiates LSRegionWrapper object</p>
+				<p>Represents access</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithRegion:(LSRegion *)<em>region</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *access</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise object using NSDictionary from <a href="../Classes/LSCmsClient.html#//api/name/locations:fail:">[LSCmsClient locations:fail:]</a> response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em></code></div>
 
 		    
 			
@@ -313,8 +348,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>region</code></th>
-						<td><p><a href="../Classes/LSRegion.html">LSRegion</a></p></td>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>NSDictionary</p></td>
 					</tr>
 				
 				</table>
@@ -324,7 +359,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>instancetype LSRegionWrapper</p>
+				<p>initialized object</p>
 			</div>
 			
 
@@ -339,7 +374,48 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSRegionWrapper.h</code></p>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Must use <a href="#//api/name/initWithDictionary:">initWithDictionary:</a> instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSZone.h</code></p>
 			</div>
 			
 			

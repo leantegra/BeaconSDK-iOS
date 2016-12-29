@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSBaseDeviceInfo Class Reference</title>
+	<title>LSFloor Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,33 +54,37 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/advertisingInterval">advertisingInterval</option>
+		<option value="//api/name/access">access</option>
 		
-		<option value="//api/name/deviceStatus">deviceStatus</option>
+		<option value="//api/name/center">center</option>
 		
-		<option value="//api/name/firmwareVersion">firmwareVersion</option>
+		<option value="//api/name/coefficient">coefficient</option>
 		
-		<option value="//api/name/macAddress">macAddress</option>
+		<option value="//api/name/geojson">geojson</option>
 		
-		<option value="//api/name/model">model</option>
+		<option value="//api/name/image">image</option>
+		
+		<option value="//api/name/index">index</option>
 		
 		<option value="//api/name/name">name</option>
 		
-		<option value="//api/name/operationMode">operationMode</option>
+		<option value="//api/name/parent">parent</option>
 		
-		<option value="//api/name/serial">serial</option>
-		
-		<option value="//api/name/temperature">temperature</option>
-		
-		<option value="//api/name/txPowerLevel">txPowerLevel</option>
-		
-		<option value="//api/name/vendor">vendor</option>
+		<option value="//api/name/uid">uid</option>
 		
 	</optgroup>
 	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -97,7 +99,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSBaseDeviceInfo Class Reference</h1>
+					<h1 class="title">LSFloor Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -106,20 +108,12 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSBaseDeviceInfo.h<br />LSBaseDeviceInfo.m</td>
+	<td>LSFloor.h<br />LSFloor.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents all basic Bluetooth GATT characteristics of WiBeat.</p>
-					</div>
-					
-					
 
 					
 					
@@ -132,8 +126,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/vendor" title="vendor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vendor">&nbsp;&nbsp;vendor</a></code>
+	<a name="//api/name/geojson" title="geojson"></a>
+	<h3 class="method-title"><code><a href="#//api/name/geojson">&nbsp;&nbsp;geojson</a></code>
 </h3>
 
 	<div class="method-info">
@@ -143,12 +137,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents vendor</p>
+				<p>Represents GeoJson data</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *vendor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary *geojson</code></div>
 
 		    
 			
@@ -166,15 +160,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/model" title="model"></a>
-	<h3 class="method-title"><code><a href="#//api/name/model">&nbsp;&nbsp;model</a></code>
+	<a name="//api/name/image" title="image"></a>
+	<h3 class="method-title"><code><a href="#//api/name/image">&nbsp;&nbsp;image</a></code>
 </h3>
 
 	<div class="method-info">
@@ -184,12 +178,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device model</p>
+				<p>Represents image link</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *model</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *image</code></div>
 
 		    
 			
@@ -207,7 +201,130 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uid" title="uid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uid">&nbsp;&nbsp;uid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents UID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger uid</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/center" title="center"></a>
+	<h3 class="method-title"><code><a href="#//api/name/center">&nbsp;&nbsp;center</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents center coordinates</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;NSNumber*&gt; *center</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/coefficient" title="coefficient"></a>
+	<h3 class="method-title"><code><a href="#//api/name/coefficient">&nbsp;&nbsp;coefficient</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents coefficient</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) double coefficient</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
@@ -225,12 +342,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device name</p>
+				<p>Represents name</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *name</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *name</code></div>
 
 		    
 			
@@ -248,15 +365,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/serial" title="serial"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serial">&nbsp;&nbsp;serial</a></code>
+	<a name="//api/name/index" title="index"></a>
+	<h3 class="method-title"><code><a href="#//api/name/index">&nbsp;&nbsp;index</a></code>
 </h3>
 
 	<div class="method-info">
@@ -266,12 +383,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device serial number</p>
+				<p>Represents index</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *serial</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger index</code></div>
 
 		    
 			
@@ -289,15 +406,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/macAddress" title="macAddress"></a>
-	<h3 class="method-title"><code><a href="#//api/name/macAddress">&nbsp;&nbsp;macAddress</a></code>
+	<a name="//api/name/parent" title="parent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parent">&nbsp;&nbsp;parent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -307,12 +424,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device MAC address</p>
+				<p>Represents parent</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSString *macAddress</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger parent</code></div>
 
 		    
 			
@@ -330,15 +447,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/operationMode" title="operationMode"></a>
-	<h3 class="method-title"><code><a href="#//api/name/operationMode">&nbsp;&nbsp;operationMode</a></code>
+	<a name="//api/name/access" title="access"></a>
+	<h3 class="method-title"><code><a href="#//api/name/access">&nbsp;&nbsp;access</a></code>
 </h3>
 
 	<div class="method-info">
@@ -348,13 +465,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents operation mode:
-<br>HYBRID, I_BEACON, EDDYSTONE_URL, TAG</p>
+				<p>Represents access</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSOperationMode operationMode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *access</code></div>
 
 		    
 			
@@ -367,29 +483,20 @@
 
 			
 
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/LSOperationMode.html">LSOperationMode</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/txPowerLevel" title="txPowerLevel"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txPowerLevel">&nbsp;&nbsp;txPowerLevel</a></code>
+	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -399,16 +506,33 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents TX power</p>
+				<p>Initialise object using NSDictionary from <a href="../Classes/LSCmsClient.html#//api/name/locations:fail:">[LSCmsClient locations:fail:]</a> response</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger txPowerLevel</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em></code></div>
 
 		    
 			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>NSDictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>initialized object</p>
+			</div>
 			
 
 			
@@ -422,15 +546,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/advertisingInterval" title="advertisingInterval"></a>
-	<h3 class="method-title"><code><a href="#//api/name/advertisingInterval">&nbsp;&nbsp;advertisingInterval</a></code>
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
 </h3>
 
 	<div class="method-info">
@@ -440,12 +564,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents advertising interval in miliseconds</p>
+				<p>Must use <a href="#//api/name/initWithDictionary:">initWithDictionary:</a> instead.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger advertisingInterval</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
 		    
 			
@@ -463,130 +587,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/firmwareVersion" title="firmwareVersion"></a>
-	<h3 class="method-title"><code><a href="#//api/name/firmwareVersion">&nbsp;&nbsp;firmwareVersion</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents firmvare version</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property NSString *firmwareVersion</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/temperature" title="temperature"></a>
-	<h3 class="method-title"><code><a href="#//api/name/temperature">&nbsp;&nbsp;temperature</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents temperature</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property NSInteger temperature</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/deviceStatus" title="deviceStatus"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deviceStatus">&nbsp;&nbsp;deviceStatus</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents device status</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property LSDeviceStatus *deviceStatus</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSBaseDeviceInfo.h</code></p>
+				<p><code class="declared-in-ref">LSFloor.h</code></p>
 			</div>
 			
 			

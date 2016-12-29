@@ -74,21 +74,45 @@
 		
 		<option value="//api/name/connect">- connect</option>
 		
+		<option value="//api/name/disableAutomaticRelocking:">- disableAutomaticRelocking:</option>
+		
 		<option value="//api/name/disconnect">- disconnect</option>
 		
+		<option value="//api/name/factoryReset:">- factoryReset:</option>
+		
 		<option value="//api/name/initWithDeviceMACAddress:delegate:">- initWithDeviceMACAddress:delegate:</option>
+		
+		<option value="//api/name/isConnected">- isConnected</option>
+		
+		<option value="//api/name/lock:">- lock:</option>
+		
+		<option value="//api/name/lockWithNewKey:oldKey:delegate:">- lockWithNewKey:oldKey:delegate:</option>
+		
+		<option value="//api/name/readActiveAdvSlotData:">- readActiveAdvSlotData:</option>
+		
+		<option value="//api/name/readActiveSlot:">- readActiveSlot:</option>
+		
+		<option value="//api/name/readAdvData:">- readAdvData:</option>
+		
+		<option value="//api/name/readAdvertisedTxPower:">- readAdvertisedTxPower:</option>
 		
 		<option value="//api/name/readAdvertisingInterval:">- readAdvertisingInterval:</option>
 		
 		<option value="//api/name/readBatteryLevel:">- readBatteryLevel:</option>
 		
-		<option value="//api/name/readCharacteristic:delegate:">- readCharacteristic:delegate:</option>
+		<option value="//api/name/readCapabilities:">- readCapabilities:</option>
 		
-		<option value="//api/name/readDeviceID:">- readDeviceID:</option>
+		<option value="//api/name/readCharacteristic:delegate:">- readCharacteristic:delegate:</option>
 		
 		<option value="//api/name/readDeviceInfo:">- readDeviceInfo:</option>
 		
+		<option value="//api/name/readDeviceStatus:">- readDeviceStatus:</option>
+		
+		<option value="//api/name/readEIDIdentityKey:">- readEIDIdentityKey:</option>
+		
 		<option value="//api/name/readFirmwareVersion:">- readFirmwareVersion:</option>
+		
+		<option value="//api/name/readLockState:">- readLockState:</option>
 		
 		<option value="//api/name/readMajor:">- readMajor:</option>
 		
@@ -96,15 +120,13 @@
 		
 		<option value="//api/name/readModel:">- readModel:</option>
 		
-		<option value="//api/name/readNetworkID:">- readNetworkID:</option>
+		<option value="//api/name/readRadioTxPower:">- readRadioTxPower:</option>
 		
-		<option value="//api/name/readOperationMode:">- readOperationMode:</option>
+		<option value="//api/name/readRemainConnectable:">- readRemainConnectable:</option>
 		
 		<option value="//api/name/readSerial:">- readSerial:</option>
 		
 		<option value="//api/name/readTemperature:">- readTemperature:</option>
-		
-		<option value="//api/name/readTxPower:">- readTxPower:</option>
 		
 		<option value="//api/name/readURL:">- readURL:</option>
 		
@@ -112,11 +134,25 @@
 		
 		<option value="//api/name/readVendor:">- readVendor:</option>
 		
+		<option value="//api/name/unlockWithLockCode:delegate:">- unlockWithLockCode:delegate:</option>
+		
+		<option value="//api/name/writeActiveSlot:delegate:">- writeActiveSlot:delegate:</option>
+		
+		<option value="//api/name/writeAdvertisedTxPower:delegate:">- writeAdvertisedTxPower:delegate:</option>
+		
 		<option value="//api/name/writeAdvertisingInterval:delegate:">- writeAdvertisingInterval:delegate:</option>
+		
+		<option value="//api/name/writeButtonLock:delegate:">- writeButtonLock:delegate:</option>
 		
 		<option value="//api/name/writeCharacteristic:dataValue:delegate:">- writeCharacteristic:dataValue:delegate:</option>
 		
 		<option value="//api/name/writeDeviceID:delegate:">- writeDeviceID:delegate:</option>
+		
+		<option value="//api/name/writeDeviceStatusWithMode:buttonLock:ledTest:delegate:">- writeDeviceStatusWithMode:buttonLock:ledTest:delegate:</option>
+		
+		<option value="//api/name/writeEIDinActiveAdvSlotWithIdentityKey:exponent:delegate:">- writeEIDinActiveAdvSlotWithIdentityKey:exponent:delegate:</option>
+		
+		<option value="//api/name/writeLedTest:delegate:">- writeLedTest:delegate:</option>
 		
 		<option value="//api/name/writeMajor:delegate:">- writeMajor:delegate:</option>
 		
@@ -126,9 +162,17 @@
 		
 		<option value="//api/name/writeOperationMode:delegate:">- writeOperationMode:delegate:</option>
 		
-		<option value="//api/name/writeTxPower:delegate:">- writeTxPower:delegate:</option>
+		<option value="//api/name/writeRadioTxPower:delegate:">- writeRadioTxPower:delegate:</option>
+		
+		<option value="//api/name/writeRemainConnectable:delegate:">- writeRemainConnectable:delegate:</option>
+		
+		<option value="//api/name/writeTLMinActiveAdvSlotWithDelegate:">- writeTLMinActiveAdvSlotWithDelegate:</option>
+		
+		<option value="//api/name/writeUIDinActiveAdvSlotWithNid:bid:delegate:">- writeUIDinActiveAdvSlotWithNid:bid:delegate:</option>
 		
 		<option value="//api/name/writeURL:delegate:">- writeURL:delegate:</option>
+		
+		<option value="//api/name/writeURLinActiveAdvSlotWithURL:delegate:">- writeURLinActiveAdvSlotWithURL:delegate:</option>
 		
 	</optgroup>
 	
@@ -187,7 +231,7 @@ with the device.</p>
 
 -(void)wiBeatConnectionDidConnect:(LSWiBeatConnection *)wiBeatConnection {
     //After connection we can write or read GATT characteristic's values
-    [pmConnection readBatteryLevel:self];
+    [pmConnection readDeviceStatus:self];
     [pmConnection writeAdvertisingInterval:200 delegate:self];
 }
 
@@ -521,6 +565,211 @@ with the device.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/isConnected" title="isConnected"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isConnected">&ndash;&nbsp;isConnected</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Connection status</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isConnected</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lock:" title="lock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lock:">&ndash;&nbsp;lock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Lock WiBeat with the same key</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)lock:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lockWithNewKey:oldKey:delegate:" title="lockWithNewKey:oldKey:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lockWithNewKey:oldKey:delegate:">&ndash;&nbsp;lockWithNewKey:oldKey:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Lock WiBeat with new key</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)lockWithNewKey:(CBUUID *)<em>newKey</em> oldKey:(CBUUID *)<em>oldKey</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableAutomaticRelocking:" title="disableAutomaticRelocking:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableAutomaticRelocking:">&ndash;&nbsp;disableAutomaticRelocking:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Disable automatic relocking</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disableAutomaticRelocking:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unlockWithLockCode:delegate:" title="unlockWithLockCode:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unlockWithLockCode:delegate:">&ndash;&nbsp;unlockWithLockCode:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unlock WiBeat</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unlockWithLockCode:(NSUUID *)<em>lockCode</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/readCharacteristic:delegate:" title="readCharacteristic:delegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/readCharacteristic:delegate:">&ndash;&nbsp;readCharacteristic:delegate:</a></code>
 </h3>
@@ -657,8 +906,8 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/readTxPower:" title="readTxPower:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/readTxPower:">&ndash;&nbsp;readTxPower:</a></code>
+	<a name="//api/name/readRadioTxPower:" title="readRadioTxPower:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readRadioTxPower:">&ndash;&nbsp;readRadioTxPower:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -668,7 +917,7 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Reads TX power characteristic.</p>
+				<p>Reads Radio TX power characteristic.</p>
 
 <p><p>
 This is an asynchronous operation. The result of the read operation is reported by the
@@ -678,7 +927,7 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)readTxPower:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)readRadioTxPower:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -835,6 +1084,154 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 
 			
 
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readCapabilities:" title="readCapabilities:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readCapabilities:">&ndash;&nbsp;readCapabilities:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads device capabilities characteristic from the associated WiBeat.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readCapabilities:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readActiveSlot:" title="readActiveSlot:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readActiveSlot:">&ndash;&nbsp;readActiveSlot:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads active slot characteristic from the associated WiBeat.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readActiveSlot:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
 			
 
 			
@@ -1093,213 +1490,6 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 		    
 
 			<div class="method-subsection method-declaration"><code>- (void)readMinor:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
-					
-					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
-					
-				</ul>
-			</div>
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/readDeviceID:" title="readDeviceID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/readDeviceID:">&ndash;&nbsp;readDeviceID:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Reads device ID characteristic.</p>
-
-<p><p>
-This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)readDeviceID:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
-					
-					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
-					
-				</ul>
-			</div>
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/readNetworkID:" title="readNetworkID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/readNetworkID:">&ndash;&nbsp;readNetworkID:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Reads network ID characteristic.</p>
-
-<p><p>
-This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)readNetworkID:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
-					
-					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
-					
-				</ul>
-			</div>
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/readOperationMode:" title="readOperationMode:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/readOperationMode:">&ndash;&nbsp;readOperationMode:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Reads operation mode characteristic.</p>
-
-<p><p>
-This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)readOperationMode:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1623,6 +1813,498 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/readDeviceStatus:" title="readDeviceStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readDeviceStatus:">&ndash;&nbsp;readDeviceStatus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads device status characteristic from the associated WiBeat.
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readDeviceStatus:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readAdvertisedTxPower:" title="readAdvertisedTxPower:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readAdvertisedTxPower:">&ndash;&nbsp;readAdvertisedTxPower:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads advertised TX power characteristic from the associated WiBeat.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readAdvertisedTxPower:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readLockState:" title="readLockState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readLockState:">&ndash;&nbsp;readLockState:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads lock state.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readLockState:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readEIDIdentityKey:" title="readEIDIdentityKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readEIDIdentityKey:">&ndash;&nbsp;readEIDIdentityKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads EID identity key.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readEIDIdentityKey:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readActiveAdvSlotData:" title="readActiveAdvSlotData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readActiveAdvSlotData:">&ndash;&nbsp;readActiveAdvSlotData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads ADV slot data.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+[LSWiBeatReadDeviceInfoDelegate wiBeatReadDeviceInfoSuccess:deviceInfo] callback.
+If error occurred, the [LSWiBeatReadDeviceInfoDelegate wiBeatReadDeviceInfoError:error:] callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readActiveAdvSlotData:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadDeviceInfoDelegate.html">LSWiBeatReadDeviceInfoDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadDeviceInfoDelegate.html">LSWiBeatReadDeviceInfoDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readRemainConnectable:" title="readRemainConnectable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readRemainConnectable:">&ndash;&nbsp;readRemainConnectable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remain Connectable. >0 - non-connectable capability supported; 0 - not supported.</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+[LSWiBeatReadDeviceInfoDelegate wiBeatReadDeviceInfoSuccess:deviceInfo] callback.
+If error occurred, the [LSWiBeatReadDeviceInfoDelegate wiBeatReadDeviceInfoError:error:] callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readRemainConnectable:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadDeviceInfoDelegate.html">LSWiBeatReadDeviceInfoDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadDeviceInfoDelegate.html">LSWiBeatReadDeviceInfoDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readAdvData:" title="readAdvData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readAdvData:">&ndash;&nbsp;readAdvData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reads TAG adv data (Network and device ID).</p>
+
+<p><p>
+This is an asynchronous operation. The result of the read operation is reported by the
+<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
+If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readAdvData:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/readDeviceInfo:" title="readDeviceInfo:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/readDeviceInfo:">&ndash;&nbsp;readDeviceInfo:</a></code>
 </h3>
@@ -1767,8 +2449,8 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/writeTxPower:delegate:" title="writeTxPower:delegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/writeTxPower:delegate:">&ndash;&nbsp;writeTxPower:delegate:</a></code>
+	<a name="//api/name/writeRadioTxPower:delegate:" title="writeRadioTxPower:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeRadioTxPower:delegate:">&ndash;&nbsp;writeRadioTxPower:delegate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1778,7 +2460,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Write TX power characteristic.</p>
+				<p>Write Radio TX power characteristic.</p>
 
 <p><p>
 This is an asynchronous operation.
@@ -1789,7 +2471,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeTxPower:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeRadioTxPower:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1799,7 +2481,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>value</code></th>
-						<td><p>New TX power value</p></td>
+						<td><p>New Radio TX power value</p></td>
 					</tr>
 				
 					<tr>
@@ -2350,6 +3032,858 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeButtonLock:delegate:" title="writeButtonLock:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeButtonLock:delegate:">&ndash;&nbsp;writeButtonLock:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write button lock characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeButtonLock:(BOOL)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New button lock value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeLedTest:delegate:" title="writeLedTest:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeLedTest:delegate:">&ndash;&nbsp;writeLedTest:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write led test characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeLedTest:(BOOL)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New led test value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeDeviceStatusWithMode:buttonLock:ledTest:delegate:" title="writeDeviceStatusWithMode:buttonLock:ledTest:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeDeviceStatusWithMode:buttonLock:ledTest:delegate:">&ndash;&nbsp;writeDeviceStatusWithMode:buttonLock:ledTest:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write device status characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeDeviceStatusWithMode:(LSOperationMode)<em>mode</em> buttonLock:(BOOL)<em>buttonLock</em> ledTest:(BOOL)<em>ledTest</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mode</code></th>
+						<td><p>New operation mode value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buttonLock</code></th>
+						<td><p>New operation mode value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ledTest</code></th>
+						<td><p>New operation mode value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeActiveSlot:delegate:" title="writeActiveSlot:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeActiveSlot:delegate:">&ndash;&nbsp;writeActiveSlot:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write active slot characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeActiveSlot:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New active slot value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeAdvertisedTxPower:delegate:" title="writeAdvertisedTxPower:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeAdvertisedTxPower:delegate:">&ndash;&nbsp;writeAdvertisedTxPower:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write advertised TX power characteristic.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeAdvertisedTxPower:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New advertised TX power value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeTLMinActiveAdvSlotWithDelegate:" title="writeTLMinActiveAdvSlotWithDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeTLMinActiveAdvSlotWithDelegate:">&ndash;&nbsp;writeTLMinActiveAdvSlotWithDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write TLM frame in advertised slot data</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeTLMinActiveAdvSlotWithDelegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeUIDinActiveAdvSlotWithNid:bid:delegate:" title="writeUIDinActiveAdvSlotWithNid:bid:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeUIDinActiveAdvSlotWithNid:bid:delegate:">&ndash;&nbsp;writeUIDinActiveAdvSlotWithNid:bid:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write UID frame in advertised slot data</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.
+@param nid
+@param bid</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeUIDinActiveAdvSlotWithNid:(NSInteger)<em>nid</em> bid:(NSInteger)<em>bid</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeURLinActiveAdvSlotWithURL:delegate:" title="writeURLinActiveAdvSlotWithURL:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeURLinActiveAdvSlotWithURL:delegate:">&ndash;&nbsp;writeURLinActiveAdvSlotWithURL:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write URL frame in advertised slot data</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.
+@param URL</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeURLinActiveAdvSlotWithURL:(NSString *)<em>url</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeEIDinActiveAdvSlotWithIdentityKey:exponent:delegate:" title="writeEIDinActiveAdvSlotWithIdentityKey:exponent:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeEIDinActiveAdvSlotWithIdentityKey:exponent:delegate:">&ndash;&nbsp;writeEIDinActiveAdvSlotWithIdentityKey:exponent:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write EID frame in advertised slot data</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeEIDinActiveAdvSlotWithIdentityKey:(NSData *)<em>identityKey</em> exponent:(NSInteger)<em>exponent</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identity</code></th>
+						<td><p>key
+@param exponent</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/factoryReset:" title="factoryReset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/factoryReset:">&ndash;&nbsp;factoryReset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set all WiBeat&rsquo;s characteristics to factory values, except Serial Number, GATT Lock Code, Identification mode</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)factoryReset:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeRemainConnectable:delegate:" title="writeRemainConnectable:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeRemainConnectable:delegate:">&ndash;&nbsp;writeRemainConnectable:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write Remain connectable characteristic.  >0 - remain in connectable mode until 0 will be written.</p>
+
+<p><p>
+This is an asynchronous operation.
+Once the write operation has been completed successfully, the
+<a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeRemainConnectable:(NSInteger)<em>value</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>New connectable value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>1.3.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html">LSWiBeatWriteCharacteristicDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -2365,7 +3899,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-11-01</p>
+						<p class="copyright">Copyright &copy; 2016 Leantegra Inc. All rights reserved. Updated: 2016-12-29</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSiBeaconFrame Class Reference</title>
+	<title>LSDeviceStatus Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,19 +54,25 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/major">major</option>
+		<option value="//api/name/batteryLevel">batteryLevel</option>
 		
-		<option value="//api/name/minor">minor</option>
+		<option value="//api/name/buttonLock">buttonLock</option>
 		
-		<option value="//api/name/proximityZone">proximityZone</option>
+		<option value="//api/name/ledTest">ledTest</option>
 		
-		<option value="//api/name/txPower">txPower</option>
+		<option value="//api/name/operationMode">operationMode</option>
 		
 	</optgroup>
 	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -83,32 +87,21 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSiBeaconFrame Class Reference</h1>
+					<h1 class="title">LSDeviceStatus Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/LSBaseFrame.html">LSBaseFrame</a> : NSObject</td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/LSFrameProximable.html">LSFrameProximable</a></td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSiBeaconFrame.h<br />LSiBeaconFrame.m</td>
+	<td>LSDeviceStatus.h<br />LSDeviceStatus.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents iBeacon advertising frame of WiBeat.</p>
-					</div>
-					
-					
 
 					
 					
@@ -121,8 +114,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
+	<a name="//api/name/operationMode" title="operationMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/operationMode">&nbsp;&nbsp;operationMode</a></code>
 </h3>
 
 	<div class="method-info">
@@ -132,135 +125,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents major ID</p>
+				<p>Represents operation mode:
+<br>HYBRID, I_BEACON, EDDYSTONE_URL, TAG</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger major</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents minor ID</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property NSInteger minor</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/txPower" title="txPower"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txPower">&nbsp;&nbsp;txPower</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents TX power at 1 meter</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property NSInteger txPower</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/proximityZone" title="proximityZone"></a>
-	<h3 class="method-title"><code><a href="#//api/name/proximityZone">&nbsp;&nbsp;proximityZone</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents proximity zone</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property LSProximityZone proximityZone</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) LSOperationMode operationMode</code></div>
 
 		    
 			
@@ -278,7 +149,7 @@
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
-					<li><code><p><a href="../Constants/LSProximityZone.html">LSProximityZone</a></p></code></li>
+					<li><code><p><a href="../Constants/LSOperationMode.html">LSOperationMode</a></p></code></li>
 					
 				</ul>
 			</div>
@@ -287,7 +158,186 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSDeviceStatus.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/buttonLock" title="buttonLock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/buttonLock">&nbsp;&nbsp;buttonLock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get button block state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL buttonLock</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Button block state of WiBeat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSDeviceStatus.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/batteryLevel" title="batteryLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/batteryLevel">&nbsp;&nbsp;batteryLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get battery level.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger batteryLevel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Battery level</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSDeviceStatus.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ledTest" title="ledTest"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ledTest">&nbsp;&nbsp;ledTest</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get led test state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL ledTest</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Led test state of WiBeat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSDeviceStatus.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Must use initWithOperationMode:buttonLock:batteryLevel:<a href="#//api/name/ledTest">ledTest</a> instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSDeviceStatus.h</code></p>
 			</div>
 			
 			

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSFrameType Constants Reference</title>
+	<title>LSLockState Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSFrameType Constants Reference</h1>
+					<h1 class="title">LSLockState Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>LSRangingEnums.h</td>
+	<td>LSWiBeatEnums.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,25 +75,19 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">LSFrameType</h3>
+                    <h3 class="subsubtitle method-title">LSLockState</h3>
                     
-					
-					<div class="section section-overview">
-                        <p>Type enum describes all possible advertising frames of the WiBeat.</p>
-					</div>
-					
-					
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, LSFrameType ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, LSLockState ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">FRAME_TYPE_I_BEACON</a>,<br>
+                            &nbsp;&nbsp; <a href="">LS_LOCKED</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">FRAME_TYPE_EDDYSTONE_URL</a>,<br>
+                            &nbsp;&nbsp; <a href="">LS_UNLOCKED</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">FRAME_TYPE_TAG</a>,<br>
+                            &nbsp;&nbsp; <a href="">LS_UNLOCKED_AND_AUTOMATIC_RELOCK_DISABLED</a>,<br>
                             
                             };</code>
                     
@@ -103,53 +97,32 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="FRAME_TYPE_I_BEACON"></a><code>FRAME_TYPE_I_BEACON</code></dt>
+                            <dt><a name="" title="LS_LOCKED"></a><code>LS_LOCKED</code></dt>
 <dd>
-
-
-<p>iBeacon frame format.</p>
-
-
-
-
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSRangingEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="FRAME_TYPE_EDDYSTONE_URL"></a><code>FRAME_TYPE_EDDYSTONE_URL</code></dt>
+                            <dt><a name="" title="LS_UNLOCKED"></a><code>LS_UNLOCKED</code></dt>
 <dd>
-
-
-<p>Eddystone(URL) frame format.</p>
-
-
-
-
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSRangingEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="FRAME_TYPE_TAG"></a><code>FRAME_TYPE_TAG</code></dt>
+                            <dt><a name="" title="LS_UNLOCKED_AND_AUTOMATIC_RELOCK_DISABLED"></a><code>LS_UNLOCKED_AND_AUTOMATIC_RELOCK_DISABLED</code></dt>
 <dd>
-
-
-<p>Location Tag frame format.</p>
-
-
-
-
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSRangingEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
 	</p>
 	
 </dd>
@@ -158,17 +131,6 @@
                     </div>
                     
 
-                    
-                    
-
-                    
-
-                    
-                    <div class="method-subsection declared-in-section">
-                        <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">LSRangingEnums.h</code></p>
-                    </div>
-                    
                     
                     
                     

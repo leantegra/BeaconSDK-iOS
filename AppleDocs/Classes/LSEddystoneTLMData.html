@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSiBeaconFrame Class Reference</title>
+	<title>LSEddystoneTLMData Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,13 +56,15 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/major">major</option>
+		<option value="//api/name/advertisementCounter">advertisementCounter</option>
 		
-		<option value="//api/name/minor">minor</option>
+		<option value="//api/name/batteryVoltage">batteryVoltage</option>
 		
-		<option value="//api/name/proximityZone">proximityZone</option>
+		<option value="//api/name/secondCounter">secondCounter</option>
 		
-		<option value="//api/name/txPower">txPower</option>
+		<option value="//api/name/temperature">temperature</option>
+		
+		<option value="//api/name/tlmVersion">tlmVersion</option>
 		
 	</optgroup>
 	
@@ -83,19 +85,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSiBeaconFrame Class Reference</h1>
+					<h1 class="title">LSEddystoneTLMData Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/LSBaseFrame.html">LSBaseFrame</a> : NSObject</td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/LSFrameProximable.html">LSFrameProximable</a></td>
+	<td><a href="../Classes/LSEddystoneBaseData.html">LSEddystoneBaseData</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSiBeaconFrame.h<br />LSiBeaconFrame.m</td>
+	<td>LSEddystoneTLMData.h<br />LSEddystoneTLMData.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -105,7 +104,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents iBeacon advertising frame of WiBeat.</p>
+						<p>Represents data from ADV slot data characteristic in SLOT_DATA_TLM mode</p>
 					</div>
 					
 					
@@ -121,8 +120,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
+	<a name="//api/name/tlmVersion" title="tlmVersion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tlmVersion">&nbsp;&nbsp;tlmVersion</a></code>
 </h3>
 
 	<div class="method-info">
@@ -132,12 +131,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents major ID</p>
+				<p>TLM version</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger major</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger tlmVersion</code></div>
 
 		    
 			
@@ -155,15 +154,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneTLMData.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
+	<a name="//api/name/batteryVoltage" title="batteryVoltage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/batteryVoltage">&nbsp;&nbsp;batteryVoltage</a></code>
 </h3>
 
 	<div class="method-info">
@@ -173,12 +172,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents minor ID</p>
+				<p>Battery voltage</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger minor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger batteryVoltage</code></div>
 
 		    
 			
@@ -196,15 +195,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneTLMData.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/txPower" title="txPower"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txPower">&nbsp;&nbsp;txPower</a></code>
+	<a name="//api/name/temperature" title="temperature"></a>
+	<h3 class="method-title"><code><a href="#//api/name/temperature">&nbsp;&nbsp;temperature</a></code>
 </h3>
 
 	<div class="method-info">
@@ -214,12 +213,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents TX power at 1 meter</p>
+				<p>Temperature</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger txPower</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) float temperature</code></div>
 
 		    
 			
@@ -237,15 +236,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneTLMData.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/proximityZone" title="proximityZone"></a>
-	<h3 class="method-title"><code><a href="#//api/name/proximityZone">&nbsp;&nbsp;proximityZone</a></code>
+	<a name="//api/name/advertisementCounter" title="advertisementCounter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/advertisementCounter">&nbsp;&nbsp;advertisementCounter</a></code>
 </h3>
 
 	<div class="method-info">
@@ -255,12 +254,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents proximity zone</p>
+				<p>Advertisement counter from last WiBeat rebooting</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSProximityZone proximityZone</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger advertisementCounter</code></div>
 
 		    
 			
@@ -273,21 +272,53 @@
 
 			
 
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/LSProximityZone.html">LSProximityZone</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneTLMData.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/secondCounter" title="secondCounter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/secondCounter">&nbsp;&nbsp;secondCounter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Seconds counter from last WiBeat rebooting</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger secondCounter</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSEddystoneTLMData.h</code></p>
 			</div>
 			
 			

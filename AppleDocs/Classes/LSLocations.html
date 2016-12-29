@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSiBeaconFrame Class Reference</title>
+	<title>LSLocations Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,19 +54,25 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/major">major</option>
+		<option value="//api/name/floors">floors</option>
 		
-		<option value="//api/name/minor">minor</option>
+		<option value="//api/name/passages">passages</option>
 		
-		<option value="//api/name/proximityZone">proximityZone</option>
-		
-		<option value="//api/name/txPower">txPower</option>
+		<option value="//api/name/zones">zones</option>
 		
 	</optgroup>
 	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -83,32 +87,21 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSiBeaconFrame Class Reference</h1>
+					<h1 class="title">LSLocations Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/LSBaseFrame.html">LSBaseFrame</a> : NSObject</td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/LSFrameProximable.html">LSFrameProximable</a></td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSiBeaconFrame.h<br />LSiBeaconFrame.m</td>
+	<td>LSLocations.h<br />LSLocations.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents iBeacon advertising frame of WiBeat.</p>
-					</div>
-					
-					
 
 					
 					
@@ -121,8 +114,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
+	<a name="//api/name/floors" title="floors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floors">&nbsp;&nbsp;floors</a></code>
 </h3>
 
 	<div class="method-info">
@@ -132,12 +125,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents major ID</p>
+				<p>List of <a href="../Classes/LSFloor.html">LSFloor</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger major</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;LSFloor*&gt; *floors</code></div>
 
 		    
 			
@@ -155,15 +148,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSLocations.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
+	<a name="//api/name/passages" title="passages"></a>
+	<h3 class="method-title"><code><a href="#//api/name/passages">&nbsp;&nbsp;passages</a></code>
 </h3>
 
 	<div class="method-info">
@@ -173,12 +166,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents minor ID</p>
+				<p>List of <a href="../Classes/LSPassage.html">LSPassage</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger minor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;LSPassage*&gt; *passages</code></div>
 
 		    
 			
@@ -196,15 +189,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSLocations.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/txPower" title="txPower"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txPower">&nbsp;&nbsp;txPower</a></code>
+	<a name="//api/name/zones" title="zones"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zones">&nbsp;&nbsp;zones</a></code>
 </h3>
 
 	<div class="method-info">
@@ -214,12 +207,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents TX power at 1 meter</p>
+				<p>List of <a href="../Classes/LSZone.html">LSZone</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger txPower</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;LSZone*&gt; *zones</code></div>
 
 		    
 			
@@ -237,15 +230,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSLocations.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/proximityZone" title="proximityZone"></a>
-	<h3 class="method-title"><code><a href="#//api/name/proximityZone">&nbsp;&nbsp;proximityZone</a></code>
+	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -255,39 +248,88 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents proximity zone</p>
+				<p>Initialise object using NSDictionary from <a href="../Classes/LSCmsClient.html#//api/name/locations:fail:">[LSCmsClient locations:fail:]</a> response</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSProximityZone proximityZone</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em></code></div>
 
 		    
 			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/LSProximityZone.html">LSProximityZone</a></p></code></li>
-					
-				</ul>
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>NSDictionary</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>initialized object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSiBeaconFrame.h</code></p>
+				<p><code class="declared-in-ref">LSLocations.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Must use <a href="#//api/name/initWithDictionary:">initWithDictionary:</a> instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSLocations.h</code></p>
 			</div>
 			
 			

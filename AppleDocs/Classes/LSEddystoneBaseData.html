@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSTagFrame Class Reference</title>
+	<title>LSEddystoneBaseData Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,15 +56,19 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/deviceId">deviceId</option>
-		
-		<option value="//api/name/networkId">networkId</option>
+		<option value="//api/name/frameType">frameType</option>
 		
 	</optgroup>
 	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -79,16 +83,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSTagFrame Class Reference</h1>
+					<h1 class="title">LSEddystoneBaseData Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/LSBaseFrame.html">LSBaseFrame</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSTagFrame.h<br />LSTagFrame.m</td>
+	<td>LSEddystoneBaseData.h<br />LSEddystoneBaseData.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -98,7 +102,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents Location Tag advertising frame of WiBeat.</p>
+						<p>Represents data in ADV slot data characteristic</p>
 					</div>
 					
 					
@@ -114,8 +118,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/networkId" title="networkId"></a>
-	<h3 class="method-title"><code><a href="#//api/name/networkId">&nbsp;&nbsp;networkId</a></code>
+	<a name="//api/name/frameType" title="frameType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frameType">&nbsp;&nbsp;frameType</a></code>
 </h3>
 
 	<div class="method-info">
@@ -125,12 +129,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents network ID</p>
+				<p>Represents Eddystone frame type</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger networkId</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) LSADVSlotDataType frameType</code></div>
 
 		    
 			
@@ -143,20 +147,29 @@
 
 			
 
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Constants/LSADVSlotDataType.html">LSADVSlotDataType</a></p></code></li>
+					
+				</ul>
+			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSTagFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneBaseData.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/deviceId" title="deviceId"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deviceId">&nbsp;&nbsp;deviceId</a></code>
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
 </h3>
 
 	<div class="method-info">
@@ -166,12 +179,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents device ID</p>
+				<p>Must use initWithData: instead.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger deviceId</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
 		    
 			
@@ -189,7 +202,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSTagFrame.h</code></p>
+				<p><code class="declared-in-ref">LSEddystoneBaseData.h</code></p>
 			</div>
 			
 			

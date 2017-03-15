@@ -1,13 +1,14 @@
 # WiBeat SDK for iOS #
 
-The WiBeat SDK for iOS is a library that allows interaction with [WiBeats](http://leantegra.com/pm).
+The WiBeat SDK for iOS is a library that allows interaction with [WiBeats](http://leantegra.com/wibeat-ble-beacon).
 It works with iOS 8 or above and requires Bluetooth Low Energy support.
 
 Features:
 - Based on Apple Core Location and Apple Core Bluetooth Frameworks;
 - WiBeat management: connect\disconnect, read\write all info from nearby device;
 - WiBeat ranging: scanning for nearby devices, filtering by specified properties, distance to device (IMMEDIATE, NEAR, FAR zones);
-- WiBeat monitoring: monitors Enter\Exit events for predefined regions that can be defined by multiple rules (UUID, distance, zone, Major, Minor etc.)
+- WiBeat monitoring: monitors Enter\Exit events for predefined regions that can be defined by multiple rules (UUID, distance, zone, Major, Minor etc.);
+- Integration with Leantegra CMS (notifications, multi-rules, analytics).
 
 ## Installation
 

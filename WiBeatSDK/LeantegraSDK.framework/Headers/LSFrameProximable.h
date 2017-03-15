@@ -17,7 +17,7 @@
 /**
  *  Represents TX power
  */
-@property NSInteger txPower;
+@property (readonly) NSInteger txPower;
 
 /**
  *  Represents proximity zone

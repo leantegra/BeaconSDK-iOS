@@ -43,6 +43,18 @@ typedef NS_ENUM(NSInteger, LSFrameType){
      */
     FRAME_TYPE_EDDYSTONE_URL,
     /**
+     * Eddystone (TLM) frame format
+     */
+    FRAME_TYPE_EDDYSTONE_TLM,
+    /**
+     * Eddystone (UID) frame format
+     */
+    FRAME_TYPE_EDDYSTONE_UID,
+    /**
+     * Eddystone (EID) frame format
+     */
+    FRAME_TYPE_EDDYSTONE_EID,
+    /**
      * Location Tag frame format.
      */
     FRAME_TYPE_TAG

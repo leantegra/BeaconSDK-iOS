@@ -1,5 +1,9 @@
 Changelog
 =====================
+## 1.4.0 (Mar 15, 2017)
+- Support of new CMS API;
+- Bug fixing and stability improvements.
+
 ## 1.3.0 (Dec 29, 2016)
 - Eddystone GATT support.
 - Customizable proximity zones.

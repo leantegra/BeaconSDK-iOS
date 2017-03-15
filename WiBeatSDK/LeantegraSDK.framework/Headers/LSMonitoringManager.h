@@ -82,7 +82,7 @@
  <b>Usage:</b>
  
     -(void)startMonitoring(){
-        monitoringManager = [[LSMonitoringManager alloc] init];
+        monitoringManager = [LSMonitoringManager sharedMonitoringManager];
         [monitoringManager addDelegate:self];
 
         LSRegionBuilder *builder = [[LSRegionBuilder alloc] initWithIdentifier:@"MyRegion"];
@@ -121,6 +121,8 @@
  */
 @interface LSMonitoringManager : NSObject <CLLocationManagerDelegate, LSRangingManagerDelegate>
 
++ (LSMonitoringManager *)sharedMonitoringManager;
+
 /**
  *  Add the new delegate
  *
@@ -153,5 +155,8 @@
  *  @return NSSet<LSRegionWrapper *> regions in monitoring
  */
 - (NSSet<LSRegionWrapper *>*)monitoredRegions;
+
+///Must use sharedMonitoringManager instead.
+- (instancetype)init __attribute__((unavailable("Must use sharedMonitoringManager instead.")));
 
 @end

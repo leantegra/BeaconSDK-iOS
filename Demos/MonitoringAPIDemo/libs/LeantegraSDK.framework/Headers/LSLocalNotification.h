@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LSCMSRule.h"
 
-
+#define kLSNotificationsList @"LSNotificationsList"
 #define LSLocalNotificationDefaultSoundName @"LSLocalNotificationDefaultSoundName"
 
 @interface LSLocalNotification : NSObject
@@ -20,6 +20,8 @@
 - (void)showWithCMSRule:(LSCMSRule*)cmsRule callback:(void (^)(BOOL))callback;
 
 @property NSString* soundName;
+
+@property NSString* title;
 
 //Only for versions iOS older 10
 + (void)removeNotificationForRuleId:(NSInteger)ruleId;

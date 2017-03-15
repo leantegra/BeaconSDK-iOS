@@ -15,6 +15,10 @@
 #import "LSEddystoneUrlFrame.h"
 #import "LSiBeaconFrame.h"
 #import "LSTagFrame.h"
+#import "LSTLMFrame.h"
+#import "LSEIDFrame.h"
+#import "LSUIDFrame.h"
+
 @class LSRangingManager;
 
 /**

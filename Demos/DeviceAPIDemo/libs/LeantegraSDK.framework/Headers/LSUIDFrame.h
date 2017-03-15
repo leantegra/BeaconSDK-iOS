@@ -1,8 +1,8 @@
 //
-//  LSiBeaconFrame.h
+//  LSUIDFrame.h
 //  LeantegraSDK
 //
-//  Created by Konstantin Efimenko on 4/28/16.
+//  Created by Konstantin Efimenko on 12/21/16.
 //  Copyright © 2016 Leantegra Inc. All rights reserved.
 //
 
@@ -10,26 +10,22 @@
 #import "LSRangingEnums.h"
 #import "LSFrameProximable.h"
 
-/**
- * Represents iBeacon advertising frame of WiBeat.
- * @see LSBaseFrame
- */
-@interface LSiBeaconFrame : LSBaseFrame <LSFrameProximable>
+@interface LSUIDFrame : LSBaseFrame <LSFrameProximable>
 
 /**
- *  Represents major ID
+ * Advertisement TX power.
  */
-@property NSInteger major;
+@property (readonly) NSInteger txPower;
 
 /**
- *  Represents minor ID
+ * Namespace
  */
-@property NSInteger minor;
+@property (readonly) NSData *nid;
 
 /**
- *  Represents TX power at 1 meter
+ * Instance
  */
-@property NSInteger txPower;
+@property (readonly) NSData *bid;
 
 /**
  *  Represents proximity zone

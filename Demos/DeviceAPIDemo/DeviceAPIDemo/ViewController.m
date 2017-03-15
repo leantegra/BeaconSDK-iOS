@@ -153,13 +153,21 @@
 }
 
 -(void)wiBeatConnection:(LSWiBeatConnection *)wiBeatConnection didGetError:(LSWiBeatError)powerMoteError{
+    [self onDisconnect];
+    //handle error
+}
+
+- (void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection *)wiBeatConnection error:(NSError *)error{
+    [self onDisconnect];
+}
+
+- (void)onDisconnect{
     [indicator stopAnimating];
     [characteristicsTableView setHidden:true];
     [connectButton setEnabled:true];
     [addressTextField setEnabled:true];
     connection=NULL;
     [connectButton setTitle:@"Connect" forState:UIControlStateNormal];
-    //handle error
 }
 
 #pragma mark- LSReadDeviceInfoDelegate

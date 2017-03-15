@@ -91,8 +91,9 @@
 /**
  * Callback invoked when device is disconnected from WiBeat.
  * @param wiBeatConnection
+ * @param error
  */
-- (void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection*)wiBeatConnection;
+- (void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection*)wiBeatConnection error:(NSError*)error;
 
 /** Calls when code can't process correctly any method
  * @param wiBeatConnection

@@ -13,8 +13,8 @@
 		1D1D52661D0161E0009933C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D1D52641D0161E0009933C4 /* Main.storyboard */; };
 		1D1D52681D0161E0009933C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1D52671D0161E0009933C4 /* Assets.xcassets */; };
 		1D1D526B1D0161E0009933C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D1D52691D0161E0009933C4 /* LaunchScreen.storyboard */; };
-		1D3B9A6E1E1515C800E2D935 /* LeantegraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3B9A6D1E1515C800E2D935 /* LeantegraSDK.framework */; };
-		1D3B9A6F1E1515C800E2D935 /* LeantegraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3B9A6D1E1515C800E2D935 /* LeantegraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D4A3A4B1E783B1B003CDA8C /* LeantegraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4A3A4A1E783B1B003CDA8C /* LeantegraSDK.framework */; };
+		1D4A3A4C1E783B1B003CDA8C /* LeantegraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4A3A4A1E783B1B003CDA8C /* LeantegraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D3B9A6F1E1515C800E2D935 /* LeantegraSDK.framework in Embed Frameworks */,
+				1D4A3A4C1E783B1B003CDA8C /* LeantegraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,7 @@
 		1D1D52671D0161E0009933C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D1D526A1D0161E0009933C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D1D526C1D0161E0009933C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D3B9A6D1E1515C800E2D935 /* LeantegraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeantegraSDK.framework; path = libs/LeantegraSDK.framework; sourceTree = "<group>"; };
+		1D4A3A4A1E783B1B003CDA8C /* LeantegraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeantegraSDK.framework; path = libs/LeantegraSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D3B9A6E1E1515C800E2D935 /* LeantegraSDK.framework in Frameworks */,
+				1D4A3A4B1E783B1B003CDA8C /* LeantegraSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 		1D1D524F1D0161E0009933C4 = {
 			isa = PBXGroup;
 			children = (
-				1D3B9A6D1E1515C800E2D935 /* LeantegraSDK.framework */,
+				1D4A3A4A1E783B1B003CDA8C /* LeantegraSDK.framework */,
 				1D1D525A1D0161E0009933C4 /* MonitoringAPIDemo */,
 				1D1D52591D0161E0009933C4 /* Products */,
 			);
@@ -125,7 +125,7 @@
 		1D1D52501D0161E0009933C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Leantegra Inc.";
 				TargetAttributes = {
 					1D1D52571D0161E0009933C4 = {
@@ -217,8 +217,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -261,8 +263,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

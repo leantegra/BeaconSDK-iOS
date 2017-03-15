@@ -53,7 +53,7 @@
     [builder addBeaconByUUID:uuid major:nil minor:nil];
     LSRegion *region = [builder build];
     
-    self.monitoringManager = [[LSMonitoringManager alloc] init];
+    self.monitoringManager = [LSMonitoringManager sharedMonitoringManager];
     [self.monitoringManager addDelegate:self];
     [self.monitoringManager startMonitoringForRegion:region];
     

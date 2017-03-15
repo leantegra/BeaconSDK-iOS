@@ -83,6 +83,12 @@
 /// Stop monitoring with the background scan in your Application.
 -(void)stopScan;
 
+/**
+ * Downloads and save in cache content from CMS server
+ * @param completion - block, that is called with optionally passed error, if any occured while loading
+**/
+- (void)loadData:(void (^_Nullable)(NSError *_Nullable))completion;
+
 ///Send view info about LSCMSRule content to CMS server.
 -(void)sendViewCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel;
 

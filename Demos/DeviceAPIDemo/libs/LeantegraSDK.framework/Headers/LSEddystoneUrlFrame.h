@@ -19,17 +19,22 @@
 /**
  * Represents advertising URL.
  */
-@property NSString *url;
+@property (readonly) NSString *url;
 
 /**
  * Represents calibrated TX power at 0 meter.
  */
-@property NSInteger txPower;
+@property (readonly) NSInteger txPower;
 
 /**
  *  Represents proximity zone
  *  @see LSProximityZone
  */
 @property LSProximityZone proximityZone;
+
+- (instancetype)initWithData:(NSData*)data;
+
+///Must use initWithData: instead.
+- (instancetype)init __attribute__((unavailable("Must use initWithData: instead.")));
 
 @end

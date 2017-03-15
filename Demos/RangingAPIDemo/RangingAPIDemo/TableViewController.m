@@ -82,6 +82,11 @@
     [beacons sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         LSBaseFrame*frame1=(LSBaseFrame*)obj1;
         LSBaseFrame*frame2=(LSBaseFrame*)obj2;
+        if(frame1.distance==nil){
+            return NSOrderedDescending;
+        }else if (frame2.distance==nil){
+            return NSOrderedAscending;
+        }
         return [frame1.distance compare:frame2.distance];
     }];
     [self.tableView reloadData];

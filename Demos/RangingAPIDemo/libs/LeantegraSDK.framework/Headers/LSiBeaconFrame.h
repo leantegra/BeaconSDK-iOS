@@ -37,4 +37,9 @@
  */
 @property LSProximityZone proximityZone;
 
+- (instancetype)initWithData:(NSData*)data;
+
+///Must use initWithData: instead.
+- (instancetype)init __attribute__((unavailable("Must use initWithData: instead.")));
+
 @end

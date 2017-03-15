@@ -130,6 +130,17 @@ static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3ede
  */
 + (NSNumber*)nearZoneRadius;
 
+/**
+ Drops CoreData storage and SDK-related keys from UserDefaults
+*/
++ (void)clearStorage;
+
+/**
+ Returns SDK version value
+ */
+
++ (NSString*)SDKVersion;
+
 @end
 
 

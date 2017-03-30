@@ -14,13 +14,10 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
 }
-
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -39,9 +36,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //register notification
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+        completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"request authorization succeeded!");
+            }
+        }];
+    }
+    else if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
@@ -60,27 +68,57 @@
     return YES;
 }
 
-- (void)showNotification:(NSString*)message{
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = message;
-    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+- (void)showNotification:(NSString *)message {
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+        [[UNUserNotificationCenter currentNotificationCenter] getDeliveredNotificationsWithCompletionHandler:^(NSArray<UNNotification*>*notifications){
+            UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+            content.body = message;
+            content.sound = [UNNotificationSound defaultSound];
+            content.title = @"MonitoringAPIDemo";
+            content.userInfo = @{@"message" : message};
+            UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
+            
+            UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:message content:content trigger:trigger];
+            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+            [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+                if (!error) {
+                    NSLog(@"add NotificationRequest succeeded!");
+                }
+            }];
+        }];
+    }
+    else {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.alertBody = message;
+        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+    }
 }
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert |UNAuthorizationOptionBadge);
+}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    completionHandler();
+}
+
 
 #pragma mark - LSMonitoringManagerDelegate
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didEnterRegion:(LSRegion *)region frame:(LSBaseFrame *)frame{
+- (void)monitoringManager:(LSMonitoringManager *)manager didEnterRegion:(LSRegion *)region frame:(LSBaseFrame *)frame {
     [self showNotification:[NSString stringWithFormat:@"Enter region %@",region.identifier]];
 }
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didExitRegion:(LSRegion *)region frame:(LSBaseFrame *)frame{
+- (void)monitoringManager:(LSMonitoringManager *)manager didExitRegion:(LSRegion *)region frame:(LSBaseFrame *)frame {
     [self showNotification:[NSString stringWithFormat:@"Exit region %@",region.identifier]];
 }
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didGetError:(LSWiBeatError)error{
+- (void)monitoringManager:(LSMonitoringManager *)manager didGetError:(LSWiBeatError)error {
 
 }
 
-- (void)monitoringManager:(LSMonitoringManager *)manager timeForRangingBeaconsWasExpiredInRegions:(NSSet<LSRegionWrapper *> *)regions{
+- (void)monitoringManager:(LSMonitoringManager *)manager timeForRangingBeaconsWasExpiredInRegions:(NSSet<LSRegionWrapper *> *)regions {
     [self showNotification: @"Time for ranging in backround expired"];
 }
 

@@ -32,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		137762BC1E8D0E5F00486D79 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		1D1D52581D0161E0009933C4 /* MonitoringAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1D525C1D0161E0009933C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D1D525E1D0161E0009933C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,12 +58,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		137762BB1E8D0E5F00486D79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				137762BC1E8D0E5F00486D79 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1D1D524F1D0161E0009933C4 = {
 			isa = PBXGroup;
 			children = (
 				1D4A3A4A1E783B1B003CDA8C /* LeantegraSDK.framework */,
 				1D1D525A1D0161E0009933C4 /* MonitoringAPIDemo */,
 				1D1D52591D0161E0009933C4 /* Products */,
+				137762BB1E8D0E5F00486D79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <LeantegraSDK/LeantegraSDK.h>
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, LSMonitoringManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, LSMonitoringManagerDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

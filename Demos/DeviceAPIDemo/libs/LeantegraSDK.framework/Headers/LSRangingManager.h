@@ -91,6 +91,8 @@
 
 - (void)addDelegate:(id<LSRangingManagerDelegate>)delegate;
 
+- (void)removeDelegate:(id<LSRangingManagerDelegate>)delegate;
+
 /**
  Launches ranging
  */

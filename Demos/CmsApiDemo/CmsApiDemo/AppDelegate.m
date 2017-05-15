@@ -17,29 +17,42 @@
     LSAdvertisingNotificationManager *manager;
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [LeantegraSDK setClientId:@"demo_mobile"];
     [LeantegraSDK setClientSecret:@"d0177393-f9a7-4417-9930-9465ee4e59ee"];
-    //Initialize manager
-    manager=[[LSAdvertisingNotificationManager alloc] initWithNotification:[LSLocalNotification new]];
+
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    LSLocalNotification *notification = [LSLocalNotification new];
+    notification.title = @"CMSAPIDemo";
+    [notification setSoundName:LSLocalNotificationDefaultSoundName];
+    manager = [[LSAdvertisingNotificationManager alloc] initWithNotification:notification];
     [manager setDelegate:self];
     [manager startScan];
-    
     return YES;
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
-    if(notification){
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    if(notification) {
         LSCMSRule*cmsRule=[[LSCMSRule alloc] initWithNotificationDictionary:notification.userInfo];
         [manager sendViewCMSRules:@[cmsRule] channel:LSViewChannelTypeNotification];
     }
 }
 
-- (void)monitoringDidGetError:(LSWiBeatError)error{
-    
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    LSCMSRule *cmsRule=[[LSCMSRule alloc] initWithNotificationDictionary:notification.request.content.userInfo];
+    [manager sendViewCMSRules:@[cmsRule] channel:LSViewChannelTypeNotification];
+
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert |UNAuthorizationOptionBadge);
+}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    completionHandler();
+}
+
+#pragma mark - LSAdvertisingNotificationManagerDelegate
+- (void)monitoringDidGetError:(LSWiBeatError)error {
+    NSLog(@"Monitoring did get error");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

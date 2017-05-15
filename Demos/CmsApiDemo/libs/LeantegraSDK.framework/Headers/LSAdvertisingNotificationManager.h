@@ -14,6 +14,25 @@
 
 @class LSCMSRule;
 
+NS_ASSUME_NONNULL_BEGIN
+
+// Keys for cmsRuleWithOptions
+
+/**
+    If @YES is set as a value, Push only rules will not be included in returning rules result
+*/
+extern NSString *const kLSExcludePushOnlyRulesOptionsKey;
+
+/**
+    If @YES is set as a value, Offer list rules will not be included in returning rules result
+*/
+extern NSString *const kLSExcludeOfferListRulesOptionsKey;
+
+/**
+    If array of specific numbers with rules ID is set a as value, will return array of rules for this rules ID
+*/
+extern NSString *const kLSRulesIDOptionsKey;
+
 /**
  *  Provides callbacks of monitoring errors
  */
@@ -58,7 +77,7 @@
 @interface LSAdvertisingNotificationManager : NSObject<LSMonitoringManagerDelegate>
 
 /// Delegate property
-@property (nonatomic, weak) id <LSAdvertisingNotificationManagerDelegate> delegate;
+@property (nullable, nonatomic, weak) id <LSAdvertisingNotificationManagerDelegate> delegate;
 
 /**
  Constructs monitoring with the background scan in your Application and shown notifications.
@@ -84,16 +103,17 @@
 -(void)stopScan;
 
 /**
- * Downloads and save in cache content from CMS server
- * @param completion - block, that is called with optionally passed error, if any occured while loading
-**/
+ * Downloads and save in cache content from CMS server.
+ * Concrete, initiates the "content" and "categories" requests to CVO portal.
+ * @param completion - block, that is called with optionally passed error, if any occured while requests loading
+ */
 - (void)loadData:(void (^_Nullable)(NSError *_Nullable))completion;
 
 ///Send view info about LSCMSRule content to CMS server.
 -(void)sendViewCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel;
 
 ///Send notification to CMS server about LSCMSRule use
--(void)sendUsageCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel success:(void (^)(void))successfulCallback fail:(void (^)(NSError*))failCallback;
+-(void)sendUsageCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel success:(void (^ _Nullable)(void))successfulCallback fail:(void (^ _Nullable)(NSError*))failCallback;
 
 ///Send notification to CMS server about delivery rules in offer list
 - (void)sendDeliveryInOfferList:(NSArray<LSCMSRule*>*)rules;
@@ -104,8 +124,7 @@
  *
  *  @return NSArray<LSCMSRule*>
  */
-- (NSArray<LSCMSRule*>*)allCMSRules;
-
+- (NSArray<LSCMSRule*>*)allCMSRules __attribute__((deprecated("allCMSRules has been deprecated please use cmsRuleWithOptions: instead")));
 /**
  *  Returns LSCMSRule* by ruleId
  *
@@ -113,7 +132,15 @@
  *
  *  @return LSCMSRule*
  */
-- (LSCMSRule*)cmsRuleById:(NSNumber*)ruleId;
+- (nullable LSCMSRule*)cmsRuleById:(NSNumber*)ruleId __attribute__((deprecated("cmsRuleById: has been deprecated please use cmsRuleWithOptions: instead")));
+
+/**
+ *  Returns LSCMSRule* by giving options
+ *
+ *  @param options See Options Keys for supported options and values
+ *
+ */
+- (NSArray<LSCMSRule*>*)cmsRuleWithOptions:(NSDictionary*_Nullable)options;
 
 /**
  * Returns LSWiBeat array from CMS server
@@ -121,7 +148,7 @@
  * @param successfulCallback block called if request performs successfully
  * @param failCallback       block called in case of error
  */
-- (void)devices:(void (^)(NSArray<LSWiBeat*>*))successfulCallback fail:(void (^)(NSError*))failCallback;
+- (void)devices:(void (^_Nullable)(NSArray<LSWiBeat*>*))successfulCallback fail:(void (^_Nullable)(NSError*))failCallback;
 
 /**
  * Returns LSLocation info from CMS server
@@ -129,6 +156,9 @@
  * @param successfulCallback block called if request performs successfully
  * @param failCallback       block called in case of error
  */
-- (void)locations:(void (^)(LSLocations*))successfulCallback fail:(void (^)(NSError*))failCallback;
+- (void)locations:(void (^_Nullable)(LSLocations*))successfulCallback fail:(void (^_Nullable)(NSError*))failCallback;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

@@ -18,9 +18,28 @@
 #import "LSRegionWrapper.h"
 
 #import "LSRangingManager.h"
+#import "LSProximityAnalyticsManager.h"
 
+#import "LSWiBeatEnums.h"
 #import "LSRangingEnums.h"
 #import "LSCloudEnums.h"
+
+#import "LSBeaconURL.h"
+#import "LSBaseDeviceInfo.h"
+#import "LSWiBeatCharacteristic.h"
+#import "LSWiBeatConnection.h"
+
+#import "LSEddystoneUIDData.h"
+#import "LSEddystoneEIDData.h"
+#import "LSEddystoneTLMData.h"
+#import "LSEddystoneURLData.h"
+#import "LSEddystoneURLDeviceInfo.h"
+
+#import "LSTagDeviceInfo.h"
+#import "LSHybridDeviceInfo.h"
+#import "LSiBeaconDeviceInfo.h"
+
+#import "LSVenuePlanView.h"
 
 //! Project version number for LeantegraSDK.
 FOUNDATION_EXPORT double LeantegraSDKVersionNumber;
@@ -28,107 +47,68 @@ FOUNDATION_EXPORT double LeantegraSDKVersionNumber;
 //! Project version string for LeantegraSDK.
 FOUNDATION_EXPORT const unsigned char LeantegraSDKVersionString[];
 
+extern NSString *_Nonnull const kLeantegraSDKErrorDomain;
+
 /**
  *  Represents proximity UUID string value
  */
-static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3edec09b";
+static NSString *_Nonnull defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3edec09b";
 
 // In this header, you should import all the public headers of your framework using statements like #import <LeantegraSDK/PublicHeader.h>
 @interface LeantegraSDK : NSObject
 
 /**
- *  Returns server URL
+ *  Value of server URL
  */
-+ (NSString*)serverUrl;
+@property (class, nonatomic, strong, nonnull) NSString *serverUrl;
 
 /**
- *  Set new value of server URL
+ *  Current client ID value
  */
-+ (void)setServerUrl:(NSString* _Nonnull)newServerUrl;
+@property (class, nonatomic, strong, nonnull) NSString *clientId;
 
 /**
- *  Returns current client ID value
+ *  Current client secret value
  */
-+ (NSString*)clientId;
+@property (class, nonatomic, strong, nonnull) NSString *clientSecret;
 
 /**
- *  Set new client ID value
+ *  Third party ID value
  */
-+ (void)setClientId:(NSString* _Nonnull)newClientId;
+@property (class, nonatomic, strong, nullable) NSString *thirdPartyId;
 
 /**
- *  Returns current client secret value
+ *  Gender value
  */
-+ (NSString*)clientSecret;
+@property (class, nonatomic, assign) LSGender gender;
 
 /**
- *  Set new client secret value
- */
-+ (void)setClientSecret:(NSString* _Nonnull)newClientSecret;
+    Age Value
+*/
+
+@property (class, nonatomic, assign) NSInteger age;
 
 /**
- *  Returns third party ID value
+ User's birth date
  */
-+ (NSString*)thirdPartyId;
+@property (class, nonatomic, strong, nullable) NSDate *birthDate;
 
 /**
- *  Set new third party ID value
- */
-+ (void)setThirdPartyId:(NSString*)newThirdPartyId;
-
-/**
- *  Returns gender
- */
-+ (LSGender)gender;
-
-/**
- Set new gender value
- */
-+ (void)setGender:(LSGender)newGender;
-
-/**
- Returns age
- */
-+ (NSInteger)age;
-
-/**
- Set new age value
- */
-+ (void)setAge:(NSInteger)newAge;
-
-/**
- Set new birth date value
- */
-+ (void)setBirthDate:(NSDate*)newBirthDate;
-
-/**
- Returns birth date
- */
-+ (NSDate*)birthDate;
-
-/**
- Set new radius for IMMEDIATE zone
- if value = nil, monitoring take default value 0.5 meters
- */
-+ (void)setImmediateZoneRadius:(NSNumber*)meters;
+    Array of strings, that represents the user segments
+*/
+@property (class, nonatomic, strong, nullable) NSArray *segments;
 
 /**
  Returns value of IMMEDIATE zone radius
- returning value = nil means radius was not customised and monitoring use default value = 0.5 m
+ returning/setting value = nil means radius was not customised and monitoring use default value = 0.5 m
  */
-+ (NSNumber*)immediateZoneRadius;
-
-/**
- Set new radius for NEAR zone
- if value = nil, monitoring take default value 3 meters
- */
-+ (void)setNearZoneRadius:(NSNumber*)meters;
+@property (class, nonatomic, strong, nullable) NSNumber *immediateZoneRadius;
 
 /**
  Returns value of NEAR zone radius
- returning value = nil means radius was not customised and monitoring use default value = 3 m
+ returning/setting value = nil means radius was not customised and monitoring use default value = 3 m
  */
-+ (NSNumber*)nearZoneRadius;
+@property (class, nonatomic, strong, nullable) NSNumber *nearZoneRadius;
 
 /**
  Drops CoreData storage and SDK-related keys from UserDefaults
@@ -138,8 +118,12 @@ static NSString *defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b-4d3a3ede
 /**
  Returns SDK version value
  */
++ (nonnull NSString *)SDKVersion;
 
-+ (NSString*)SDKVersion;
+/**
+ Returns SDK build number value
+ */
++ (nonnull NSString *)SDKBuildNumber;
 
 @end
 

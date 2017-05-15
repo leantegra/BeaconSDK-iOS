@@ -53,7 +53,10 @@
         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+#pragma GCC diagnostic pop
     }
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"85a99e33-bbbe-4763-a66b-4d3a3edec09b"];
     LSRegionBuilder *builder = [[LSRegionBuilder alloc] initWithIdentifier:@"DemoRegion"];

@@ -36,7 +36,7 @@
             self.typeLabel.text=@"iBeacon";
             self.backgroundColor=[self colorWith:iBeaconFrame.proximityZone];
             self.zoneLabel.text=[self proximityZoneToString:iBeaconFrame.proximityZone];
-            self.infoLabel.text =[NSString stringWithFormat:@"Major id:%d Minor id:%d",iBeaconFrame.major,iBeaconFrame.minor];
+            self.infoLabel.text =[NSString stringWithFormat:@"Major id:%ld Minor id:%ld",(long)iBeaconFrame.major,(long)iBeaconFrame.minor];
         }
             break;
             
@@ -54,7 +54,7 @@
             self.typeLabel.text=@"Tag";
             self.backgroundColor=[self colorWith:UNKNOWN];
             self.zoneLabel.text=[self proximityZoneToString:UNKNOWN];
-            self.infoLabel.text =[NSString stringWithFormat:@"Network id:%d Device id:%d",tagFrame.networkId,tagFrame.deviceId];
+            self.infoLabel.text =[NSString stringWithFormat:@"Network id:%ld Device id:%ld",(long)tagFrame.networkId,(long)tagFrame.deviceId];
         }
             break;
             

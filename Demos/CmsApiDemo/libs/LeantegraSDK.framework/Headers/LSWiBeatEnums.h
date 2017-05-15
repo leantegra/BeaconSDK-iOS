@@ -46,6 +46,8 @@ typedef NS_ENUM(NSInteger, LSWiBeatError) {
  * Operation mode enum describes all possible broadcasting schemes of the WiBeat.
  */
 typedef NS_ENUM(NSInteger, LSOperationMode) {
+    /*!Undefined WiBeat operation mode.*/
+    UNDEFINED = -1,
     /*!WiBeat broadcasts iBeacon and Eddystone(URL) advertising frames.*/
     HYBRID,
     /*!WiBeat broadcasts iBeacon advertising frame.*/
@@ -80,6 +82,12 @@ typedef NS_ENUM(NSInteger, LSCharacteristicType){
 typedef NS_ENUM(NSInteger, LSCapabilitiesVariableSupported){
     IS_VARIABLE_ADV_SUPPORTED = 0x01,
     IS_VARIABLE_TX_POWER_SUPPORTED = 0x02
+};
+
+typedef NS_ENUM(NSInteger, LSSettingCapabilities){
+    LSSettingCapabilitiesUndefined = -1,
+    LSSettingCapabilitiesDisabled,
+    LSSettingCapabilitiesEnabled
 };
 
 typedef NS_ENUM(NSInteger, LSCapabilitiesFrameType){

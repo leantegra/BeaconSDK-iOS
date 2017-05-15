@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <LeantegraSDK/LeantegraSDK.h>
 #import <LeantegraSDK/LSAdvertisingNotificationManager.h>
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, LSAdvertisingNotificationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, LSAdvertisingNotificationManagerDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -115,12 +115,12 @@
             
         case 1:
             title=@"Advertising interval";
-            subTitle=[NSString stringWithFormat:@"%dms",wiBeatDeviceInfo.advertisingInterval];
+            subTitle=[NSString stringWithFormat:@"%ldms",(long)wiBeatDeviceInfo.advertisingInterval];
             break;
             
         case 2:
             title=@"Tx power";
-            subTitle=[NSString stringWithFormat:@"%ddBm",wiBeatDeviceInfo.txPowerLevel];
+            subTitle=[NSString stringWithFormat:@"%lddBm",(long)wiBeatDeviceInfo.txPowerLevel];
             break;
             
         case 3:
@@ -310,7 +310,7 @@
     [self presentViewController:actionView animated:YES completion:nil];
 }
 
--(void)showNumberDialogWithTitle:(NSString*)title message:(NSString*)message initValue:(int)initValue handler:(void (^)(int value))handler{
+-(void)showNumberDialogWithTitle:(NSString*)title message:(NSString*)message initValue:(NSInteger)initValue handler:(void (^)(int value))handler{
     UIAlertController *actionView = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [actionView addAction:[UIAlertAction actionWithTitle:@"Ok"
                                                    style:UIAlertActionStyleDefault
@@ -325,7 +325,7 @@
                                                      [actionView dismissViewControllerAnimated:YES completion:nil];
                                                  }]];
     [actionView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.text=[NSString stringWithFormat:@"%d",initValue];
+        textField.text=[NSString stringWithFormat:@"%ld",(long)initValue];
         [textField setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
     }];
     [self presentViewController:actionView animated:YES completion:nil];

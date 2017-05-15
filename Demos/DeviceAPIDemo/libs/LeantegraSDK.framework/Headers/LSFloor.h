@@ -7,23 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LSLocationObjectProtocol.h"
 
-@interface LSFloor : NSObject
-
-/**
- * Represents GeoJson data
- */
-@property (readonly) NSDictionary *geojson;
+@interface LSFloor : NSObject <LSAccessibleLocationObject>
 
 /**
  * Represents image link
  */
 @property (readonly) NSString *image;
-
-/**
- * Represents UID
- */
-@property (readonly) NSInteger uid;
 
 /**
  * Represents center coordinates
@@ -36,33 +27,9 @@
 @property (readonly) double coefficient;
 
 /**
- * Represents name
- */
-@property (readonly) NSString *name;
-
-/**
  * Represents index
  */
-@property (readonly) NSInteger index;
-
-/**
- * Represents parent
- */
-@property (readonly) NSInteger parent;
-
-/**
- * Represents access
- */
-@property (readonly) NSString *access;
-
-/**
- *  Initialise object using NSDictionary from [LSCmsClient locations:fail:] response
- *
- *  @param dictionary NSDictionary
- *
- *  @return initialized object
- */
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+@property (readonly) NSString *index;
 
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));

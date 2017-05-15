@@ -136,6 +136,11 @@
 					E73A2F1E1D006B0100727F74 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KWUHXM4MWE;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

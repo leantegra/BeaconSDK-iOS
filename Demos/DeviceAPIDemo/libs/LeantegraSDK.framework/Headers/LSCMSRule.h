@@ -35,6 +35,31 @@
 @property (readonly) NSString *notification;
 
 /**
+ *  Represents long notification text
+ */
+@property (readonly) NSString *notificationLong;
+
+/**
+ *  Represents barcode
+ */
+@property (readonly) NSString *barcode;
+
+/**
+ *  Represents Item Number
+ */
+@property (readonly) NSString *itemNumber;
+
+/**
+ *  Represents sticker
+ */
+@property (readonly) NSString *sticker;
+
+/**
+ *  Represents price
+ */
+@property (readonly) NSString *price;
+
+/**
  *  Represents rule ID
  */
 @property (readonly) NSInteger ruleId;
@@ -113,6 +138,11 @@
  If rule was already used
  */
 @property (readonly) BOOL used;
+
+/**
+ Array of categories UIDs
+ */
+@property (readonly) NSArray *categoriesUIDs;
 
 /**
  *  Initialise object using NSDictionary from [LSCmsClient allCMSRulesSuccess:fail:] or [LSCmsClient CMSRules:major:minor:proximityZone:address:success:fail:] response

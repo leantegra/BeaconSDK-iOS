@@ -14,10 +14,12 @@ Features:
 
 ### Manual installation
 
-1. Add [LeantegraSDK.framework](https://github.com/leantegra/iOSWiBeatSDK/blob/master/WiBeatSDK/LeantegraSDK.framework) into XCode project; 
-2. Add Apple's CoreLocation and Apple's CoreBlueooth frameworks into XCode project;
+1. Add [LeantegraSDK.framework](https://github.com/leantegra/iOSWiBeatSDK/blob/master/WiBeatSDK/LeantegraSDK.framework) into Xcode project; 
+2. Add Apple's CoreLocation and Apple's CoreBlueooth frameworks into Xcode project;
 3. For WiBeat Monitoring feature, add [NSLocationAlwaysUsageDescription](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) property key;
-4. For WiBeat Monitoring feature, enable "Location updates" checkbox in XCode target settings -- TARGETS/Capabilities/Background Modes.
+4. For WiBeat Monitoring feature, enable "Location updates" checkbox in Xcode target settings -- TARGETS/Capabilities/Background Modes.
+5. For WiBeat Monitoring feature, add [bluetooth-central](https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW7) property key;
+6. For WiBeat Monitoring feature, enable "Uses Bluetooth LE accessories" checkbox in Xcode target settings – TARGETS/Capabilities/Background Modes.
 
 ## How to use
 

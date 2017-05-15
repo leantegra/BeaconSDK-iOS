@@ -7,42 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LSLocationObjectProtocol.h"
 
-@interface LSZone : NSObject
-
-/**
- * Represents GeoJson data
- */
-@property (readonly) NSDictionary *geojson;
-
-/**
- * Represents UID
- */
-@property (readonly) NSInteger uid;
-
-/**
- * Represents name
- */
-@property (readonly) NSString *name;
-
-/**
- * Represents parent
- */
-@property (readonly) NSInteger parent;
-
-/**
- * Represents access
- */
-@property (readonly) NSString *access;
-
-/**
- *  Initialise object using NSDictionary from [LSCmsClient locations:fail:] response
- *
- *  @param dictionary NSDictionary
- *
- *  @return initialized object
- */
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+@interface LSZone : NSObject <LSAccessibleLocationObject>
 
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));

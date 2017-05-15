@@ -9,14 +9,7 @@
 #import <LeantegraSDK/LeantegraSDK.h>
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import <LeantegraSDK/LSWiBeatEnums.h>
-#import <LeantegraSDK/LSBeaconURL.h>
-#import <LeantegraSDK/LSBaseDeviceInfo.h>
-#import <LeantegraSDK/LSWiBeatCharacteristic.h>
-#import "LSEddystoneUIDData.h"
-#import "LSEddystoneEIDData.h"
-#import "LSEddystoneTLMData.h"
-#import "LSEddystoneURLData.h"
+
 @class LSWiBeatConnection;
 
 //Common service characteristics
@@ -84,19 +77,19 @@
 
 /**
  * Callback invoked when device established connection with WiBeat.
- * @param wiBeatConnection
+ * @param wiBeatConnection current connection
  */
 - (void)wiBeatConnectionDidConnect:(LSWiBeatConnection*)wiBeatConnection;
 
 /**
  * Callback invoked when device is disconnected from WiBeat.
- * @param wiBeatConnection
- * @param error
+ * @param wiBeatConnection current connection
+ * @param error occured error
  */
 - (void)wiBeatConnectionDidDisconnect:(LSWiBeatConnection*)wiBeatConnection error:(NSError*)error;
 
 /** Calls when code can't process correctly any method
- * @param wiBeatConnection
+ * @param wiBeatConnection current connection
  * @param wiBeatError Error code
  */
 - (void)wiBeatConnection:(LSWiBeatConnection*)wiBeatConnection didGetError:(LSWiBeatError)wiBeatError;
@@ -156,13 +149,13 @@
 
 /**
  * Callback invoked when characteristic has been successfully written.
- * @param characteristicType
+ * @param characteristicType current characteristic
  */
 - (void)wiBeatWriteCharacteristicSuccess:(LSCharacteristicType)characteristicType;
 
 /**
  * Callback invoked when characteristic writing has been failed.
- * @param characteristic
+ * @param characteristicType current characteristic
  * @param error Error code
  */
 - (void)wiBeatWriteCharacteristic:(LSCharacteristicType)characteristicType error:(LSWiBeatError)error;
@@ -283,18 +276,6 @@
  * @see CBCharacteristic
  */
 - (void)readCharacteristic:(CBCharacteristic*)characteristic delegate:(id<LSWiBeatReadCharacteristicDelegate>)newReadDelegate;
-
-/**
- * Reads battery level characteristic.
- *
- * This is an asynchronous operation. The result of the read operation is reported by the
- * [LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:] callback.
- * If error occurred, the [LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:] callback is triggered.
- * @param delegate LSWiBeatReadCharacteristicDelegate The read delegate
- * @see LSWiBeatReadCharacteristicDelegate
- * @see LSWiBeatCharacteristic
- */
-- (void)readBatteryLevel:(id<LSWiBeatReadCharacteristicDelegate>) delegate;
 
 /**
  * Reads Radio TX power characteristic.
@@ -711,7 +692,7 @@
  * @param mode New operation mode value
  * @param buttonLock New operation mode value
  * @param ledTest New operation mode value
- * @param delegate Write delegate
+ * @param newDelegate Write delegate
  * @see LSWiBeatWriteCharacteristicDelegate
  * @see OperationMode#I_BEACON I_BEACON
  * @see OperationMode#EDDYSTONE_URL EDDYSTONE_URL
@@ -719,8 +700,7 @@
  * @see OperationMode#TAG TAG
  * @since 1.3.0
  */
-- (void)writeDeviceStatusWithMode:(LSOperationMode)mode buttonLock:(BOOL)buttonLock ledTest:(BOOL)ledTest delegate:(id<LSWiBeatWriteCharacteristicDelegate>)delegate;
-
+- (void)writeDeviceStatusWithMode:(LSOperationMode)mode buttonLock:(LSSettingCapabilities)buttonLock ledTest:(LSSettingCapabilities)ledTest delegate:(id<LSWiBeatWriteCharacteristicDelegate>)newDelegate;
 /**
  * Write active slot characteristic.
  * <p>
@@ -769,8 +749,8 @@
  * Once the write operation has been completed successfully, the
  * [LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:] callback is invoked,
  * otherwise [LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:] callback is triggered.
- * @param nid 
- * @param bid
+ * @param nid nid data for advertisement frames
+ * @param bid bid data for advertisement frames
  * @param delegate Write delegate
  * @see LSWiBeatWriteCharacteristicDelegate
  * @since 1.3.0
@@ -784,7 +764,7 @@
  * Once the write operation has been completed successfully, the
  * [LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:] callback is invoked,
  * otherwise [LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:] callback is triggered.
- * @param URL
+ * @param url url for advertisement frames
  * @param delegate Write delegate
  * @see LSWiBeatWriteCharacteristicDelegate
  * @since 1.3.0
@@ -798,8 +778,8 @@
  * Once the write operation has been completed successfully, the
  * [LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:] callback is invoked,
  * otherwise [LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:] callback is triggered.
- * @param identity key
- * @param exponent
+ * @param identityKey key 16-byte encrypted Identify key array
+ * @param exponent exponent
  * @param delegate Write delegate
  * @see LSWiBeatWriteCharacteristicDelegate
  * @since 1.3.0

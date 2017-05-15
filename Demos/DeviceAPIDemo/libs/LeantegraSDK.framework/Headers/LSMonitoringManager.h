@@ -73,6 +73,9 @@
 @optional
 - (void)monitoringManager:(LSMonitoringManager*)manager didExitServiceRegion:(CLRegion*)region;
 
+@optional
+- (void)monitoringManager:(LSMonitoringManager *)manager didRangeBeacons:(NSArray<CLBeacon *> *)beacons;
+
 @end
 
 
@@ -129,6 +132,13 @@
  *  @param delegate LSMonitoringManagerDelegate
  */
 - (void)addDelegate:(id<LSMonitoringManagerDelegate>)delegate;
+
+/**
+ *  Removes the delegate
+ *
+ *  @param delegate LSMonitoringManagerDelegate
+ */
+- (void)removeDelegate:(id<LSMonitoringManagerDelegate>)delegate;
 
 /**
  *  Add and start region for monitoring. If the region with the same identifier exists, new region will replace it

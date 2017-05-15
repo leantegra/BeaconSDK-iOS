@@ -73,7 +73,7 @@ struct LSAdvDataStruct
  @return Operation mode represented by characteristic.
  @see LSCharacteristicType
  */
-@property LSOperationMode operationMode;
+@property (readonly) LSOperationMode operationMode;
 
 
 @property NSData *data;
@@ -85,7 +85,7 @@ struct LSAdvDataStruct
  * @return Device status represented by characteristic.
  * @since 1.3.0
  */
-@property LSDeviceStatus *deviceStatus;
+@property (readonly) LSDeviceStatus *deviceStatus;
 
 /**
  * Return the device capabilities represented by characteristic.
@@ -95,7 +95,7 @@ struct LSAdvDataStruct
  * @return Device capabilities represented by characteristic.
  * @since 1.3.0
  */
-@property LSCapabilities *capabilities;
+@property (readonly) LSCapabilities *capabilities;
 
 /**
  * Returns Eddystone ADV slot data

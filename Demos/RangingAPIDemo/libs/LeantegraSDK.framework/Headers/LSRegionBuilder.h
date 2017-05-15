@@ -35,25 +35,24 @@
  *  <p>
  *  If MAC address is set, this region will be monitored only in foreground mode
  */
-- (NSArray<NSString*>*)addresses;
+- (nullable NSArray<NSString *> *)addresses;
 
 /**
  *  Returns list of beacons
  */
-- (NSArray<CLBeaconRegion*>*)beacons;
+- (nullable NSArray<CLBeaconRegion *> *)beacons;
 
 /**
  *  Initialize LSRegionBuilder object
  *
- *  @param proximityUUID NSUUID
  *  @param identifier    NSString
  *
  *  @return id LSRegionBuilder
  */
-- (id)initWithIdentifier:(nonnull NSString*)identifier;
+- (nullable instancetype)initWithIdentifier:(nonnull NSString *)identifier;
 
 ///Must use initWithIdentifier: instead.
-- (id) init __attribute__((unavailable("Must use initWithIdentifier instead.")));
+- (nullable instancetype)init __attribute__((unavailable("Must use initWithIdentifier instead.")));
 
 /**
    Receive MAC address in format XX:XX:XX:XX:XX:XX and add it into addresses
@@ -72,11 +71,11 @@
  *  @param minor NSNumber could be nil
  
  */
-- (void)addBeaconByUUID:(nonnull NSUUID*)uuid major:(nullable NSNumber*)major minor:(nullable NSNumber*)minor;
+- (void)addBeaconByUUID:(nonnull NSUUID *)uuid major:(nullable NSNumber *)major minor:(nullable NSNumber *)minor;
 
 /**
  * Initialise LSRegion object
  */
-- (LSRegion*)build;
+- (LSRegion *_Nullable)build;
 
 @end

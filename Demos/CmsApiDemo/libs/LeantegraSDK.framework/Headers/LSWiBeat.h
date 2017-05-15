@@ -7,38 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LSLocationObjectProtocol.h"
 
-@interface LSWiBeat : NSObject
-
-/**
- * Represents GeoJson data
- */
-@property (readonly) NSDictionary *geojson;
-
-/**
- * Represents name
- */
-@property (readonly) NSString *name;
-
-/**
- * Represents parent
- */
-@property (readonly) NSInteger parent;
-
-/**
- * Represents uid
- */
-@property (readonly) NSInteger uid;
+@interface LSWiBeat : NSObject <LSLocationObject>
 
 /**
  * Represents major
  */
-@property (readonly) NSInteger major;
+@property (readonly) NSNumber *major;
 
 /**
  * Represents minor
  */
-@property (readonly) NSInteger minor;
+@property (readonly) NSNumber *minor;
 
 /**
  * Represents uuid
@@ -50,14 +31,6 @@
  */
 @property (readonly) NSString *mac;
 
-/**
- *  Initialise object using NSDictionary from [LSCmsClient devices:fail:] response
- *
- *  @param dictionary NSDictionary
- *
- *  @return initialized object
- */
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));

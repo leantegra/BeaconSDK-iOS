@@ -24,8 +24,11 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This application requires location services to work</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This application requires Bluetooth services for monitoring proximity zones</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>bluetooth-central</string>
 		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -41,6 +44,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 </dict>
 </plist>

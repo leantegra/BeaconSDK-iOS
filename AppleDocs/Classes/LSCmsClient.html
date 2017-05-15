@@ -60,6 +60,8 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/categories:fail:">- categories:fail:</option>
+		
 		<option value="//api/name/contentRawCallback:fail:">- contentRawCallback:fail:</option>
 		
 		<option value="//api/name/contentSuccess:fail:">- contentSuccess:fail:</option>
@@ -68,7 +70,11 @@
 		
 		<option value="//api/name/locations:fail:">- locations:fail:</option>
 		
+		<option value="//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:">- sendCSVProximityAnalytics:attemptsCount:success:fail:</option>
+		
 		<option value="//api/name/sendDelivery:channel:success:fail:">- sendDelivery:channel:success:fail:</option>
+		
+		<option value="//api/name/sendJSONProximityAnalytics:attemptsCount:success:fail:">- sendJSONProximityAnalytics:attemptsCount:success:fail:</option>
 		
 		<option value="//api/name/sendUsage:channel:success:fail:">- sendUsage:channel:success:fail:</option>
 		
@@ -141,7 +147,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)contentSuccess:(void ( ^ ) ( LSContent *))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentSuccess:(void ( ^ _Nonnull ) ( LSContent *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -182,7 +188,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)contentRawCallback:(void ( ^ ) ( id _Nonnull responseObject ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentRawCallback:(void ( ^ _Nonnull ) ( id _Nonnull responseObject ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -223,7 +229,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSArray&lt;NSNumber*&gt; *)<em>rulesIds</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -291,7 +297,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSArray&lt;NSNumber*&gt; *)<em>rulesIds</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -359,7 +365,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendUsage:(NSArray&lt;NSNumber*&gt; *)<em>rulesIds</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendUsage:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -427,7 +433,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)devices:(void ( ^ ) ( NSArray&lt;LSWiBeat*&gt; *))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)devices:(void ( ^ _Nonnull ) ( NSArray&lt;LSWiBeat*&gt; *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -485,7 +491,201 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)locations:(void ( ^ ) ( LSLocations *))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)locations:(void ( ^ _Nonnull ) ( LSLocations *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:" title="sendCSVProximityAnalytics:attemptsCount:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:">&ndash;&nbsp;sendCSVProximityAnalytics:attemptsCount:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends Proximity analytics to CMS server in CSV format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendCSVProximityAnalytics:(nonnull NSData *)<em>proximityEvents</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>proximityEvents</code></th>
+						<td><p>UTF-8 encoded CSV events representations</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>how many tries should be performed before failCallback call</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendJSONProximityAnalytics:attemptsCount:success:fail:" title="sendJSONProximityAnalytics:attemptsCount:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendJSONProximityAnalytics:attemptsCount:success:fail:">&ndash;&nbsp;sendJSONProximityAnalytics:attemptsCount:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends Proximity analytics to CMS server in JSON format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendJSONProximityAnalytics:(nonnull NSArray&lt;NSDictionary*&gt; *)<em>proximityEvents</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>proximityEvents</code></th>
+						<td><p>array of dictionaries events representation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>how many tries should be performed before failCallback call</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/categories:fail:" title="categories:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/categories:fail:">&ndash;&nbsp;categories:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns LSCategories info from CMS server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)categories:(void ( ^ _Nonnull ) ( NSArray&lt;LSCategory*&gt; *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
@@ -541,7 +741,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-03-14</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-05-10</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

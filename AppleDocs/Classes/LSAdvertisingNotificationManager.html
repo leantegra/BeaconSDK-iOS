@@ -70,6 +70,8 @@
 		
 		<option value="//api/name/cmsRuleById:">- cmsRuleById:</option>
 		
+		<option value="//api/name/cmsRuleWithOptions:">- cmsRuleWithOptions:</option>
+		
 		<option value="//api/name/devices:fail:">- devices:fail:</option>
 		
 		<option value="//api/name/initWithNotification:">- initWithNotification:</option>
@@ -187,7 +189,7 @@ region events. Also uses <a href="../Classes/LSCmsClient.html">LSCmsClient</a> t
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;LSAdvertisingNotificationManagerDelegate&gt; delegate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;LSAdvertisingNotificationManagerDelegate&gt; delegate</code></div>
 
 		    
 			
@@ -371,7 +373,8 @@ Also if you want to send view statistic to CMS, you must call the sendViewCMSRul
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Downloads and save in cache content from CMS server</p>
+				<p>Downloads and save in cache content from CMS server.
+Concrete, initiates the &ldquo;content&rdquo; and &ldquo;categories&rdquo; requests to CVO portal.</p>
 			</div>
 			
 		    
@@ -387,7 +390,7 @@ Also if you want to send view statistic to CMS, you must call the sendViewCMSRul
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
 						<td><ul>
-<li>block, that is called with optionally passed error, if any occured while loading</li>
+<li>block, that is called with optionally passed error, if any occured while requests loading</li>
 </ul>
 </td>
 					</tr>
@@ -473,7 +476,7 @@ Also if you want to send view statistic to CMS, you must call the sendViewCMSRul
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendUsageCMSRules:(NSArray&lt;LSCMSRule*&gt; *)<em>cmsRules</em> channel:(NSString *)<em>channel</em> success:(void ( ^ ) ( void ))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendUsageCMSRules:(NSArray&lt;LSCMSRule*&gt; *)<em>cmsRules</em> channel:(NSString *)<em>channel</em> success:(void ( ^ _Nullable ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nullable ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -602,7 +605,7 @@ SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification i
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (LSCMSRule *)cmsRuleById:(NSNumber *)<em>ruleId</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable LSCMSRule *)cmsRuleById:(NSNumber *)<em>ruleId</em></code></div>
 
 		    
 			
@@ -644,6 +647,59 @@ SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification i
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/cmsRuleWithOptions:" title="cmsRuleWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cmsRuleWithOptions:">&ndash;&nbsp;cmsRuleWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns LSCMSRule* by giving options</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;LSCMSRule*&gt; *)cmsRuleWithOptions:(NSDictionary *_Nullable)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>See Options Keys for supported options and values</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSAdvertisingNotificationManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/devices:fail:" title="devices:fail:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/devices:fail:">&ndash;&nbsp;devices:fail:</a></code>
 </h3>
@@ -660,7 +716,7 @@ SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification i
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)devices:(void ( ^ ) ( NSArray&lt;LSWiBeat*&gt; *))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)devices:(void ( ^ _Nullable ) ( NSArray&lt;LSWiBeat*&gt; *))<em>successfulCallback</em> fail:(void ( ^ _Nullable ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -718,7 +774,7 @@ SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification i
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)locations:(void ( ^ ) ( LSLocations *))<em>successfulCallback</em> fail:(void ( ^ ) ( NSError *))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)locations:(void ( ^ _Nullable ) ( LSLocations *))<em>successfulCallback</em> fail:(void ( ^ _Nullable ) ( NSError *))<em>failCallback</em></code></div>
 
 		    
 			
@@ -1024,7 +1080,7 @@ SDK generate &ldquo;LSCMSRulesCacheContentWasChanged&rdquo; local notification i
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-03-14</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-05-10</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

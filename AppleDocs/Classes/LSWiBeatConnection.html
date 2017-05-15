@@ -98,8 +98,6 @@
 		
 		<option value="//api/name/readAdvertisingInterval:">- readAdvertisingInterval:</option>
 		
-		<option value="//api/name/readBatteryLevel:">- readBatteryLevel:</option>
-		
 		<option value="//api/name/readCapabilities:">- readCapabilities:</option>
 		
 		<option value="//api/name/readCharacteristic:delegate:">- readCharacteristic:delegate:</option>
@@ -823,77 +821,6 @@ If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.
 
 			
 
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/readBatteryLevel:" title="readBatteryLevel:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/readBatteryLevel:">&ndash;&nbsp;readBatteryLevel:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Reads battery level characteristic.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)readBatteryLevel:(id&lt;LSWiBeatReadCharacteristicDelegate&gt;)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a> The read delegate</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This is an asynchronous operation. The result of the read operation is reported by the
-<a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristicSuccess:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristicSuccess:]</a> callback.
-If error occurred, the <a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html#//api/name/wiBeatReadCharacteristic:error:">[LSWiBeatReadCharacteristicDelegate wiBeatReadCharacteristic:error:]</a> callback is triggered.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></p></code></li>
-					
-					<li><code><p><a href="../Classes/LSWiBeatCharacteristic.html">LSWiBeatCharacteristic</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
@@ -3211,7 +3138,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)writeDeviceStatusWithMode:(LSOperationMode)<em>mode</em> buttonLock:(BOOL)<em>buttonLock</em> ledTest:(BOOL)<em>ledTest</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)writeDeviceStatusWithMode:(LSOperationMode)<em>mode</em> buttonLock:(LSSettingCapabilities)<em>buttonLock</em> ledTest:(LSSettingCapabilities)<em>ledTest</em> delegate:(id&lt;LSWiBeatWriteCharacteristicDelegate&gt;)<em>newDelegate</em></code></div>
 
 		    
 			
@@ -3235,7 +3162,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<th scope="row" class="argument-name"><code>newDelegate</code></th>
 						<td><p>Write delegate</p></td>
 					</tr>
 				
@@ -3523,9 +3450,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
 <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.
-@param nid
-@param bid</p>
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
@@ -3537,6 +3462,16 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>nid</code></th>
+						<td><p>nid data for advertisement frames</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bid</code></th>
+						<td><p>bid data for advertisement frames</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
@@ -3598,8 +3533,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 This is an asynchronous operation.
 Once the write operation has been completed successfully, the
 <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristicSuccess:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristicSuccess:]</a> callback is invoked,
-otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.
-@param URL</p>
+otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/name/wiBeatWriteCharacteristic:error:">[LSWiBeatWriteCharacteristicDelegate wiBeatWriteCharacteristic:error:]</a> callback is triggered.</p>
 			</div>
 			
 		    
@@ -3611,6 +3545,11 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>url for advertisement frames</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
@@ -3686,14 +3625,18 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>Write delegate</p></td>
+						<th scope="row" class="argument-name"><code>identityKey</code></th>
+						<td><p>key 16-byte encrypted Identify key array</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>identity</code></th>
-						<td><p>key
-@param exponent</p></td>
+						<th scope="row" class="argument-name"><code>exponent</code></th>
+						<td><p>exponent</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Write delegate</p></td>
 					</tr>
 				
 				</table>
@@ -3899,7 +3842,7 @@ otherwise <a href="../Protocols/LSWiBeatWriteCharacteristicDelegate.html#//api/n
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-03-14</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-05-10</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -12,18 +12,24 @@
 #define kLSNotificationsList @"LSNotificationsList"
 #define LSLocalNotificationDefaultSoundName @"LSLocalNotificationDefaultSoundName"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LSLocalNotification : NSObject
 
 /**
- Returns YES in callback if notifications for this rule haven't fired yet, or from last showing to user this rule
- */
-- (void)showWithCMSRule:(LSCMSRule*)cmsRule callback:(void (^)(BOOL))callback;
+    Schedules notification showing with UNUserNotificationCenter / UILocalNotification system API
+    @param cmsRule Rule to show
+    @param callback Passing YES as success argument in callback if notifications for this rule haven't fired yet, or from last showing to user this rule. If notification not successfully scheduled, NO as success argument with optional error argument (if any) will be passed to the callback.
+*/
+- (void)showWithCMSRule:(LSCMSRule *)cmsRule callback:(void (^)(BOOL success, NSError *error))callback;
 
-@property NSString* soundName;
+@property (nullable) NSString *soundName;
 
-@property NSString* title;
+@property (nullable) NSString *title;
 
 //Only for versions iOS older 10
 + (void)removeNotificationForRuleId:(NSInteger)ruleId;
+
+NS_ASSUME_NONNULL_END
 
 @end

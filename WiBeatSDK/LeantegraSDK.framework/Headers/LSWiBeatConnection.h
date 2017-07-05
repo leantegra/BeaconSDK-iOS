@@ -210,7 +210,7 @@
 @property NSNumber *scanInterval;
 
 /** MAC address of peripheral*/
-@property NSString *deviceMACAddress;
+@property (readonly) NSString *deviceMACAddress;
 
 /** Bounded peripheral*/
 @property CBPeripheral *peripheral;
@@ -241,6 +241,13 @@
  */
 - (BOOL)isConnected;
 
+#pragma mark - Lock
+
+/**
+ * Returns WiBeat GATT Lock Code
+ */
+- (CBUUID *)GATTLockCode;
+
 /**
  * Lock WiBeat with the same key
  */
@@ -258,8 +265,9 @@
 
 /**
  *  Unlock WiBeat
+ *  lockCode should be not nil
  */
-- (void)unlockWithLockCode:(NSUUID*)lockCode delegate:(id<LSWiBeatWriteCharacteristicDelegate>)delegate;
+- (void)unlockWithLockCode:(CBUUID *)lockCode delegate:(id<LSWiBeatWriteCharacteristicDelegate>)delegate;
 
 #pragma mark - Read
 

@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LSFloor.h"
-#import "LSZone.h"
-#import "LSPassage.h"
+#import <MapKit/MapKit.h>
 
-@class LSVenuePlanView;
+@class LSFloor, LSPassage, LSZone, LSRouteRequest, LSRoute, LSVenuePlanView;
 
 extern NSInteger const kLSNoFloorsDataVenuePlanError;
 
+typedef NS_ENUM(NSUInteger, LSVenuePlanSourceType) {
+    LSVenuePlanSourceDefault,
+    LSVenuePlanSourceGeoJSON,
+    LSVenuePlanSourceOSM,
+    LSVenuePlanSourceMixed
+};
+
 typedef NS_OPTIONS(NSUInteger, LSVenuePlanPaintingLayerOptions) {
-    LSVenuePlanFloorImageLayer = (1 << 0), // Not Implemented yet
+    LSVenuePlanFloorImageLayer = (1 << 0),
     LSVenuePlanFloorShapeLayer = (1 << 1),
     LSVenuePlanZoneShapeLayer = (1 << 2),
     LSVenuePlanPassageShapeLayer = (1 << 3),
@@ -25,7 +30,7 @@ typedef NS_OPTIONS(NSUInteger, LSVenuePlanPaintingLayerOptions) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LSVenuePlanViewDelegate <NSObject>
+@protocol LSVenuePlanViewDelegate <MKMapViewDelegate>
 
 /**
  * Specifies the layers, that should be displayed on the Venue Plan.
@@ -33,16 +38,39 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (LSVenuePlanPaintingLayerOptions)displayingOptionsForVenuePlanView:(LSVenuePlanView *)venuePlanView;
 
+/**
+ * Informs delegate about the completed route request.
+ */
+- (void)venuePlanView:(LSVenuePlanView *)venuePlanView didPerformRouteRequest:(LSRouteRequest *)routeRequest result:(nullable LSRoute *)route error:(nullable NSError *)error;
+
 @optional
 
 /**
  * Indicates, when Venue Plan did finish load from it's cache or is updated from CVO Portal.
  * Select the floor to display here.
+ * You should rely on this callback instead of MKMapViewDelegate methods:
+ * -[id<MKMapViewDelegate> mapViewWillStartLoadingMap:]
+ * -[id<MKMapViewDelegate> mapViewDidFinishLoadingMap:]
+ * -[id<MKMapViewDelegate> mapViewDidFailLoadingMap:withError:]
+ * -[id<MKMapViewDelegate> mapViewDidFinishRenderingMap:fullyRendered:]
  */
 - (void)didUpdateVenuePlanView:(LSVenuePlanView *)venuePlanView error:(nullable NSError *)error;
 
+/**
+ * When userLocation == YES, this will be called on user location update (normally, once per 1 sec.).
+ * You should rely on this callback instead of MKMapViewDelegate methods:
+ * -[id<MKMapViewDelegate> mapView:didUpdateUserLocation:]
+ * -[id<MKMapViewDelegate> mapView:didFailToLocateUserWithError:]
+ * @param location CLLocation object with user's longitude and altitude
+ * @param error Any error during the locating of user
+ */
+- (void)didUpdateUserLocation:(nullable CLLocation *)location error:(nullable NSError *)error;
+
 // Offer image
 - (UIImage *)imageForOfferID:(NSNumber *)offerID;
+
+// User image
+- (UIImage *)imageForUser;
 
 // Venue objects colors
 - (UIColor *)fillColorForFloor:(LSFloor *)floor;
@@ -60,25 +88,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface LSVenuePlanView : UIView
+@interface LSVenuePlanView : MKMapView
 
 @property (nullable, nonatomic, weak) id<LSVenuePlanViewDelegate> delegate;
 
 /**
- * A Boolean indicating whether the map displays a compass control.
- * Use this property to show or hide the control that lets users change the heading orientation of the map.
- * The default value of this property is NO.
-  */
-@property (nonatomic, assign) BOOL showsCompass;
-
-/**
- * A Boolean indicating whether the map shows scale information.
- * The default value of this property is NO.
+ * By default LSVenuePlanSourceGeoJSON will be used.
+ * For LSVenuePlanSourceGeoOSM, make sure that OSMData has valid OSM XML data.
  */
-@property (nonatomic, assign) BOOL showsScale;
+@property (nonatomic, assign) LSVenuePlanSourceType sourceType;
 
 /**
- * Returns current floor for venue. To change the floor, use <code>-[LSVenuePlanView setFloor:animatable:]</code>
+ * NSUTF8StringEncoding XML data of OSM venue representation.
+ */
+@property (nonatomic, assign) NSData *OSMData;
+
+/**
+ * Returns current floor for venue. To change the floor, use <code>-[LSVenuePlanView setFloor:]</code> and then call
+ * -[LSVenuePlanView redisplayVenuePlanAnimated:] or -[LSVenuePlanView reloadData]
  */
 @property (nullable, nonatomic, readonly) LSFloor *currentFloor;
 
@@ -86,6 +113,22 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns the list of venue's floors sorted by it's index.
  */
 @property (nullable, nonatomic, readonly) NSArray <LSFloor *> *floors;
+
+/**
+ * Indicates, if route request is scheduled.
+ */
+@property (nonatomic, assign, readonly) BOOL isRouteRequested;
+
+/**
+ * Set to YES to add the user location annotation to the venue plan and start updating its location. Location updates are performed by using Multilateration algorithm on visible WiBeats.
+ * If not enough WiBeats are visible for locating the user, error code -2003 will be passed to -[id<LSVenuePlanViewDelegate> didUpdateUserLocation:error:] delegate callback and value of this property becomes NO
+**/
+@property (nonatomic) BOOL showsUserLocation;
+
+/**
+ * The annotation representing the user's location
+**/
+@property (nonatomic, readonly) MKUserLocation *userLocation;
 
 /**
  * Use this method for setting the floor to display
@@ -111,13 +154,26 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Causes the loading of current venue data from cache and redisplays the Venue Plan.
  * When finish, -[didUpdateVenuePlanView: error:] delegate method is called
+ * @param animated If YES, animates redisplaying by changing the opacity
+ * @param resetCamera If YES, changes the visible region of the map to fit the whole floor or offers rect, that were selected via -[LSVenuePlanView setOffers:] method. Also sets the max and min camera altitude. You should pass YES as the argument at the initial venue plan setup. If NO, no camera updates will be occured.
  */
-- (void)redisplayVenuePlanAnimated:(BOOL)animated;
+- (void)redisplayVenuePlanAnimated:(BOOL)animated resetCamera:(BOOL)resetCamera;
 
 /**
  * Indicates, if venue is cached.
  */
 - (BOOL)hasCachedVenuePlan;
+
+/**
+ * Schedules a route request in background.
+ * When complete, calls the -[id<LSVenuePlanViewDelegate> venuePlanView:didPerformRouteRequest:result:error:]
+ */
+- (void)performRouteRequest:(LSRouteRequest *)routeRequest;
+
+/**
+ * Declines the scheduled route request.
+ */
+- (void)cancelRouteRequest;
 
 NS_ASSUME_NONNULL_END
 

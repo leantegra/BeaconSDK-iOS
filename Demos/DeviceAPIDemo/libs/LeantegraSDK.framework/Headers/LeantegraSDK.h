@@ -40,6 +40,12 @@
 #import "LSiBeaconDeviceInfo.h"
 
 #import "LSVenuePlanView.h"
+#import "LSRoutePoint.h"
+#import "LSRouteRequest.h"
+
+#import "LSActivityLogger.h"
+
+#import "LSRoute.h"
 
 //! Project version number for LeantegraSDK.
 FOUNDATION_EXPORT double LeantegraSDKVersionNumber;
@@ -48,6 +54,8 @@ FOUNDATION_EXPORT double LeantegraSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char LeantegraSDKVersionString[];
 
 extern NSString *_Nonnull const kLeantegraSDKErrorDomain;
+
+extern NSString *_Nonnull const kLeantegraSDKErrorDescription;
 
 /**
  *  Represents proximity UUID string value
@@ -114,6 +122,11 @@ static NSString *_Nonnull defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b
  Drops CoreData storage and SDK-related keys from UserDefaults
 */
 + (void)clearStorage;
+
+/**
+ A dictionary representation of CoreData storage
+*/
++ (nullable NSArray <NSDictionary *> *)storageDump;
 
 /**
  Returns SDK version value

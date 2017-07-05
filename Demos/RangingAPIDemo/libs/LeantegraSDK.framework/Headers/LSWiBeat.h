@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "LSLocationObjectProtocol.h"
 
 @interface LSWiBeat : NSObject <LSLocationObject>
@@ -31,6 +32,10 @@
  */
 @property (readonly) NSString *mac;
 
+/**
+ * Represents latitude and longitude of WiBeat
+ */
+@property (nonatomic, strong, readonly) CLLocation *location;
 
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));

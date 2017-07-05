@@ -39,7 +39,9 @@ typedef NS_ENUM(NSInteger, LSWiBeatError) {
     /**Can't find device with this MAC address.*/
     ERROR_CONNECTION_DEVICE_NOT_FOUND,
     /**Unknown error.*/
-    ERROR
+    ERROR,
+    /**Unlock operation failed.*/
+    ERROR_UNLOCK
 };
 
 /**

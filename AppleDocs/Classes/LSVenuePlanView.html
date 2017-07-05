@@ -54,13 +54,19 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/OSMData">OSMData</option>
+		
 		<option value="//api/name/currentFloor">currentFloor</option>
 		
 		<option value="//api/name/floors">floors</option>
 		
-		<option value="//api/name/showsCompass">showsCompass</option>
+		<option value="//api/name/isRouteRequested">isRouteRequested</option>
 		
-		<option value="//api/name/showsScale">showsScale</option>
+		<option value="//api/name/showsUserLocation">showsUserLocation</option>
+		
+		<option value="//api/name/sourceType">sourceType</option>
+		
+		<option value="//api/name/userLocation">userLocation</option>
 		
 	</optgroup>
 	
@@ -70,9 +76,13 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/cancelRouteRequest">- cancelRouteRequest</option>
+		
 		<option value="//api/name/hasCachedVenuePlan">- hasCachedVenuePlan</option>
 		
-		<option value="//api/name/redisplayVenuePlanAnimated:">- redisplayVenuePlanAnimated:</option>
+		<option value="//api/name/performRouteRequest:">- performRouteRequest:</option>
+		
+		<option value="//api/name/redisplayVenuePlanAnimated:resetCamera:">- redisplayVenuePlanAnimated:resetCamera:</option>
 		
 		<option value="//api/name/reloadData">- reloadData</option>
 		
@@ -101,7 +111,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>UIView</td>
+	<td>MKMapView</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>LSVenuePlanView.h<br />LSVenuePlanView.m</td>
@@ -122,8 +132,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/showsCompass" title="showsCompass"></a>
-	<h3 class="method-title"><code><a href="#//api/name/showsCompass">&nbsp;&nbsp;showsCompass</a></code>
+	<a name="//api/name/sourceType" title="sourceType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceType">&nbsp;&nbsp;sourceType</a></code>
 </h3>
 
 	<div class="method-info">
@@ -133,14 +143,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A Boolean indicating whether the map displays a compass control.
-Use this property to show or hide the control that lets users change the heading orientation of the map.
-The default value of this property is NO.</p>
+				<p>By default LSVenuePlanSourceGeoJSON will be used.
+For LSVenuePlanSourceGeoOSM, make sure that <a href="#//api/name/OSMData">OSMData</a> has valid OSM XML data.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL showsCompass</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) LSVenuePlanSourceType sourceType</code></div>
 
 		    
 			
@@ -165,8 +174,8 @@ The default value of this property is NO.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/showsScale" title="showsScale"></a>
-	<h3 class="method-title"><code><a href="#//api/name/showsScale">&nbsp;&nbsp;showsScale</a></code>
+	<a name="//api/name/OSMData" title="OSMData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/OSMData">&nbsp;&nbsp;OSMData</a></code>
 </h3>
 
 	<div class="method-info">
@@ -176,13 +185,12 @@ The default value of this property is NO.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A Boolean indicating whether the map shows scale information.
-The default value of this property is NO.</p>
+				<p>NSUTF8StringEncoding XML data of OSM venue representation.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL showsScale</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSData *OSMData</code></div>
 
 		    
 			
@@ -218,7 +226,8 @@ The default value of this property is NO.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns current floor for venue. To change the floor, use <code>[LSVenuePlanView setFloor:animatable:]</code></p>
+				<p>Returns current floor for venue. To change the floor, use <code><a href="#//api/name/setFloor:">[LSVenuePlanView setFloor:]</a></code> and then call
+[LSVenuePlanView redisplayVenuePlanAnimated:] or <a href="#//api/name/reloadData">[LSVenuePlanView reloadData]</a></p>
 			</div>
 			
 		    
@@ -265,6 +274,130 @@ The default value of this property is NO.</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSArray&lt;LSFloor*&gt; *floors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isRouteRequested" title="isRouteRequested"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isRouteRequested">&nbsp;&nbsp;isRouteRequested</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates, if route request is scheduled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL isRouteRequested</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showsUserLocation" title="showsUserLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showsUserLocation">&nbsp;&nbsp;showsUserLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set to YES to add the user location annotation to the venue plan and start updating its location. Location updates are performed by using Multilateration algorithm on visible WiBeats.
+If not enough WiBeats are visible for locating the user, error code -2003 will be passed to [id<LSVenuePlanViewDelegate> didUpdateUserLocation:error:] delegate callback and value of this property becomes NO</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL showsUserLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/userLocation" title="userLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userLocation">&nbsp;&nbsp;userLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The annotation representing the user&rsquo;s location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MKUserLocation *userLocation</code></div>
 
 		    
 			
@@ -418,8 +551,8 @@ When finish, [didUpdateVenuePlanView: error:] delegate method is called</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/redisplayVenuePlanAnimated:" title="redisplayVenuePlanAnimated:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/redisplayVenuePlanAnimated:">&ndash;&nbsp;redisplayVenuePlanAnimated:</a></code>
+	<a name="//api/name/redisplayVenuePlanAnimated:resetCamera:" title="redisplayVenuePlanAnimated:resetCamera:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/redisplayVenuePlanAnimated:resetCamera:">&ndash;&nbsp;redisplayVenuePlanAnimated:resetCamera:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -435,9 +568,26 @@ When finish, [didUpdateVenuePlanView: error:] delegate method is called</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)redisplayVenuePlanAnimated:(BOOL)<em>animated</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)redisplayVenuePlanAnimated:(BOOL)<em>animated</em> resetCamera:(BOOL)<em>resetCamera</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>If YES, animates redisplaying by changing the opacity</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resetCamera</code></th>
+						<td><p>If YES, changes the visible region of the map to fit the whole floor or offers rect, that were selected via <a href="#//api/name/setOffers:">[LSVenuePlanView setOffers:]</a> method. Also sets the max and min camera altitude. You should pass YES as the argument at the initial venue plan <a href="#//api/name/setup">setup</a>. If NO, no camera updates will be occured.</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -500,6 +650,89 @@ When finish, [didUpdateVenuePlanView: error:] delegate method is called</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRouteRequest:" title="performRouteRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRouteRequest:">&ndash;&nbsp;performRouteRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Schedules a route request in background.
+When complete, calls the [id<LSVenuePlanViewDelegate> venuePlanView:didPerformRouteRequest:result:error:]</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)performRouteRequest:(LSRouteRequest *)<em>routeRequest</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelRouteRequest" title="cancelRouteRequest"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelRouteRequest">&ndash;&nbsp;cancelRouteRequest</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Declines the scheduled route request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelRouteRequest</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -515,7 +748,7 @@ When finish, [didUpdateVenuePlanView: error:] delegate method is called</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-07-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

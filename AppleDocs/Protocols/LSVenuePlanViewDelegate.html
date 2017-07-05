@@ -58,9 +58,13 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/didUpdateUserLocation:error:">- didUpdateUserLocation:error:</option>
+		
 		<option value="//api/name/didUpdateVenuePlanView:error:">- didUpdateVenuePlanView:error:</option>
 		
 		<option value="//api/name/displayingOptionsForVenuePlanView:">- displayingOptionsForVenuePlanView:</option>
+		
+		<option value="//api/name/venuePlanView:didPerformRouteRequest:result:error:">- venuePlanView:didPerformRouteRequest:result:error:</option>
 		
 	</optgroup>
 	
@@ -83,7 +87,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Conforms to</th>
-	<td>NSObject</td>
+	<td>MKMapViewDelegate</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>LSVenuePlanView.h</td>
@@ -146,6 +150,47 @@ Look for <code>LSVenuePlanPaintingLayerOptions</code> for supported options.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/venuePlanView:didPerformRouteRequest:result:error:" title="venuePlanView:didPerformRouteRequest:result:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/venuePlanView:didPerformRouteRequest:result:error:">&ndash;&nbsp;venuePlanView:didPerformRouteRequest:result:error:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs delegate about the completed route request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)venuePlanView:(LSVenuePlanView *)<em>venuePlanView</em> didPerformRouteRequest:(LSRouteRequest *)<em>routeRequest</em> result:(nullable LSRoute *)<em>route</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/didUpdateVenuePlanView:error:" title="didUpdateVenuePlanView:error:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/didUpdateVenuePlanView:error:">&ndash;&nbsp;didUpdateVenuePlanView:error:</a></code>
 </h3>
@@ -158,7 +203,12 @@ Look for <code>LSVenuePlanPaintingLayerOptions</code> for supported options.</p>
 			
 			<div class="method-subsection brief-description">
 				<p>Indicates, when Venue Plan did finish load from it&rsquo;s cache or is updated from CVO Portal.
-Select the floor to display here.</p>
+Select the floor to display here.
+You should rely on this callback instead of MKMapViewDelegate methods:
+[id<MKMapViewDelegate> mapViewWillStartLoadingMap:]
+[id<MKMapViewDelegate> mapViewDidFinishLoadingMap:]
+[id<MKMapViewDelegate> mapViewDidFailLoadingMap:withError:]
+[id<MKMapViewDelegate> mapViewDidFinishRenderingMap:fullyRendered:]</p>
 			</div>
 			
 		    
@@ -166,6 +216,67 @@ Select the floor to display here.</p>
 			<div class="method-subsection method-declaration"><code>- (void)didUpdateVenuePlanView:(LSVenuePlanView *)<em>venuePlanView</em> error:(nullable NSError *)<em>error</em></code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenuePlanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didUpdateUserLocation:error:" title="didUpdateUserLocation:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didUpdateUserLocation:error:">&ndash;&nbsp;didUpdateUserLocation:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When userLocation == YES, this will be called on user location update (normally, once per 1 sec.).
+You should rely on this callback instead of MKMapViewDelegate methods:
+[id<MKMapViewDelegate> mapView:didUpdateUserLocation:]
+[id<MKMapViewDelegate> mapView:didFailToLocateUserWithError:]</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didUpdateUserLocation:(nullable CLLocation *)<em>location</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>location</code></th>
+						<td><p>CLLocation object with user&rsquo;s longitude and altitude</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Any error during the locating of user</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -202,7 +313,7 @@ Select the floor to display here.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-07-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

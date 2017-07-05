@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSCMSRulesCache Class Reference</title>
+	<title>LSRTLSManager Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -58,15 +58,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/init">- init</option>
-		
 		<option value="//api/name/monitoringManager:didEnterRegion:frame:">- monitoringManager:didEnterRegion:frame:</option>
 		
-		<option value="//api/name/monitoringManager:didEnterServiceRegion:">- monitoringManager:didEnterServiceRegion:</option>
-		
 		<option value="//api/name/monitoringManager:didExitRegion:frame:">- monitoringManager:didExitRegion:frame:</option>
-		
-		<option value="//api/name/monitoringManager:didExitServiceRegion:">- monitoringManager:didExitServiceRegion:</option>
 		
 		<option value="//api/name/monitoringManager:didGetError:">- monitoringManager:didGetError:</option>
 		
@@ -87,7 +81,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSCMSRulesCache Class Reference</h1>
+					<h1 class="title">LSRTLSManager Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -99,7 +93,7 @@
 	<td><a href="../Protocols/LSMonitoringManagerDelegate.html">LSMonitoringManagerDelegate</a></td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSCMSRulesCache.h<br />LSCMSRulesCache.m</td>
+	<td>LSRTLSManager.h<br />LSRTLSManager.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -113,12 +107,12 @@
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
+						
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	<a name="//api/name/monitoringManager:didGetError:" title="monitoringManager:didGetError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didGetError:">&ndash;&nbsp;monitoringManager:didGetError:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -128,63 +122,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Must use initWithErrorCallback: instead.</p>
+				<p>Returns callback when monitoring manager generates error</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSCMSRulesCache.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/monitoringManager:didEnterServiceRegion:" title="monitoringManager:didEnterServiceRegion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didEnterServiceRegion:">&ndash;&nbsp;monitoringManager:didEnterServiceRegion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Calls when device enters in region with defaultProximityUUID
-You can change this value in <a href="../Classes/LeantegraSDK.html">LeantegraSDK</a>.h
-You can&rsquo;t start or stop service region monitoring manually</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didEnterServiceRegion:(CLRegion *)<em>region</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didGetError:(LSWiBeatError)<em>error</em></code></div>
 
 		    
 			
@@ -198,68 +141,8 @@ You can&rsquo;t start or stop service region monitoring manually</p>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>region</code></th>
-						<td><p>CLRegion</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/monitoringManager:didExitServiceRegion:" title="monitoringManager:didExitServiceRegion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didExitServiceRegion:">&ndash;&nbsp;monitoringManager:didExitServiceRegion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Calls when device exit out region with defaultProximityUUID
-You can change this value in <a href="../Classes/LeantegraSDK.html">LeantegraSDK</a>.h
-You can&rsquo;t start or stop service region monitoring manually</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didExitServiceRegion:(CLRegion *)<em>region</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>manager</code></th>
-						<td><p><a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a></p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>region</code></th>
-						<td><p>CLRegion</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p><a href="../Constants/LSWiBeatError.html">LSWiBeatError</a></p></td>
 					</tr>
 				
 				</table>
@@ -386,64 +269,6 @@ You can&rsquo;t start or stop service region monitoring manually</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>frame</code></th>
 						<td><p>First advertising frame in region.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSMonitoringManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/monitoringManager:didGetError:" title="monitoringManager:didGetError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/monitoringManager:didGetError:">&ndash;&nbsp;monitoringManager:didGetError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns callback when monitoring manager generates error</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)monitoringManager:(LSMonitoringManager *)<em>manager</em> didGetError:(LSWiBeatError)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>manager</code></th>
-						<td><p><a href="../Classes/LSMonitoringManager.html">LSMonitoringManager</a></p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p><a href="../Constants/LSWiBeatError.html">LSWiBeatError</a></p></td>
 					</tr>
 				
 				</table>

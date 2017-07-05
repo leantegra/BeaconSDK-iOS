@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LSActivityLogger Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Leantegra iOS SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Leantegra Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/logData:name:">+ logData:name:</option>
+		
+		<option value="//api/name/logFormatString:arguments:stamp:">+ logFormatString:arguments:stamp:</option>
+		
+		<option value="//api/name/loggingDidStart">+ loggingDidStart</option>
+		
+		<option value="//api/name/maxLogFileSize">+ maxLogFileSize</option>
+		
+		<option value="//api/name/maxLogFilesCount">+ maxLogFilesCount</option>
+		
+		<option value="//api/name/setMaxLogFileSize:">+ setMaxLogFileSize:</option>
+		
+		<option value="//api/name/setMaxLogFilesCount:">+ setMaxLogFilesCount:</option>
+		
+		<option value="//api/name/startLog">+ startLog</option>
+		
+		<option value="//api/name/stopLog">+ stopLog</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">LSActivityLogger Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>LSActivityLogger.h<br />LSActivityLogger.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Stamp for time with msec.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/setMaxLogFileSize:" title="setMaxLogFileSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMaxLogFileSize:">+&nbsp;setMaxLogFileSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Maximum log file size in bytes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setMaxLogFileSize:(unsigned long long)<em>maxFileSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxFileSize</code></th>
+						<td><ul>
+<li>If no value or 0 is provided, 2097152 (2 mb) will be used as default value</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxLogFileSize" title="maxLogFileSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxLogFileSize">+&nbsp;maxLogFileSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current maximum of log file size in bytes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (unsigned long long)maxLogFileSize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMaxLogFilesCount:" title="setMaxLogFilesCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMaxLogFilesCount:">+&nbsp;setMaxLogFilesCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Count of stored log files.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setMaxLogFilesCount:(NSUInteger)<em>maxFilesCount</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxFilesCount</code></th>
+						<td><ul>
+<li>If no value or 0 is provided, 5 will be used as default value.
+All logs are stored in files: &ldquo;syslogX.log&rdquo;, where X - is an index of log file. The newest logs files have the smallest index, so the most recent logs are stored in &ldquo;syslog0.log&rdquo;.</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxLogFilesCount" title="maxLogFilesCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxLogFilesCount">+&nbsp;maxLogFilesCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current count of stored log files.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSUInteger)maxLogFilesCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startLog" title="startLog"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startLog">+&nbsp;startLog</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the logging. Since this called, messages passed via <code>LSLog()</code>, <code>LSErrorLog()</code>, <code>LSNetworkLog()</code>, <code>LSDBLog()</code>, <code>LSStampedLog()</code>, <code><a href="#//api/name/logFormatString:arguments:stamp:">[LSActivityLogger logFormatString:arguments:stamp:]</a></code> will be stored in log files.
+All logs are stored in files: &ldquo;syslogX.log&rdquo;, where X - is an index of log file. The newest logs files have the smallest index, so the most recent logs are stored in &ldquo;syslog0.log&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startLog</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopLog" title="stopLog"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopLog">+&nbsp;stopLog</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the logging. Since this called, messages passed via <code>LSLog()</code>, <code>LSErrorLog()</code>, <code>LSNetworkLog()</code>, <code>LSDBLog()</code>, <code>LSStampedLog()</code>, <code><a href="#//api/name/logFormatString:arguments:stamp:">[LSActivityLogger logFormatString:arguments:stamp:]</a></code> will have no effect.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)stopLog</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loggingDidStart" title="loggingDidStart"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loggingDidStart">+&nbsp;loggingDidStart</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Idicates, if logging did started.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)loggingDidStart</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logFormatString:arguments:stamp:" title="logFormatString:arguments:stamp:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logFormatString:arguments:stamp:">+&nbsp;logFormatString:arguments:stamp:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs a message into a log file.
+Has no effect, if <a href="#//api/name/startLog">[LSActivityLogger startLog]</a> was not called. It&rsquo;s recommended to use one of the following wrappers:<code>LSLog()</code>, <code>LSErrorLog()</code>, <code>LSNetworkLog()</code>, <code>LSDBLog()</code>, <code>LSStampedLog()</code> instead of direct call of this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logFormatString:(NSString *)<em>format</em> arguments:(va_list)<em>argList</em> stamp:(NSString *)<em>stamp</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><ul>
+<li>NSString format to be logged</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>argList</code></th>
+						<td><ul>
+<li>lost of format string arguments</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stamp</code></th>
+						<td><ul>
+<li>NSString stamp to be attached at the begining of log message</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logData:name:" title="logData:name:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logData:name:">+&nbsp;logData:name:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Saves given data to LSLog location with a giving filename. Function-like API is also available - use LSLogData().</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logData:(NSData *)<em>data</em> name:(NSString *)<em>filename</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><ul>
+<li>data to save</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><ul>
+<li>name (with file extension) for the file to be stored</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSActivityLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-07-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

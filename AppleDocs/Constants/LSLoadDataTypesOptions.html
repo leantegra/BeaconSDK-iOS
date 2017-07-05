@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSCapabilitiesFrameType Constants Reference</title>
+	<title>LSLoadDataTypesOptions Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSCapabilitiesFrameType Constants Reference</h1>
+					<h1 class="title">LSLoadDataTypesOptions Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>LSWiBeatEnums.h</td>
+	<td>LSLoadersManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,21 +75,21 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">LSCapabilitiesFrameType</h3>
+                    <h3 class="subsubtitle method-title">LSLoadDataTypesOptions</h3>
                     
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, LSCapabilitiesFrameType ) {<br>
+                        <code>typedef NS_OPTIONS(NSUInteger, LSLoadDataTypesOptions ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">UID</a> = 0 x0001,<br>
+                            &nbsp;&nbsp; <a href="">LSLoadCmsRulesData</a> = ( 1 &lt; &lt; 0 ),<br>
                             
-                            &nbsp;&nbsp; <a href="">URL</a> = 0 x0002,<br>
+                            &nbsp;&nbsp; <a href="">LSLoadCategoriesData</a> = ( 1 &lt; &lt; 1 ),<br>
                             
-                            &nbsp;&nbsp; <a href="">TLM</a> = 0 x0004,<br>
+                            &nbsp;&nbsp; <a href="">LSLoadWiBeatsData</a> = ( 1 &lt; &lt; 2 ),<br>
                             
-                            &nbsp;&nbsp; <a href="">EID</a> = 0 x0008,<br>
+                            &nbsp;&nbsp; <a href="">LSLoadVenuePlanGeoData</a> = ( 1 &lt; &lt; 3 ),<br>
                             
                             };</code>
                     
@@ -99,42 +99,42 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="UID"></a><code>UID</code></dt>
+                            <dt><a name="" title="LSLoadCmsRulesData"></a><code>LSLoadCmsRulesData</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSLoadersManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="URL"></a><code>URL</code></dt>
+                            <dt><a name="" title="LSLoadCategoriesData"></a><code>LSLoadCategoriesData</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSLoadersManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="TLM"></a><code>TLM</code></dt>
+                            <dt><a name="" title="LSLoadWiBeatsData"></a><code>LSLoadWiBeatsData</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSLoadersManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="EID"></a><code>EID</code></dt>
+                            <dt><a name="" title="LSLoadVenuePlanGeoData"></a><code>LSLoadVenuePlanGeoData</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSWiBeatEnums.h</code>.
+		Declared In <code class="declared-in-ref">LSLoadersManager.h</code>.
 	</p>
 	
 </dd>

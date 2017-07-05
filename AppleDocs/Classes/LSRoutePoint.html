@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSFrameProximable Protocol Reference</title>
+	<title>LSRoutePoint Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,19 +54,29 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/distance">distance</option>
+		<option value="//api/name/floor">floor</option>
 		
-		<option value="//api/name/proximityZone">proximityZone</option>
-		
-		<option value="//api/name/rssi">rssi</option>
-		
-		<option value="//api/name/txPower">txPower</option>
+		<option value="//api/name/location">location</option>
 		
 	</optgroup>
 	
 
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/routePointWithFloor:location:">+ routePointWithFloor:location:</option>
+		
+	</optgroup>
+	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithFloor:location:">- initWithFloor:location:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -83,29 +91,21 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSFrameProximable Protocol Reference</h1>
+					<h1 class="title">LSRoutePoint Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Conforms to</th>
+	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>LSFrameProximable.h</td>
+	<td>LSRoutePoint.h<br />LSRoutePoint.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Describes methods for frames which store data about <a href="#//api/name/distance">distance</a></p>
-					</div>
-					
-					
 
 					
 					
@@ -118,9 +118,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/txPower" title="txPower"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txPower">&nbsp;&nbsp;txPower</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/floor" title="floor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floor">&nbsp;&nbsp;floor</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -129,12 +129,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents TX power</p>
+				<p>Floor of Route point.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger txPower</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LSFloor *floor</code></div>
 
 		    
 			
@@ -152,16 +152,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSFrameProximable.h</code></p>
+				<p><code class="declared-in-ref">LSRoutePoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/proximityZone" title="proximityZone"></a>
-	<h3 class="method-title"><code><a href="#//api/name/proximityZone">&nbsp;&nbsp;proximityZone</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/location" title="location"></a>
+	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -170,12 +170,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents proximity zone</p>
+				<p>Location of Route point.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property LSProximityZone proximityZone</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) CLLocation *location</code></div>
 
 		    
 			
@@ -188,30 +188,21 @@
 
 			
 
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/LSProximityZone.html">LSProximityZone</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSFrameProximable.h</code></p>
+				<p><code class="declared-in-ref">LSRoutePoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/distance" title="distance"></a>
-	<h3 class="method-title"><code><a href="#//api/name/distance">&nbsp;&nbsp;distance</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/routePointWithFloor:location:" title="routePointWithFloor:location:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/routePointWithFloor:location:">+&nbsp;routePointWithFloor:location:</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -220,12 +211,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents distance in meters</p>
+				<p>Designated Initializer
+Returns the LSRoutePoint object with specified <a href="#//api/name/floor">floor</a> and <a href="#//api/name/location">location</a>.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSNumber *distance</code></div>
+			<div class="method-subsection method-declaration"><code>+ (LSRoutePoint *)routePointWithFloor:(LSFloor *)<em>floor</em> location:(CLLocation *)<em>location</em></code></div>
 
 		    
 			
@@ -243,16 +235,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSFrameProximable.h</code></p>
+				<p><code class="declared-in-ref">LSRoutePoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/rssi" title="rssi"></a>
-	<h3 class="method-title"><code><a href="#//api/name/rssi">&nbsp;&nbsp;rssi</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -261,12 +253,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents RSSI level</p>
+				<p>Unavailable. Use the -[initWithFloor:location:] Designated Initializer</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property NSInteger rssi</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
 		    
 			
@@ -284,7 +276,49 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSFrameProximable.h</code></p>
+				<p><code class="declared-in-ref">LSRoutePoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFloor:location:" title="initWithFloor:location:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFloor:location:">&ndash;&nbsp;initWithFloor:location:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Designated Initializer
+Initializes the LSRoutePoint object with specified <a href="#//api/name/floor">floor</a> and <a href="#//api/name/location">location</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFloor:(LSFloor *)<em>floor</em> location:(CLLocation *)<em>location</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRoutePoint.h</code></p>
 			</div>
 			
 			

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LSCloudEnums.h"
+#import "LSWiBeat.h"
 
 /**
  * Immutable representation of the event info stored in Leantegra CMS.
@@ -143,6 +144,11 @@
  Array of categories UIDs
  */
 @property (readonly) NSArray *categoriesUIDs;
+
+/**
+ Array of categories LSWiBeats
+ */
+@property (readonly) NSArray<LSWiBeat *> *wiBeats;
 
 /**
  *  Initialise object using NSDictionary from [LSCmsClient allCMSRulesSuccess:fail:] or [LSCmsClient CMSRules:major:minor:proximityZone:address:success:fail:] response

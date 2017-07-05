@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, LSVenueObjectType) {
+    LSVenueObjectTypeUndefined = 0,
+    LSVenueObjectTypeWiBeat,
+    LSVenueObjectTypeFloor,
+    LSVenueObjectTypeZone,
+    LSVenueObjectTypePassage,
+    LSVenueObjectTypeStairs,
+    LSVenueObjectTypeElevator,
+    LSVenueObjectTypeDoor
+};
+
 @protocol LSLocationObject <NSObject>
 
 /**
@@ -28,7 +39,17 @@
 /**
  * Represents parent
  */
-@property (readonly) NSInteger parent;
+@property (readonly) NSArray <NSNumber *> *parents;
+
+/**
+ * Represents parent
+ */
+@property (readonly) NSDictionary *dictionaryRepresentation;
+
+/**
+ * Type of Venue object
+ */
+@property (nonatomic, assign) LSVenueObjectType type;
 
 /**
  *  Initialise object using NSDictionary from [LSCmsClient locations:fail:] response

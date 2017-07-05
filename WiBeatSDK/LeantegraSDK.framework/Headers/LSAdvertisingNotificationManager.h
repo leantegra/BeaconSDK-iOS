@@ -11,6 +11,7 @@
 #import "LSLocalNotification.h"
 #import "LSWiBeat.h"
 #import "LSLocations.h"
+#import "LSCategory.h"
 
 @class LSCMSRule;
 
@@ -34,16 +35,36 @@ extern NSString *const kLSExcludeOfferListRulesOptionsKey;
 extern NSString *const kLSRulesIDOptionsKey;
 
 /**
+    Array of LSCategory objects. Only rules of specified categies will be returned.
+*/
+extern NSString *const kLSCategoriesOptionsKey;
+
+/**
+    Use this key in conjunction with kLSCategoriesOptionsKey.
+    Specifies, if rules with no categories should be included in result array.
+*/
+extern NSString *const kLSAllowsEmptyCategoriesOptionsKey;
+
+/**
  *  Provides callbacks of monitoring errors
  */
 @protocol LSAdvertisingNotificationManagerDelegate <NSObject>
 
 /**
- *  Returns callback when monitoring manager generates error
+ *  Called when monitoring manager gets error
  *
  *  @param error  LSWiBeatError
  */
 - (void)monitoringDidGetError:(LSWiBeatError)error;
+
+/**
+ *  Called when adverising manager scheduled notification for a particular CMS rule
+ *
+ *  @param rule Rule, that is scheduled for showing to user
+ *  @param success Indicates, if rule was shown successfully
+ *  @param error Passed, if any error was occured. Note: this parameter may be nil, even if success == NO (For example, when there is previously presented notification for specific CMS Rule, that is still present in Notification Center, and event occures again for this CMS Rule)
+ */
+- (void)monitoringDidShowNotificationWithCMSRule:(LSCMSRule *)rule success:(BOOL)success error:(nullable NSError *)error;
 
 @end
 
@@ -143,12 +164,18 @@ extern NSString *const kLSRulesIDOptionsKey;
 - (NSArray<LSCMSRule*>*)cmsRuleWithOptions:(NSDictionary*_Nullable)options;
 
 /**
+ *  Returns array of available categories
+ *
+ */
+- (NSArray<LSCategory*>*)categories;
+
+/**
  * Returns LSWiBeat array from CMS server
  *
  * @param successfulCallback block called if request performs successfully
  * @param failCallback       block called in case of error
  */
-- (void)devices:(void (^_Nullable)(NSArray<LSWiBeat*>*))successfulCallback fail:(void (^_Nullable)(NSError*))failCallback;
+- (void)devices:(void (^_Nullable)(NSArray<LSWiBeat*>*))successfulCallback fail:(void (^_Nullable)(NSError*))failCallback __attribute__((deprecated("devices: has been deprecated. Please use cmsClient class instead")));
 
 /**
  * Returns LSLocation info from CMS server
@@ -156,7 +183,7 @@ extern NSString *const kLSRulesIDOptionsKey;
  * @param successfulCallback block called if request performs successfully
  * @param failCallback       block called in case of error
  */
-- (void)locations:(void (^_Nullable)(LSLocations*))successfulCallback fail:(void (^_Nullable)(NSError*))failCallback;
+- (void)locations:(void (^_Nullable)(LSLocations*))successfulCallback fail:(void (^_Nullable)(NSError*))failCallback __attribute__((deprecated("locations: has been deprecated. Please use cmsClient class instead")));
 
 @end
 

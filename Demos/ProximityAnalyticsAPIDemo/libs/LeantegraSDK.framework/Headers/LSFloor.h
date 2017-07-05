@@ -31,6 +31,12 @@
  */
 @property (readonly) NSString *index;
 
+/**
+ * Represents coordinates of image. First pair - Left Top coords.
+ * Second pair - Right Bottom coords.
+ */
+@property (readonly) NSArray <NSNumber *> *imageExtent;
+
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));
 

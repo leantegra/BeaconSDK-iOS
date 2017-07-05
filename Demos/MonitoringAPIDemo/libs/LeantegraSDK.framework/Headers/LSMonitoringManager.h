@@ -124,6 +124,12 @@
  */
 @interface LSMonitoringManager : NSObject <CLLocationManagerDelegate, LSRangingManagerDelegate>
 
+/**
+ *  Array of lastly discovered CLBeacons. If monitoring is not launched, nil will be returned. CLBeacons with rssi==0 will be ignored.
+ *
+ */
+@property (nonatomic, strong) NSArray <CLBeacon *> *lastVisibleBeacons;
+
 + (LSMonitoringManager *)sharedMonitoringManager;
 
 /**

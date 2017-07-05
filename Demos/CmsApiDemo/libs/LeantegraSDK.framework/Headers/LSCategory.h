@@ -31,6 +31,11 @@
 @property (readonly) NSDate *modifiedDate;
 
 /**
+ * Represents the date of category modifying
+ */
+@property (readonly) NSDictionary *dictionaryRepresentation;
+
+/**
  *  Initialise object using NSDictionary from [LSCmsClient categories:fail:] response
  *
  *  @param dictionary NSDictionary

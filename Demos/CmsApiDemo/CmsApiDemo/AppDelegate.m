@@ -18,6 +18,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [LeantegraSDK setAge:18];
     [LeantegraSDK setClientId:@"demo_mobile"];
     [LeantegraSDK setClientSecret:@"d0177393-f9a7-4417-9930-9465ee4e59ee"];
 
@@ -53,6 +54,14 @@
 #pragma mark - LSAdvertisingNotificationManagerDelegate
 - (void)monitoringDidGetError:(LSWiBeatError)error {
     NSLog(@"Monitoring did get error");
+}
+
+- (void)monitoringDidShowNotificationWithCMSRule:(LSCMSRule *)rule success:(BOOL)success error:(nullable NSError *)error {
+    if (success) {
+        NSLog(@"Scheduled notification for %@", @(rule.ruleId));
+    } else {
+        NSLog(@"Notification Scheduling failed for %@, error: %@", @(rule.ruleId), error);
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

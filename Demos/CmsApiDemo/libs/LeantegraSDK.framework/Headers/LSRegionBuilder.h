@@ -52,7 +52,7 @@
 - (nullable instancetype)initWithIdentifier:(nonnull NSString *)identifier;
 
 ///Must use initWithIdentifier: instead.
-- (nullable instancetype)init __attribute__((unavailable("Must use initWithIdentifier instead.")));
+- (nonnull instancetype)init __attribute__((unavailable("Must use initWithIdentifier instead.")));
 
 /**
    Receive MAC address in format XX:XX:XX:XX:XX:XX and add it into addresses

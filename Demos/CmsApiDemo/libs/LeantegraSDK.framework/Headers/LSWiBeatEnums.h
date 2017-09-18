@@ -9,42 +9,6 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Error enum describes all possible errors for interactions with WiBeat.
- */
-typedef NS_ENUM(NSInteger, LSWiBeatError) {
-    /**No connection to the remote device.*/
-    ERROR_NOT_CONNECTED,
-    /**Requested characteristic is unavailable in WiBeat.*/
-    ERROR_CHARACTERISTIC_NOT_FOUND,
-    /**Wrong characteristic*/
-    ERROR_CHARACTERISTIC_VALUE,
-    /**Read operation failed.*/
-    ERROR_READ,
-    /**Write operation failed.*/
-    ERROR_WRITE,
-    /**Bluetooth not enabled or unavailable in this device.*/
-    ERROR_BLUETOOTH_NOT_FOUND,
-    /**Bluetooth is off on device.*/
-    ERROR_BLUETOOTH_OFF,
-    /**Connecting to WiBeat failed.*/
-    ERROR_CONNECTION_FAILED,
-    /**Prmission not provided.*/
-    ERROR_PERMISSION_NOT_PROVIDED,
-    /**Connection to WiBeat closed during read/write operation.*/
-    ERROR_CONNECTION_CLOSED,
-    /**WiBeat services discovery has been failed.*/
-    ERROR_CONNECTION_SCAN_FAILED,
-    /**Incorrect MAC address.*/
-    ERROR_CONNECTION_WRONG_MAC_ADDRESS,
-    /**Can't find device with this MAC address.*/
-    ERROR_CONNECTION_DEVICE_NOT_FOUND,
-    /**Unknown error.*/
-    ERROR,
-    /**Unlock operation failed.*/
-    ERROR_UNLOCK
-};
-
-/**
  * Operation mode enum describes all possible broadcasting schemes of the WiBeat.
  */
 typedef NS_ENUM(NSInteger, LSOperationMode) {
@@ -78,7 +42,10 @@ typedef NS_ENUM(NSInteger, LSCharacteristicType){
     LS_CHARACTERISTIC_TYPE_NETWORK_ID,
     LS_CHARACTERISTIC_TYPE_DEVICE_ID,
     LS_CHARACTERISTIC_TYPE_UNLOCK,
-    LS_CHARACTERISTIC_TYPE_ADV_SLOT_DATA
+    LS_CHARACTERISTIC_TYPE_ADV_SLOT_DATA,
+    LS_CHARACTERISTIC_TYPE_LS_BLEBTL_NEW_IMAGE_INFO,
+    LS_CHARACTERISTIC_TYPE_LS_BLEBTL_EXPECTED_SEQUENCE,
+    LS_CHARACTERISTIC_TYPE_LS_BLEBTL_NEW_IMAGE_CONTENT
 };
 
 typedef NS_ENUM(NSInteger, LSCapabilitiesVariableSupported){

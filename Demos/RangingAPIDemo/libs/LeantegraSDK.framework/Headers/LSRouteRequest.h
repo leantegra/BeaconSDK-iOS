@@ -12,6 +12,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * Curve option for LSRouteRequest
+ * If YES - generated route will have curved stroke
+ */
+extern NSString *const kLSRouteRequestCurveRoute;
+
 @interface LSRouteRequest : NSObject
 
 /**
@@ -25,9 +31,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) LSRoutePoint *endPoint;
 
 /**
+ * Options for route request. See available keys on top.
+ */
+@property (nonatomic, strong, readonly) NSDictionary *options;
+
+/**
  * Returns LSRouteRequest object with specified startPoint and endPoint.
  */
-+ (LSRouteRequest *)routeRequestWithStartRoutePoint:(LSRoutePoint *)startPoint endRoutePoint:(LSRoutePoint *)endPoint;
++ (LSRouteRequest *)routeRequestWithStartRoutePoint:(LSRoutePoint *)startPoint endRoutePoint:(LSRoutePoint *)endPoint options:(nullable NSDictionary *)options;
 
 /**
  * Unavailable. Use the -[initWithStartRoutePoint:endRoutePoint:] Designated Initializer
@@ -38,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Designated Initializer
  * Initializes the LSRouteRequest object with specified startPoint and endPoint.
  */
-- (instancetype)initWithStartRoutePoint:(LSRoutePoint *)startPoint endRoutePoint:(LSRoutePoint *)endPoint NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithStartRoutePoint:(LSRoutePoint *)startPoint endRoutePoint:(LSRoutePoint *)endPoint options:(nullable NSDictionary *)options NS_DESIGNATED_INITIALIZER;
 
 @end
 

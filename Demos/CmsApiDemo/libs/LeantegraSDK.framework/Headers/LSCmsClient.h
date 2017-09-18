@@ -13,6 +13,8 @@
 #import "LSWiBeat.h"
 #import "LSLocations.h"
 #import "LSCategory.h"
+#import "LSTrackable.h"
+#import "LSTrackablePerson.h"
 
 /**
  *  API client provides interaction with Leantegra CMS API.
@@ -104,5 +106,37 @@
  * @param failCallback       block called in case of error
  */
 - (void)categories:(void (^_Nonnull)(NSArray<LSCategory *> *_Nonnull))successfulCallback fail:(void (^_Nonnull)(NSError *_Nullable))failCallback;
+
+/**
+ * Returns LSTrackable info from CMS server
+ *
+ * @param successfulCallback block called if request performs successfully
+ * @param failCallback       block called in case of error
+ */
+- (void)trackables:(void (^_Nonnull)(NSArray<LSTrackable *> *_Nonnull))successfulCallback fail:(void (^_Nonnull)(NSError *_Nullable))failCallback;
+
+/**
+ * Returns LSTrackable info for the single trackableUID from CMS server
+ *
+ * @param successfulCallback block called if request performs successfully
+ * @param failCallback       block called in case of error
+ */
+- (void)trackableByUID:(nonnull NSNumber *)trackableUID success:(void (^_Nonnull)(LSTrackable *_Nullable))successfulCallback fail:(void (^_Nonnull)(NSError *_Nullable))failCallback;
+
+/**
+ * Returns LSTrackablePerson info from CMS server
+ *
+ * @param successfulCallback block called if request performs successfully
+ * @param failCallback       block called in case of error
+ */
+- (void)trackablePersons:(void (^_Nonnull)(NSArray<LSTrackablePerson *> *_Nonnull))successfulCallback fail:(void (^_Nonnull)(NSError *_Nullable))failCallback;
+
+/**
+ * Returns LSTrackablePerson info for the single personUID from CMS server
+ *
+ * @param successfulCallback block called if request performs successfully
+ * @param failCallback       block called in case of error
+ */
+- (void)trackablePersonByUID:(nonnull NSNumber *)personUID success:(void (^_Nonnull)(LSTrackablePerson *_Nullable))successfulCallback fail:(void (^_Nonnull)(NSError *_Nullable))failCallback;
 
 @end

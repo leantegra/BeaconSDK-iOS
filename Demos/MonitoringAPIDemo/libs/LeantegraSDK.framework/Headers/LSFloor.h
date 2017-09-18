@@ -40,4 +40,9 @@
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));
 
+/**
+ * Loads LSFloor object for a specific uid, if any
+ */
++ (LSFloor *)floorForUID:(NSNumber *)uid;
+
 @end

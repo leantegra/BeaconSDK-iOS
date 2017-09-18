@@ -10,8 +10,14 @@
 #import "LSFloor.h"
 #import "LSPassage.h"
 #import "LSZone.h"
+#import "LSVenue.h"
 
 @interface LSLocations : NSObject
+
+/**
+ * List of LSVenue
+ */
+@property (readonly) NSArray<LSVenue*>* venues;
 
 /**
  * List of LSFloor

@@ -43,12 +43,12 @@
 - (void)rangingManager:(LSRangingManager*)manager didRangeBeacon:(LSBaseFrame*)frame;
 
 /**
- *  Returns callback if LSWiBeatError was generated
+ *  Returns callback if NSError with LSLeantegraSDKErrorCodeType was generated
  *
  *  @param manager LSRangingManager
- *  @param error   LSWiBeatError
+ *  @param error   NSError with LSLeantegraSDKErrorCodeType
  */
-- (void)rangingManager:(LSRangingManager*)manager didGetError:(LSWiBeatError)error;
+- (void)rangingManager:(LSRangingManager*)manager didGetError:(NSError *)error;
 
 @end
 

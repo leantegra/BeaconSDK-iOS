@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -56,6 +58,8 @@
 		
 		<option value="//api/name/endPoint">endPoint</option>
 		
+		<option value="//api/name/options">options</option>
+		
 		<option value="//api/name/startPoint">startPoint</option>
 		
 	</optgroup>
@@ -64,7 +68,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/routeRequestWithStartRoutePoint:endRoutePoint:">+ routeRequestWithStartRoutePoint:endRoutePoint:</option>
+		<option value="//api/name/routeRequestWithStartRoutePoint:endRoutePoint:options:">+ routeRequestWithStartRoutePoint:endRoutePoint:options:</option>
 		
 	</optgroup>
 	
@@ -74,7 +78,7 @@
 		
 		<option value="//api/name/init">- init</option>
 		
-		<option value="//api/name/initWithStartRoutePoint:endRoutePoint:">- initWithStartRoutePoint:endRoutePoint:</option>
+		<option value="//api/name/initWithStartRoutePoint:endRoutePoint:options:">- initWithStartRoutePoint:endRoutePoint:options:</option>
 		
 	</optgroup>
 	
@@ -106,6 +110,15 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Curve option for LSRouteRequest
+If YES - generated route will have curved stroke</p>
+					</div>
+					
+					
 
 					
 					
@@ -200,8 +213,49 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/routeRequestWithStartRoutePoint:endRoutePoint:" title="routeRequestWithStartRoutePoint:endRoutePoint:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/routeRequestWithStartRoutePoint:endRoutePoint:">+&nbsp;routeRequestWithStartRoutePoint:endRoutePoint:</a></code>
+	<a name="//api/name/options" title="options"></a>
+	<h3 class="method-title"><code><a href="#//api/name/options">&nbsp;&nbsp;options</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Options for route request. See available keys on top.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSDictionary *options</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSRouteRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/routeRequestWithStartRoutePoint:endRoutePoint:options:" title="routeRequestWithStartRoutePoint:endRoutePoint:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/routeRequestWithStartRoutePoint:endRoutePoint:options:">+&nbsp;routeRequestWithStartRoutePoint:endRoutePoint:options:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -216,7 +270,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (LSRouteRequest *)routeRequestWithStartRoutePoint:(LSRoutePoint *)<em>startPoint</em> endRoutePoint:(LSRoutePoint *)<em>endPoint</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (LSRouteRequest *)routeRequestWithStartRoutePoint:(LSRoutePoint *)<em>startPoint</em> endRoutePoint:(LSRoutePoint *)<em>endPoint</em> options:(nullable NSDictionary *)<em>options</em></code></div>
 
 		    
 			
@@ -282,8 +336,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithStartRoutePoint:endRoutePoint:" title="initWithStartRoutePoint:endRoutePoint:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithStartRoutePoint:endRoutePoint:">&ndash;&nbsp;initWithStartRoutePoint:endRoutePoint:</a></code>
+	<a name="//api/name/initWithStartRoutePoint:endRoutePoint:options:" title="initWithStartRoutePoint:endRoutePoint:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithStartRoutePoint:endRoutePoint:options:">&ndash;&nbsp;initWithStartRoutePoint:endRoutePoint:options:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -299,7 +353,7 @@ Initializes the LSRouteRequest object with specified <a href="#//api/name/startP
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithStartRoutePoint:(LSRoutePoint *)<em>startPoint</em> endRoutePoint:(LSRoutePoint *)<em>endPoint</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithStartRoutePoint:(LSRoutePoint *)<em>startPoint</em> endRoutePoint:(LSRoutePoint *)<em>endPoint</em> options:(nullable NSDictionary *)<em>options</em></code></div>
 
 		    
 			
@@ -338,7 +392,7 @@ Initializes the LSRouteRequest object with specified <a href="#//api/name/startP
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-07-05</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-09-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

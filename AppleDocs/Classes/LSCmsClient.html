@@ -80,6 +80,14 @@
 		
 		<option value="//api/name/sendView:channel:success:fail:">- sendView:channel:success:fail:</option>
 		
+		<option value="//api/name/trackableByUID:success:fail:">- trackableByUID:success:fail:</option>
+		
+		<option value="//api/name/trackablePersonByUID:success:fail:">- trackablePersonByUID:success:fail:</option>
+		
+		<option value="//api/name/trackablePersons:fail:">- trackablePersons:fail:</option>
+		
+		<option value="//api/name/trackables:fail:">- trackables:fail:</option>
+		
 	</optgroup>
 	
 	
@@ -726,6 +734,238 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackables:fail:" title="trackables:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackables:fail:">&ndash;&nbsp;trackables:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns <a href="../Classes/LSTrackable.html">LSTrackable</a> info from CMS server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackables:(void ( ^ _Nonnull ) ( NSArray&lt;LSTrackable*&gt; *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackableByUID:success:fail:" title="trackableByUID:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackableByUID:success:fail:">&ndash;&nbsp;trackableByUID:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns <a href="../Classes/LSTrackable.html">LSTrackable</a> info for the single trackableUID from CMS server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackableByUID:(nonnull NSNumber *)<em>trackableUID</em> success:(void ( ^ _Nonnull ) ( LSTrackable *_Nullable ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackablePersons:fail:" title="trackablePersons:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackablePersons:fail:">&ndash;&nbsp;trackablePersons:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns <a href="../Classes/LSTrackablePerson.html">LSTrackablePerson</a> info from CMS server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackablePersons:(void ( ^ _Nonnull ) ( NSArray&lt;LSTrackablePerson*&gt; *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackablePersonByUID:success:fail:" title="trackablePersonByUID:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackablePersonByUID:success:fail:">&ndash;&nbsp;trackablePersonByUID:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns <a href="../Classes/LSTrackablePerson.html">LSTrackablePerson</a> info for the single personUID from CMS server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackablePersonByUID:(nonnull NSNumber *)<em>personUID</em> success:(void ( ^ _Nonnull ) ( LSTrackablePerson *_Nullable ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -741,7 +981,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-07-05</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-09-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

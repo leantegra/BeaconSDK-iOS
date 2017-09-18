@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSWiBeat Class Reference</title>
+	<title>LSVenue Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,17 +54,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/dictionaryRepresentation">dictionaryRepresentation</option>
+		<option value="//api/name/OSMMapPath">OSMMapPath</option>
 		
-		<option value="//api/name/location">location</option>
+		<option value="//api/name/name">name</option>
 		
-		<option value="//api/name/mac">mac</option>
+		<option value="//api/name/rotation">rotation</option>
 		
-		<option value="//api/name/major">major</option>
-		
-		<option value="//api/name/minor">minor</option>
-		
-		<option value="//api/name/uuid">uuid</option>
+		<option value="//api/name/uid">uid</option>
 		
 	</optgroup>
 	
@@ -72,15 +68,15 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/wiBeatForKey:">+ wiBeatForKey:</option>
-		
-		<option value="//api/name/wiBeatForMAC:">+ wiBeatForMAC:</option>
+		<option value="//api/name/venues">+ venues</option>
 		
 	</optgroup>
 	
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/convertToDictonary">- convertToDictonary</option>
 		
 		<option value="//api/name/init">- init</option>
 		
@@ -101,7 +97,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSWiBeat Class Reference</h1>
+					<h1 class="title">LSVenue Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -109,11 +105,8 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/LSLocationObject.html">LSLocationObject</a></td>
-</tr><tr>
 	<th>Declared in</th>
-	<td>LSWiBeat.h<br />LSWiBeat.m</td>
+	<td>LSVenue.h<br />LSVenue.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -127,12 +120,12 @@
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
+						
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
+	<a name="//api/name/uid" title="uid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uid">&nbsp;&nbsp;uid</a></code>
 </h3>
 
 	<div class="method-info">
@@ -142,12 +135,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents major</p>
+				<p>Represents UID</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) NSNumber *major</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign) NSInteger uid</code></div>
 
 		    
 			
@@ -165,15 +158,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
+	<a name="//api/name/rotation" title="rotation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotation">&nbsp;&nbsp;rotation</a></code>
 </h3>
 
 	<div class="method-info">
@@ -183,12 +176,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents minor</p>
+				<p>Represents rotation angle for venue about the North-South line</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) NSNumber *minor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign) float rotation</code></div>
 
 		    
 			
@@ -206,15 +199,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/uuid" title="uuid"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uuid">&nbsp;&nbsp;uuid</a></code>
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
 </h3>
 
 	<div class="method-info">
@@ -224,12 +217,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents uuid</p>
+				<p>Represents venue name</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *uuid</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSString *name</code></div>
 
 		    
 			
@@ -247,15 +240,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/mac" title="mac"></a>
-	<h3 class="method-title"><code><a href="#//api/name/mac">&nbsp;&nbsp;mac</a></code>
+	<a name="//api/name/OSMMapPath" title="OSMMapPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/OSMMapPath">&nbsp;&nbsp;OSMMapPath</a></code>
 </h3>
 
 	<div class="method-info">
@@ -265,12 +258,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents MAC</p>
+				<p>Represents path to OSM map on the server</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) NSString *mac</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, strong) NSString *OSMMapPath</code></div>
 
 		    
 			
@@ -288,15 +281,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
+	<a name="//api/name/venues" title="venues"></a>
+	<h3 class="method-title"><code><a href="#//api/name/venues">+&nbsp;venues</a></code>
 </h3>
 
 	<div class="method-info">
@@ -306,12 +299,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Represents latitude and longitude of WiBeat</p>
+				<p>Returns all stored venue</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) CLLocation *location</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray&lt;LSVenue*&gt; *)venues</code></div>
 
 		    
 			
@@ -329,7 +322,65 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise object using NSDictionary from with @&ldquo;uid&rdquo; key and NSNumber value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>NSDictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>initialized object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			
@@ -370,15 +421,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/wiBeatForMAC:" title="wiBeatForMAC:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/wiBeatForMAC:">+&nbsp;wiBeatForMAC:</a></code>
+	<a name="//api/name/convertToDictonary" title="convertToDictonary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertToDictonary">&ndash;&nbsp;convertToDictonary</a></code>
 </h3>
 
 	<div class="method-info">
@@ -388,12 +439,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Loads LSWiBeat object for a specific MAC address, if any</p>
+				<p>Save object state into NSDictonary</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (LSWiBeat *)wiBeatForMAC:(NSString *)<em>wiBeatMAC</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)convertToDictonary</code></div>
 
 		    
 			
@@ -411,142 +462,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/wiBeatForKey:" title="wiBeatForKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/wiBeatForKey:">+&nbsp;wiBeatForKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Loads LSWiBeat object for a specific <a href="../Classes/LSBeaconKey.html">LSBeaconKey</a> key, if any</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (LSWiBeat *)wiBeatForKey:(LSBeaconKey *)<em>key</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeat.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSLocationObjectProtocol.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Extension Methods" name="task_Extension Methods"></a>
-						<h2 class="task-title">Extension Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/dictionaryRepresentation" title="dictionaryRepresentation"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dictionaryRepresentation">&nbsp;&nbsp;dictionaryRepresentation</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Represents parent</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary *dictionaryRepresentation</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSLocationObjectProtocol.h</code></p>
+				<p><code class="declared-in-ref">LSVenue.h</code></p>
 			</div>
 			
 			

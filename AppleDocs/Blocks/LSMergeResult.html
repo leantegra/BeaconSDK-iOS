@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSDataErrorCode Constants Reference</title>
+	<title>LSMergeResult Block Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSDataErrorCode Constants Reference</h1>
+					<h1 class="title">LSMergeResult Block Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>NSData+LSDataExtension.h</td>
+	<td>LSDBVenueObject+CoreDataClass.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,53 +75,18 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">LSDataErrorCode</h3>
                     
-                    <div class="section">
-                        <!-- display enum values -->
-                        
-                        <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSUInteger, LSDataErrorCode ) {<br>
-                            
-                            &nbsp;&nbsp; <a href="">kLSNoDataError</a> = 0,<br>
-                            
-                            &nbsp;&nbsp; <a href="">kLSOutOfRangeDataError</a> = 1,<br>
-                            
-                            };</code>
-                    
-                    </div>
-                    
-                    <div class="section section-methods">
-                        <h4 class="method-subtitle">Constants</h4>
-                        <dl class="termdef">
-                            
-                            <dt><a name="" title="kLSNoDataError"></a><code>kLSNoDataError</code></dt>
-<dd>
+          
+          <a title="Block Definition" name="instance_methods"></a>
+          <h4 class="method-subtitle parameter-title">Block Definition</h4>
+          <h3 class="subsubtitle method-title">LSMergeResult</h3>
 
-    
-	<p>
-		Declared In <code class="declared-in-ref">NSData+LSDataExtension.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="kLSOutOfRangeDataError"></a><code>kLSOutOfRangeDataError</code></dt>
-<dd>
 
-    
-	<p>
-		Declared In <code class="declared-in-ref">NSData+LSDataExtension.h</code>.
-	</p>
-	
-</dd>
-                            
-                        </dl>
-                    </div>
-                    
-
-                    
-                    
-                    
+<code>typedef void (^LSMergeResult) (NSArray *removed, NSArray *added, NSDictionary *stayedInStore, NSDictionary *stayedInRetrieved)</code>
+  
+  
+  
+  
           
 				</main>
 

@@ -27,7 +27,11 @@ typedef NS_ENUM(NSInteger, LSProximityZone) {
     /*!
      * Distance to WiBeat is more than 3.0m.
      */
-    FAR
+    FAR,
+    /*!
+     * WiBeat is not in any proximity zone.
+     */
+    AWAY
 };
 
 /**

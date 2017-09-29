@@ -117,7 +117,7 @@
     [self showNotification:[NSString stringWithFormat:@"Exit region %@",region.identifier]];
 }
 
-- (void)monitoringManager:(LSMonitoringManager *)manager didGetError:(LSWiBeatError)error {
+- (void)monitoringManager:(LSMonitoringManager *)manager didGetError:(NSError *)error {
 
 }
 

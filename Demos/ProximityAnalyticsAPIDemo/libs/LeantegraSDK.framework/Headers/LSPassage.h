@@ -14,4 +14,6 @@
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));
 
++ (LSPassage *)passageForPassageUID:(NSInteger)uid;
+
 @end

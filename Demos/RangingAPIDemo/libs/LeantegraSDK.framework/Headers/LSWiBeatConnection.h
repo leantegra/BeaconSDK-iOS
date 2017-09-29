@@ -92,7 +92,7 @@
  * @param wiBeatConnection current connection
  * @param wiBeatError Error code
  */
-- (void)wiBeatConnection:(LSWiBeatConnection*)wiBeatConnection didGetError:(LSWiBeatError)wiBeatError;
+- (void)wiBeatConnection:(LSWiBeatConnection*)wiBeatConnection didGetError:(NSError *)wiBeatError;
 
 @end
 
@@ -107,13 +107,13 @@
  * Callback invoked when characteristic has been successfully read.
  * @param characteristic Characteristic value
  */
-- (void)wiBeatReadCharacteristicSuccess:(LSWiBeatCharacteristic*)characteristic;
+- (void)wiBeatReadCharacteristicSuccess:(__kindof LSWiBeatCharacteristic *)characteristic;
 
 /**
  * Callback invoked when characteristic reading has been failed.
  * @param error Error code
  */
-- (void)wiBeatReadCharacteristic:(LSWiBeatCharacteristic*)characteristic error:(LSWiBeatError)error;
+- (void)wiBeatReadCharacteristic:(LSWiBeatCharacteristic*)characteristic error:(NSError *)error;
 
 @end
 
@@ -134,9 +134,9 @@
 /**
  * Callback invoked when device information reading has been failed.
  * @param error Error reading device information. Can be one of
- * @see LSWiBeatError
+ * @see LSLeantegraSDKErrorCodeType -3000... errors
  */
-- (void)wiBeatReadDeviceInfoError:(LSWiBeatError)error;
+- (void)wiBeatReadDeviceInfoError:(NSError *)error;
 
 @end
 
@@ -158,7 +158,7 @@
  * @param characteristicType current characteristic
  * @param error Error code
  */
-- (void)wiBeatWriteCharacteristic:(LSCharacteristicType)characteristicType error:(LSWiBeatError)error;
+- (void)wiBeatWriteCharacteristic:(LSCharacteristicType)characteristicType error:(NSError *)error;
 
 @end
 
@@ -205,6 +205,9 @@
     }
  */
 @interface LSWiBeatConnection : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
+
+/** LSWiBeatConnectionDelegate delegate */
+@property (nonatomic, weak) id<LSWiBeatConnectionDelegate> delegate;
 
 /** Time in seconds - maximum time of scanning */
 @property NSNumber *scanInterval;

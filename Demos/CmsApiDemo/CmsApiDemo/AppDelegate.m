@@ -52,8 +52,8 @@
 }
 
 #pragma mark - LSAdvertisingNotificationManagerDelegate
-- (void)monitoringDidGetError:(LSWiBeatError)error {
-    NSLog(@"Monitoring did get error");
+- (void)monitoringDidGetError:(NSError *)error {
+    NSLog(@"Monitoring did get error %@", error);
 }
 
 - (void)monitoringDidShowNotificationWithCMSRule:(LSCMSRule *)rule success:(BOOL)success error:(nullable NSError *)error {

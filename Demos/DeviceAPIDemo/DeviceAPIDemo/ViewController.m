@@ -152,7 +152,7 @@
     [connectButton setTitle:@"Connect" forState:UIControlStateNormal];
 }
 
--(void)wiBeatConnection:(LSWiBeatConnection *)wiBeatConnection didGetError:(LSWiBeatError)powerMoteError{
+-(void)wiBeatConnection:(LSWiBeatConnection *)wiBeatConnection didGetError:(NSError *)wiBeatError{
     [self onDisconnect];
     //handle error
 }
@@ -182,7 +182,7 @@
     [characteristicsTableView reloadData];
 }
 
--(void)wiBeatReadDeviceInfoError:(LSWiBeatError)error{
+-(void)wiBeatReadDeviceInfoError:(NSError *)error{
     //handle error
 }
 
@@ -193,7 +193,7 @@
     
 }
 
--(void)wiBeatWriteCharacteristic:(LSCharacteristicType)characteristicType error:(LSWiBeatError)error{
+-(void)wiBeatWriteCharacteristic:(LSCharacteristicType)characteristicType error:(NSError *)error{
     [indicator stopAnimating];
     [characteristicsTableView setHidden:false];
     [connectButton setEnabled:true];

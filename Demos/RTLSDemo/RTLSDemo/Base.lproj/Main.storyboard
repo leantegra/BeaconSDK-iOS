@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Determining location..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE1-cJ-Jkj">
+                                <rect key="frame" x="73.5" y="273" width="172.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hVl-5d-zM1" customClass="LSVenuePlanView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zE1-cJ-Jkj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="H6o-eY-RBG"/>
+                            <constraint firstItem="zE1-cJ-Jkj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMa-Bz-34M"/>
+                            <constraint firstItem="hVl-5d-zM1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RPE-zX-hgj"/>
+                            <constraint firstItem="hVl-5d-zM1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i51-st-zhh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hVl-5d-zM1" secondAttribute="bottom" id="mGd-By-nZM"/>
+                            <constraint firstAttribute="trailing" secondItem="hVl-5d-zM1" secondAttribute="trailing" id="sfK-v0-CaF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="determiningLocationLabel" destination="zE1-cJ-Jkj" id="A0Z-Cv-gCg"/>
+                        <outlet property="venuePlanView" destination="hVl-5d-zM1" id="4s7-fC-xIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

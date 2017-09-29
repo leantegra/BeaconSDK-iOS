@@ -42,6 +42,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) id<LSProximityAnalyticsManagerDelegate> delegate;
 
 /**
+ * Time interval for synchronization of proximity analytics in seconds. Specify this value before -[LSProximityAnalyticsManager startGatheringProximityAnalytics] calling
+ * If provided value is less than 300 or bigger than 21600, default value will be used.
+ * If no value is provided, default value will be used.
+ * Default value is 3600.
+*/
+@property (nonatomic, assign) NSTimeInterval synchronizeTimeInterval;
+
+/**
  * Performs the sending of collected proximity events to server
  * 5000 events is a maximum value of proximity events. 
  * If more events is gathered after the last sync - only 5000 last events will be sended.
@@ -51,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Starts gathering of proximity events
- * Performs calling of <code>-[LSProximityAnalyticsManager synchronizeWithServer]</code> automatically every 1 h
+ * Performs calling of <code>-[LSProximityAnalyticsManager synchronizeWithServer]</code> automatically every 1 h, if other is not specified via <code>synchronizeTimeInterval</code> property.
  */
 - (void)startGatheringProximityAnalytics;
 

@@ -20,6 +20,7 @@
 #import "LSRangingManager.h"
 #import "LSProximityAnalyticsManager.h"
 
+#import "LSBeaconKey.h"
 #import "LSWiBeatEnums.h"
 #import "LSRangingEnums.h"
 #import "LSCloudEnums.h"
@@ -28,6 +29,8 @@
 #import "LSBaseDeviceInfo.h"
 #import "LSWiBeatCharacteristic.h"
 #import "LSWiBeatConnection.h"
+#import "LSFirmwareUpdater.h"
+#import "LSFirmware.h"
 
 #import "LSEddystoneUIDData.h"
 #import "LSEddystoneEIDData.h"
@@ -40,22 +43,23 @@
 #import "LSiBeaconDeviceInfo.h"
 
 #import "LSVenuePlanView.h"
+#import "LSVenue.h"
 #import "LSRoutePoint.h"
 #import "LSRouteRequest.h"
+#import "LSTrackable.h"
+#import "LSTrackablePerson.h"
 
 #import "LSActivityLogger.h"
 
 #import "LSRoute.h"
+
+#import "LeantegraSDKErrors.h"
 
 //! Project version number for LeantegraSDK.
 FOUNDATION_EXPORT double LeantegraSDKVersionNumber;
 
 //! Project version string for LeantegraSDK.
 FOUNDATION_EXPORT const unsigned char LeantegraSDKVersionString[];
-
-extern NSString *_Nonnull const kLeantegraSDKErrorDomain;
-
-extern NSString *_Nonnull const kLeantegraSDKErrorDescription;
 
 /**
  *  Represents proximity UUID string value
@@ -102,9 +106,9 @@ static NSString *_Nonnull defaultProximityUUIDstring = @"85a99e33-bbbe-4763-a66b
 @property (class, nonatomic, strong, nullable) NSDate *birthDate;
 
 /**
-    Array of strings, that represents the user segments
+    Array of numbers, that represents the user segments Codes
 */
-@property (class, nonatomic, strong, nullable) NSArray *segments;
+@property (class, nonatomic, strong, nullable) NSArray<NSNumber *> *segments;
 
 /**
  Returns value of IMMEDIATE zone radius

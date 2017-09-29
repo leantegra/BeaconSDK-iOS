@@ -53,9 +53,9 @@ extern NSString *const kLSAllowsEmptyCategoriesOptionsKey;
 /**
  *  Called when monitoring manager gets error
  *
- *  @param error  LSWiBeatError
+ *  @param error  NSError with LSLeantegraSDKErrorCodeType
  */
-- (void)monitoringDidGetError:(LSWiBeatError)error;
+- (void)monitoringDidGetError:(NSError *)error;
 
 /**
  *  Called when adverising manager scheduled notification for a particular CMS rule

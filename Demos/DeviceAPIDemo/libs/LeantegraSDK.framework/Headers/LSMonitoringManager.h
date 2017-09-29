@@ -39,9 +39,9 @@
  *  Returns callback when monitoring manager generates error
  *
  *  @param manager LSMonitoringManager
- *  @param error  LSWiBeatError
+ *  @param error  NSError with LSLeantegraSDKErrorCodeType
  */
-- (void)monitoringManager:(LSMonitoringManager*)manager didGetError:(LSWiBeatError)error;
+- (void)monitoringManager:(LSMonitoringManager*)manager didGetError:(NSError *)error;
 
 /**
  *  Returns set of regions, which have LSProximityZone parameter when the time for ranging in background expired

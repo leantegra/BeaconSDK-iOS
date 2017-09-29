@@ -10,6 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LSLocationObjectProtocol.h"
 
+@class LSBeaconKey;
+
 @interface LSWiBeat : NSObject <LSLocationObject>
 
 /**
@@ -39,5 +41,15 @@
 
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));
+
+/**
+ * Loads LSWiBeat object for a specific MAC address, if any
+ */
++ (LSWiBeat *)wiBeatForMAC:(NSString *)wiBeatMAC;
+
+/**
+ * Loads LSWiBeat object for a specific LSBeaconKey key, if any
+ */
++ (LSWiBeat *)wiBeatForKey:(LSBeaconKey *)key;
 
 @end

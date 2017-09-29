@@ -11,8 +11,6 @@
 
 @class LSFloor, LSPassage, LSZone, LSRouteRequest, LSRoute, LSVenuePlanView;
 
-extern NSInteger const kLSNoFloorsDataVenuePlanError;
-
 typedef NS_ENUM(NSUInteger, LSVenuePlanSourceType) {
     LSVenuePlanSourceDefault,
     LSVenuePlanSourceGeoJSON,
@@ -38,12 +36,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (LSVenuePlanPaintingLayerOptions)displayingOptionsForVenuePlanView:(LSVenuePlanView *)venuePlanView;
 
+@optional
+
 /**
  * Informs delegate about the completed route request.
+ * This method is required, if -[LSVenuePlanView performRouteRequest] is used!
  */
 - (void)venuePlanView:(LSVenuePlanView *)venuePlanView didPerformRouteRequest:(LSRouteRequest *)routeRequest result:(nullable LSRoute *)route error:(nullable NSError *)error;
-
-@optional
 
 /**
  * Indicates, when Venue Plan did finish load from it's cache or is updated from CVO Portal.
@@ -62,9 +61,10 @@ NS_ASSUME_NONNULL_BEGIN
  * -[id<MKMapViewDelegate> mapView:didUpdateUserLocation:]
  * -[id<MKMapViewDelegate> mapView:didFailToLocateUserWithError:]
  * @param location CLLocation object with user's longitude and altitude
+ * @param floor UID of floor, that user is located on. Determined by the shortest average distance to wiBeats on particular floor.
  * @param error Any error during the locating of user
  */
-- (void)didUpdateUserLocation:(nullable CLLocation *)location error:(nullable NSError *)error;
+- (void)didUpdateUserLocation:(nullable CLLocation *)location floor:(nullable LSFloor *)floor error:(nullable NSError *)error;
 
 // Offer image
 - (UIImage *)imageForOfferID:(NSNumber *)offerID;
@@ -101,7 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * NSUTF8StringEncoding XML data of OSM venue representation.
  */
-@property (nonatomic, assign) NSData *OSMData;
+@property (nonatomic, strong) NSData *OSMData;
 
 /**
  * Returns current floor for venue. To change the floor, use <code>-[LSVenuePlanView setFloor:]</code> and then call
@@ -174,6 +174,12 @@ NS_ASSUME_NONNULL_BEGIN
  * Declines the scheduled route request.
  */
 - (void)cancelRouteRequest;
+
+/**
+ * Determines, if given floor supports Indoor Routing functionality.
+ * If OSM representation exists for given floor, YES will be returned.
+ */
+- (BOOL)supportsRoutingForFloor:(LSFloor *)floor;
 
 NS_ASSUME_NONNULL_END
 

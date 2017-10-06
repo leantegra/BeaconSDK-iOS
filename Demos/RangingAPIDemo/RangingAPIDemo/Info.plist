@@ -24,8 +24,12 @@
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This application requires Bluetooth services for monitoring proximity zones</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application requires location services to work</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location services will be available only when application is on the screen</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This application requires location services for background monitoring proximity zones</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This application requires location services for proximity zones monitoring. Don&apos;t miss poximity events when app is not on presented on screen by enabling Always</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>

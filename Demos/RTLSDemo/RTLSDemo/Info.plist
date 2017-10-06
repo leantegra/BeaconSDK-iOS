@@ -20,8 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application requires location services for determining your position on map</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location services will be available only when application is on the screen</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This application requires location services for background monitoring proximity zones</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This application requires location services for proximity zones monitoring. Don&apos;t miss poximity events when app is not on presented on screen by enabling Always</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

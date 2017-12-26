@@ -70,13 +70,21 @@
 		
 		<option value="//api/name/locations:fail:">- locations:fail:</option>
 		
+		<option value="//api/name/sendCSVCampaignAnalytics:attemptsCount:channel:success:fail:">- sendCSVCampaignAnalytics:attemptsCount:channel:success:fail:</option>
+		
 		<option value="//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:">- sendCSVProximityAnalytics:attemptsCount:success:fail:</option>
+		
+		<option value="//api/name/sendDelivery:channel:attemptsCount:success:fail:">- sendDelivery:channel:attemptsCount:success:fail:</option>
 		
 		<option value="//api/name/sendDelivery:channel:success:fail:">- sendDelivery:channel:success:fail:</option>
 		
 		<option value="//api/name/sendJSONProximityAnalytics:attemptsCount:success:fail:">- sendJSONProximityAnalytics:attemptsCount:success:fail:</option>
 		
+		<option value="//api/name/sendUsage:channel:attemptsCount:success:fail:">- sendUsage:channel:attemptsCount:success:fail:</option>
+		
 		<option value="//api/name/sendUsage:channel:success:fail:">- sendUsage:channel:success:fail:</option>
+		
+		<option value="//api/name/sendView:channel:attemptsCount:success:fail:">- sendView:channel:attemptsCount:success:fail:</option>
 		
 		<option value="//api/name/sendView:channel:success:fail:">- sendView:channel:success:fail:</option>
 		
@@ -221,210 +229,6 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/sendDelivery:channel:success:fail:" title="sendDelivery:channel:success:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sendDelivery:channel:success:fail:">&ndash;&nbsp;sendDelivery:channel:success:fail:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Notify server about getting notification</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>rulesIds</code></th>
-						<td><p>array of rules IDs of event</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>channel</code></th>
-						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
-						<td><p>block called if request performs successfully</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>failCallback</code></th>
-						<td><p>block called in case of error</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/sendView:channel:success:fail:" title="sendView:channel:success:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sendView:channel:success:fail:">&ndash;&nbsp;sendView:channel:success:fail:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Notify server about showing to user content of event</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>rulesIds</code></th>
-						<td><p>rules IDs of event</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>channel</code></th>
-						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
-						<td><p>block called if request performs successfully</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>failCallback</code></th>
-						<td><p>block called in case of error</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/sendUsage:channel:success:fail:" title="sendUsage:channel:success:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sendUsage:channel:success:fail:">&ndash;&nbsp;sendUsage:channel:success:fail:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Notify server about using content of event</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)sendUsage:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>rulesIds</code></th>
-						<td><p>rules IDs of event</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>channel</code></th>
-						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
-						<td><p>block called if request performs successfully</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>failCallback</code></th>
-						<td><p>block called in case of error</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/devices:fail:" title="devices:fail:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/devices:fail:">&ndash;&nbsp;devices:fail:</a></code>
 </h3>
@@ -541,8 +345,8 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:" title="sendCSVProximityAnalytics:attemptsCount:success:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:">&ndash;&nbsp;sendCSVProximityAnalytics:attemptsCount:success:fail:</a></code>
+	<a name="//api/name/categories:fail:" title="categories:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/categories:fail:">&ndash;&nbsp;categories:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -552,28 +356,18 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sends Proximity analytics to CMS server in CSV format.</p>
+				<p>Returns LSCategories info from CMS server</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)sendCSVProximityAnalytics:(nonnull NSData *)<em>proximityEvents</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)categories:(void ( ^ _Nonnull ) ( NSArray&lt;LSCategory*&gt; *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>proximityEvents</code></th>
-						<td><p>UTF-8 encoded CSV events representations</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
-						<td><p>how many tries should be performed before failCallback call</p></td>
-					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
@@ -677,8 +471,8 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/categories:fail:" title="categories:fail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/categories:fail:">&ndash;&nbsp;categories:fail:</a></code>
+	<a name="//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:" title="sendCSVProximityAnalytics:attemptsCount:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendCSVProximityAnalytics:attemptsCount:success:fail:">&ndash;&nbsp;sendCSVProximityAnalytics:attemptsCount:success:fail:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -688,18 +482,524 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns LSCategories info from CMS server</p>
+				<p>Sends Proximity analytics to CMS server in CSV format.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)categories:(void ( ^ _Nonnull ) ( NSArray&lt;LSCategory*&gt; *_Nonnull ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)sendCSVProximityAnalytics:(nonnull NSData *)<em>proximityEvents</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>proximityEvents</code></th>
+						<td><p>UTF-8 encoded CSV events representations</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>how many tries should be performed before failCallback call</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendCSVCampaignAnalytics:attemptsCount:channel:success:fail:" title="sendCSVCampaignAnalytics:attemptsCount:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendCSVCampaignAnalytics:attemptsCount:channel:success:fail:">&ndash;&nbsp;sendCSVCampaignAnalytics:attemptsCount:channel:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends Campaign analytics to CMS server in CSV format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendCSVCampaignAnalytics:(nonnull NSData *)<em>campaignEvents</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nonnull ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignEvents</code></th>
+						<td><p>UTF-8 encoded CSV events representations</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>how many tries should be performed before failCallback call</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>channel type</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendView:channel:success:fail:" title="sendView:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendView:channel:success:fail:">&ndash;&nbsp;sendView:channel:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about showing to user content of event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rulesIds</code></th>
+						<td><p>rules IDs of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendView:channel:attemptsCount:success:fail:" title="sendView:channel:attemptsCount:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendView:channel:attemptsCount:success:fail:">&ndash;&nbsp;sendView:channel:attemptsCount:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about showing to user content of event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendView:(NSArray&lt;LSCampaignEvent*&gt; *_Nonnull)<em>events</em> channel:(NSString *_Nonnull)<em>channel</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable , NSArray *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>events</code></th>
+						<td><p>events to send</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>if request failed, specified attempts count will be performed before failCallback calling</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendUsage:channel:success:fail:" title="sendUsage:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendUsage:channel:success:fail:">&ndash;&nbsp;sendUsage:channel:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about using content of event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendUsage:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rulesIds</code></th>
+						<td><p>rules IDs of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendUsage:channel:attemptsCount:success:fail:" title="sendUsage:channel:attemptsCount:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendUsage:channel:attemptsCount:success:fail:">&ndash;&nbsp;sendUsage:channel:attemptsCount:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about using content of event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendUsage:(NSArray&lt;LSCampaignEvent*&gt; *_Nonnull)<em>events</em> channel:(NSString *_Nonnull)<em>channel</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable , NSArray *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>events</code></th>
+						<td><p>events to send</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>if request failed, specified attempts count will be performed before failCallback calling</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendDelivery:channel:success:fail:" title="sendDelivery:channel:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendDelivery:channel:success:fail:">&ndash;&nbsp;sendDelivery:channel:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about getting notification</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSArray&lt;NSNumber*&gt; *_Nonnull)<em>rulesIds</em> channel:(NSString *_Nonnull)<em>channel</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rulesIds</code></th>
+						<td><p>array of rules IDs of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
+						<td><p>block called if request performs successfully</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failCallback</code></th>
+						<td><p>block called in case of error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCmsClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendDelivery:channel:attemptsCount:success:fail:" title="sendDelivery:channel:attemptsCount:success:fail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendDelivery:channel:attemptsCount:success:fail:">&ndash;&nbsp;sendDelivery:channel:attemptsCount:success:fail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notify server about getting notification</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendDelivery:(NSArray&lt;LSCampaignEvent*&gt; *_Nonnull)<em>events</em> channel:(NSString *_Nonnull)<em>channel</em> attemptsCount:(NSUInteger)<em>attemptsCount</em> success:(void ( ^ _Nonnull ) ( void ))<em>successfulCallback</em> fail:(void ( ^ _Nonnull ) ( NSError *_Nullable , NSArray *_Nullable ))<em>failCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>events</code></th>
+						<td><p>events to send</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channel</code></th>
+						<td><p>which way content was shown to user: LSViewChannelTypeOfferList if user open content from offer list, LSViewChannelTypeNotification if from notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attemptsCount</code></th>
+						<td><p>if request failed, specified attempts count will be performed before failCallback calling</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>successfulCallback</code></th>
@@ -981,7 +1281,7 @@ You can set your CMS URL in cmsUrl static variable, client ID in clientId, secre
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-09-22</p>
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-12-26</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

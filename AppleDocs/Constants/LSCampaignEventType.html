@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSAccessType Constants Reference</title>
+	<title>LSCampaignEventType Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSAccessType Constants Reference</h1>
+					<h1 class="title">LSCampaignEventType Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>LSDBAccessibleVenueObject+CoreDataClass.h</td>
+	<td>LSCampaignEvent.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,19 +75,21 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">LSAccessType</h3>
+                    <h3 class="subsubtitle method-title">LSCampaignEventType</h3>
                     
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSUInteger, LSAccessType ) {<br>
+                        <code>typedef NS_ENUM(NSUInteger, LSCampaignEventType ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">LSAccessTypeUndefined</a> = 0,<br>
+                            &nbsp;&nbsp; <a href="">LSCampaignEventTypeUnknown</a> = 0,<br>
                             
-                            &nbsp;&nbsp; <a href="">LSAccessTypePrivate</a>,<br>
+                            &nbsp;&nbsp; <a href="">LSCampaignEventTypeViewed</a> = 1,<br>
                             
-                            &nbsp;&nbsp; <a href="">LSAccessTypePublic</a>,<br>
+                            &nbsp;&nbsp; <a href="">LSCampaignEventTypeUsed</a> = 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">LSCampaignEventTypeDelivered</a> = 3,<br>
                             
                             };</code>
                     
@@ -97,32 +99,42 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="LSAccessTypeUndefined"></a><code>LSAccessTypeUndefined</code></dt>
+                            <dt><a name="" title="LSCampaignEventTypeUnknown"></a><code>LSCampaignEventTypeUnknown</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSDBAccessibleVenueObject+CoreDataClass.h</code>.
+		Declared In <code class="declared-in-ref">LSCampaignEvent.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LSAccessTypePrivate"></a><code>LSAccessTypePrivate</code></dt>
+                            <dt><a name="" title="LSCampaignEventTypeViewed"></a><code>LSCampaignEventTypeViewed</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSDBAccessibleVenueObject+CoreDataClass.h</code>.
+		Declared In <code class="declared-in-ref">LSCampaignEvent.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LSAccessTypePublic"></a><code>LSAccessTypePublic</code></dt>
+                            <dt><a name="" title="LSCampaignEventTypeUsed"></a><code>LSCampaignEventTypeUsed</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LSDBAccessibleVenueObject+CoreDataClass.h</code>.
+		Declared In <code class="declared-in-ref">LSCampaignEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LSCampaignEventTypeDelivered"></a><code>LSCampaignEventTypeDelivered</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">LSCampaignEvent.h</code>.
 	</p>
 	
 </dd>

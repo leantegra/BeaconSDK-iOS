@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LSDeviceInfoReader Class Reference</title>
+	<title>LSCampaignAnalyticsManagerDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -58,9 +58,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/wiBeatReadCharacteristic:error:">- wiBeatReadCharacteristic:error:</option>
+		<option value="//api/name/campaignAnalyticsManager:didGetError:">- campaignAnalyticsManager:didGetError:</option>
 		
-		<option value="//api/name/wiBeatReadCharacteristicSuccess:">- wiBeatReadCharacteristicSuccess:</option>
+		<option value="//api/name/campaignAnalyticsManager:didSychronizeEventsWithServer:error:">- campaignAnalyticsManager:didSychronizeEventsWithServer:error:</option>
 		
 	</optgroup>
 	
@@ -77,19 +77,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LSDeviceInfoReader Class Reference</h1>
+					<h1 class="title">LSCampaignAnalyticsManagerDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
+	<th>Conforms to</th>
 	<td>NSObject</td>
 </tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/LSWiBeatReadCharacteristicDelegate.html">LSWiBeatReadCharacteristicDelegate</a></td>
-</tr><tr>
 	<th>Declared in</th>
-	<td>LSDeviceInfoReader.h<br />LSDeviceInfoReader.m</td>
+	<td>LSCampaignAnalyticsManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -107,9 +104,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/wiBeatReadCharacteristic:error:" title="wiBeatReadCharacteristic:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/wiBeatReadCharacteristic:error:">&ndash;&nbsp;wiBeatReadCharacteristic:error:</a></code>
-</h3>
+	<a name="//api/name/campaignAnalyticsManager:didSychronizeEventsWithServer:error:" title="campaignAnalyticsManager:didSychronizeEventsWithServer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campaignAnalyticsManager:didSychronizeEventsWithServer:error:">&ndash;&nbsp;campaignAnalyticsManager:didSychronizeEventsWithServer:error:</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -118,12 +115,76 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Callback invoked when characteristic reading has been failed.</p>
+				<p>Informs delegate about synchronization with server.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)wiBeatReadCharacteristic:(CBCharacteristic *)<em>characteristic</em> error:(NSError *)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)campaignAnalyticsManager:(LSCampaignAnalyticsManager *)<em>analyticsManager</em> didSychronizeEventsWithServer:(NSArray&lt;NSDictionary*&gt; *)<em>events</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>events</code></th>
+						<td><ul>
+<li>an array of events dictionaries</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><ul>
+<li>error, that was occured during the synchronization, if any.</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/campaignAnalyticsManager:didGetError:" title="campaignAnalyticsManager:didGetError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campaignAnalyticsManager:didGetError:">&ndash;&nbsp;campaignAnalyticsManager:didGetError:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs delegate about error, that occured during campaignAnalyticsManager work, that is not related to synchronization process.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)campaignAnalyticsManager:(LSCampaignAnalyticsManager *)<em>analyticsManager</em> didGetError:(nullable NSError *)<em>error</em></code></div>
 
 		    
 			
@@ -133,7 +194,10 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>Error code</p></td>
+						<td><ul>
+<li>error, that was occured during the campaignAnalyticsManager work</li>
+</ul>
+</td>
 					</tr>
 				
 				</table>
@@ -153,60 +217,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/wiBeatReadCharacteristicSuccess:" title="wiBeatReadCharacteristicSuccess:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/wiBeatReadCharacteristicSuccess:">&ndash;&nbsp;wiBeatReadCharacteristicSuccess:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Callback invoked when characteristic has been successfully read.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)wiBeatReadCharacteristicSuccess:(CBCharacteristic *)<em>characteristic</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>characteristic</code></th>
-						<td><p>Characteristic value</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LSWiBeatConnection.h</code></p>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
 			</div>
 			
 			

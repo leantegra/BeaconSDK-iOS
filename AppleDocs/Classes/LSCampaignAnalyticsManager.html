@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LSCampaignAnalyticsManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Leantegra iOS SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Leantegra Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/campaignEvents">campaignEvents</option>
+		
+		<option value="//api/name/didStart">didStart</option>
+		
+		<option value="//api/name/nextSynchronizeAfterTimeInterval">nextSynchronizeAfterTimeInterval</option>
+		
+		<option value="//api/name/synchronizeTimeInterval">synchronizeTimeInterval</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/insertCampaignEvent:">- insertCampaignEvent:</option>
+		
+		<option value="//api/name/removeCampaignEvent:">- removeCampaignEvent:</option>
+		
+		<option value="//api/name/startGatheringCampaignAnalytics">- startGatheringCampaignAnalytics</option>
+		
+		<option value="//api/name/stopGatheringCampaignAnalytics">- stopGatheringCampaignAnalytics</option>
+		
+		<option value="//api/name/synchronizeWithServer">- synchronizeWithServer</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">LSCampaignAnalyticsManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>LSCampaignAnalyticsManager.h<br />LSCampaignAnalyticsManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/synchronizeTimeInterval" title="synchronizeTimeInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronizeTimeInterval">&nbsp;&nbsp;synchronizeTimeInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Time interval for synchronization of campaign analytics in seconds. Specify this value before [LSCampaignAnalyticsManagerDelegate startGatheringCampaignAnalytics] calling
+If provided value is less than 300 or bigger than 21600, default value will be used.
+If no value is provided, default value will be used.
+Default value is 3600.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSTimeInterval synchronizeTimeInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didStart" title="didStart"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didStart">&nbsp;&nbsp;didStart</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes, if <a href="#//api/name/startGatheringCampaignAnalytics">[LSCampaignAnalyticsManager startGatheringCampaignAnalytics]</a>, <a href="#//api/name/stopGatheringCampaignAnalytics">[LSCampaignAnalyticsManager stopGatheringCampaignAnalytics]</a> are called</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL didStart</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/campaignEvents" title="campaignEvents"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campaignEvents">&nbsp;&nbsp;campaignEvents</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Currently stored campaign events</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSSet&lt;LSCampaignEvent*&gt; *campaignEvents</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertCampaignEvent:" title="insertCampaignEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertCampaignEvent:">&ndash;&nbsp;insertCampaignEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds LSCampaignEvent object to be sent to the server on next synchronization
+This method will generate error, if <a href="#//api/name/startGatheringCampaignAnalytics">[LSCampaignAnalyticsManager startGatheringCampaignAnalytics]</a> did not called</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertCampaignEvent:(LSCampaignEvent *)<em>campaignEvent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignEvent</code></th>
+						<td><ul>
+<li>event to add</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCampaignEvent:" title="removeCampaignEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCampaignEvent:">&ndash;&nbsp;removeCampaignEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes <a href="../Classes/LSCampaignEvent.html">LSCampaignEvent</a> object to be sent to the server on next synchronization</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCampaignEvent:(LSCampaignEvent *)<em>campaignEvent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignEvent</code></th>
+						<td><ul>
+<li>event to remove</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextSynchronizeAfterTimeInterval" title="nextSynchronizeAfterTimeInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextSynchronizeAfterTimeInterval">&nbsp;&nbsp;nextSynchronizeAfterTimeInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Time interval for next synchronization operation.
+DBL_MAX will be returned, if manager is not started with <a href="#//api/name/startGatheringCampaignAnalytics">[LSCampaignAnalyticsManager startGatheringCampaignAnalytics]</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSTimeInterval nextSynchronizeAfterTimeInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/synchronizeWithServer" title="synchronizeWithServer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronizeWithServer">&ndash;&nbsp;synchronizeWithServer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Performs the sending of collected campaign events to server
+1000 events is a maximum value of campaign events.
+If more events is gathered after the last sync - only 1000 last events will be sended.
+48 h is a maximum time interval for storing events. Only events, that were collected during last 48 h will be sended.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)synchronizeWithServer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startGatheringCampaignAnalytics" title="startGatheringCampaignAnalytics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startGatheringCampaignAnalytics">&ndash;&nbsp;startGatheringCampaignAnalytics</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts gathering of campaign events
+Performs calling of <code><a href="#//api/name/synchronizeWithServer">[LSCampaignAnalyticsManager synchronizeWithServer]</a></code> automatically every 1 h, if other is not specified via <code>synchronizeTimeInterval</code> property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startGatheringCampaignAnalytics</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopGatheringCampaignAnalytics" title="stopGatheringCampaignAnalytics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopGatheringCampaignAnalytics">&ndash;&nbsp;stopGatheringCampaignAnalytics</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops gathering campaign events
+Calling of <code><a href="#//api/name/synchronizeWithServer">[LSCampaignAnalyticsManager synchronizeWithServer]</a></code> will not occure automatically</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopGatheringCampaignAnalytics</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LSCampaignAnalyticsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Leantegra Inc. All rights reserved. Updated: 2017-12-26</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

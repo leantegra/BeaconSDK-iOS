@@ -69,6 +69,10 @@ typedef NS_ENUM(NSUInteger, LSLeantegraSDKErrorCodeType) {
     /**Throwed when NSPersistentStoreOpenError occurs.*/
     kLSPersistentStoreOpenError = -5000,
 
+    // Analytics errors
+    kLSCantAddEventError = -8000,
+    kLSCantRemoveEventError = -8001,
+    
     // Other
     kLSInvalidParameters = -6000,
     kLSOperationCancelledByUser = -6001

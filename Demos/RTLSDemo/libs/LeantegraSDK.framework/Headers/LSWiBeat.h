@@ -35,6 +35,11 @@
 @property (readonly) NSString *mac;
 
 /**
+ * Lazily gets UID of floor
+ */
+@property (readonly) NSInteger floorUID;
+
+/**
  * Represents latitude and longitude of WiBeat
  */
 @property (nonatomic, strong, readonly) CLLocation *location;

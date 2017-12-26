@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:CmsApiDemo/CmsApiDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MonitoringAPIDemo/MonitoringAPIDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RangingAPIDemo/RangingAPIDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DeviceAPIDemo/DeviceAPIDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DeviceAPIDemo/../ProximityAnalyticsAPIDemo/ProximityAnalyticsAPIDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RTLSDemo/RTLSDemo.xcodeproj">
+   </FileRef>
+</Workspace>

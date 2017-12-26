@@ -28,6 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSComparisonResult)compareVersion:(NSString *)version1 withVersion:(NSString *)version2;
 
 /*
+ * Check, if given firmware version supports updating.
+*/
++ (BOOL)versionSupportsUpdating:(NSString *)version;
+
+/*
  * Initializer for LSFirmware object.
 */
 - (nullable instancetype)initWithFirmwareData:(NSData *)firmwareData;

@@ -1,5 +1,10 @@
 Changelog
 =====================
+## 1.8.0 (Dec 27, 2017)
+- New Campaign Analytics functionality;
+- Routing functionality improvements;
+- Bug fixes and stability improvements.
+
 ## 1.7.0 (Sep 22, 2017)
 - Updated routing functionality with more accurate route;
 - Added Trackables API support;
@@ -46,4 +51,3 @@ Changelog
 
 ## 1.0.0 (June 9, 2016)
 - Initial version.
-

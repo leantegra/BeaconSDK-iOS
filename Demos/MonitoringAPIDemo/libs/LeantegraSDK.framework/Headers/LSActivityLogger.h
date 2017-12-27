@@ -58,7 +58,7 @@ void LSLogData(NSData *data, NSString *filename);
 /**
  * Stamp for time with msec.
  */
-NSString *LSDateStamp();
+NSString *LSDateStamp(void);
 
 @interface LSActivityLogger : NSObject
 

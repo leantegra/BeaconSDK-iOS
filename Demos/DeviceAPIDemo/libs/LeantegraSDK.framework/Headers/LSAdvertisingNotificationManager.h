@@ -131,13 +131,13 @@ extern NSString *const kLSAllowsEmptyCategoriesOptionsKey;
 - (void)loadData:(void (^_Nullable)(NSError *_Nullable))completion;
 
 ///Send view info about LSCMSRule content to CMS server.
--(void)sendViewCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel;
+- (void)sendViewCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel __attribute__((deprecated("-[LSAdvertisingNotificationManager sendViewCMSRules] has been deprecated. Please use LSCampaignAnalyticsManager or related LSCmsClient methods directly")));
 
 ///Send notification to CMS server about LSCMSRule use
--(void)sendUsageCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel success:(void (^ _Nullable)(void))successfulCallback fail:(void (^ _Nullable)(NSError*))failCallback;
+- (void)sendUsageCMSRules:(NSArray<LSCMSRule*>*)cmsRules channel:(NSString*)channel success:(void (^ _Nullable)(void))successfulCallback fail:(void (^ _Nullable)(NSError*))failCallback __attribute__((deprecated("-[LSAdvertisingNotificationManager sendUsageCMSRules:success:fail:] has been deprecated. Please use LSCampaignAnalyticsManager or related LSCmsClient methods directly")));
 
 ///Send notification to CMS server about delivery rules in offer list
-- (void)sendDeliveryInOfferList:(NSArray<LSCMSRule*>*)rules;
+- (void)sendDeliveryInOfferList:(NSArray<LSCMSRule*>*)rules __attribute__((deprecated("-[LSAdvertisingNotificationManager sendDeliveryInOfferList:] has been deprecated. Please use LSCampaignAnalyticsManager or related LSCmsClient methods directly")));
 
 /**
  *  Returns list of all LSCMSRule enabled for showing in list

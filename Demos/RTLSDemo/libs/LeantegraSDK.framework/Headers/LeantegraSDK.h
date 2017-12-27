@@ -18,7 +18,10 @@
 #import "LSRegionWrapper.h"
 
 #import "LSRangingManager.h"
+
 #import "LSProximityAnalyticsManager.h"
+#import "LSCampaignAnalyticsManager.h"
+#import "LSCampaignEvent.h"
 
 #import "LSBeaconKey.h"
 #import "LSWiBeatEnums.h"

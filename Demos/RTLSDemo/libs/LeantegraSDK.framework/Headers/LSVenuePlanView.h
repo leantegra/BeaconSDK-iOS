@@ -39,6 +39,14 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 /**
+ * Get called, when there are several floors candidate to be displayed.
+ * For example: when calling -[LSVenuePlanView setOffers:], if passed offer's connected wiBeats are located on several floors,
+ * delegate should decide, which floor should be displayed.
+ * @return - Should return one of the passed floorUIDs as the result.
+ */
+- (NSNumber *)venuePlanViewShouldSelectFloorWithinCandidates:(NSSet <NSNumber *> *)floorUIDs;
+
+/**
  * Informs delegate about the completed route request.
  * This method is required, if -[LSVenuePlanView performRouteRequest] is used!
  */
@@ -131,6 +139,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) MKUserLocation *userLocation;
 
 /**
+ * Listed layers will be selected as base values to calculate "sticky" map region, that should be displayed as default region.
+ * When change this property, call -[LSVenuePlanView redisplayVenuePlanAnimated:resetCamera:] with resetCamera parameter set to YES to take effect
+ * @remark
+ * The following default values will be applied
+ * 1. If delegate has LSVenuePlanFloorImageLayer as suboption returned by -[id<LSVenuePlanViewDelegate> displayingOptionsForVenuePlanView:] method, LSVenuePlanFloorImageLayer will be selected by default. Will not be applied, if rule #2 is true.
+ * 2. If delegate has LSVenuePlanFloorShapeLayer as suboption returned by -[id<LSVenuePlanViewDelegate> displayingOptionsForVenuePlanView:] method, LSVenuePlanFloorShapeLayer will be selected by default. Rule #1 will be ignored.
+ **/
+ @property (nonatomic, assign) LSVenuePlanPaintingLayerOptions boundingRegionLayers;
+
+/**
  * Use this method for setting the floor to display
  * Floor that will be used to display
  * Should be a member of -[LSVenuePlanView floors]
@@ -180,6 +198,11 @@ NS_ASSUME_NONNULL_BEGIN
  * If OSM representation exists for given floor, YES will be returned.
  */
 - (BOOL)supportsRoutingForFloor:(LSFloor *)floor;
+
+/**
+ * Indicates, if venue contains OSM data.
+ */
+- (BOOL)hasOSMVenuePlan;
 
 NS_ASSUME_NONNULL_END
 

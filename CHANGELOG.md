@@ -1,5 +1,9 @@
 Changelog
 =====================
+## 1.9.0 (Apr , 2018)
+- 3rd party BLE beacons support;
+- Bug fixes and stability improvements.
+
 ## 1.8.0 (Dec 27, 2017)
 - New Campaign Analytics functionality;
 - Routing functionality improvements;
@@ -36,7 +40,7 @@ Changelog
 - Bug fixing and improvements.
 
 ## 1.2.1 (Nov 1, 2016)
-- Added ability to customise proximity zones;
+- Added ability to customize proximity zones;
 - Only one notification for rule in Notifications center;
 - Support of new CMS API;
 - Bug fixing and improvements.

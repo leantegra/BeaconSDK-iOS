@@ -44,6 +44,16 @@
  */
 @property (nonatomic, strong, readonly) CLLocation *location;
 
+/**
+ * Represents device model
+ */
+@property (readonly) NSString *model;
+
+/**
+ * Represents device model
+ */
+@property (readonly) NSString *serialNumber;
+
 ///Must use initWithDictionary: instead.
 - (instancetype)init __attribute__((unavailable("Must use initWithDictionary: instead.")));
 
@@ -56,5 +66,7 @@
  * Loads LSWiBeat object for a specific LSBeaconKey key, if any
  */
 + (LSWiBeat *)wiBeatForKey:(LSBeaconKey *)key;
+
+-(NSUUID*)proximityUUID;
 
 @end

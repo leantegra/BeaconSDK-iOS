@@ -1,7 +1,6 @@
 # WiBeat SDK for iOS #
 
-The WiBeat SDK for iOS is a library that allows interaction with [WiBeats](http://leantegra.com/wibeat-ble-beacon).
-It works with iOS 8 or above and requires Bluetooth Low Energy support.
+The WiBeat SDK for iOS is a library that allows interaction with any iBeacon / Eddystone compatible devices, including both Leantegra beacons and 3rd-party devices from other vendors (e.g. Estimote, Kontakt.io).
 
 Features:
 - Based on Apple Core Location and Apple Core Bluetooth Frameworks;

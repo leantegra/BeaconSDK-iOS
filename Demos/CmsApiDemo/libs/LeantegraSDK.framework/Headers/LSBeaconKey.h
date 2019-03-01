@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, strong) NSNumber *major;
 @property (readonly, strong) NSNumber *minor;
 
-- (instancetype)initWithMajor:(NSNumber *)major minor:(NSNumber *)minor;
+- (instancetype)initWithMajor:(NSNumber *)major minor:(NSNumber *)minor uuid:(NSString*)uuid;
 
-+ (LSBeaconKey *)keyWithMajor:(NSNumber *)major minor:(NSNumber *)minor;
++ (LSBeaconKey *)keyWithMajor:(NSNumber *)major minor:(NSNumber *)minor uuid:(NSString*)uuid;
 
 NS_ASSUME_NONNULL_END
 
